@@ -40,7 +40,7 @@ return array(
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'showScriptName' => false,
-			//'urlSuffix'=>'.html',
+			'urlSuffix'=>'.html',
 			/*
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
