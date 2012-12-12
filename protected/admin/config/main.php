@@ -5,10 +5,16 @@
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
-return array(
-	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
 
+$backend = dirname( dirname( __FILE__ ) );
+$frontend = dirname( $backend );
+$main =  array(
+	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
+	'name'=>'后台管理',
+	"language" => "zh_cn",
+	"charset" => "utf-8",
+	"timeZone" => "Asia/Chongqing",
+	"runtimePath" => $backend."/../runtime/backend",
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -37,16 +43,18 @@ return array(
 			'allowAutoLogin'=>true,
 		),
 		// uncomment the following to enable URLs in path-format
-		/*
+		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
+			/*
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
+			*/
 		),
-		*/
+		
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),
@@ -88,3 +96,5 @@ return array(
 		'adminEmail'=>'webmaster@example.com',
 	),
 );
+
+return $main;
