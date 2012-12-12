@@ -150,3 +150,43 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/favicon.ico
 ---
+2012/12/12 11:31:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in E:\myapp\yii\web\CWebApplication.php:287
+Stack trace:
+#0 E:\myapp\yii\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 E:\myapp\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\myapp\yiicms\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/12/12 11:31:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in E:\myapp\yii\web\CWebApplication.php:287
+Stack trace:
+#0 E:\myapp\yii\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 E:\myapp\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\myapp\yiicms\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/12/12 11:31:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in E:\myapp\yii\web\CWebApplication.php:287
+Stack trace:
+#0 E:\myapp\yii\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 E:\myapp\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\myapp\yiicms\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/12/12 11:31:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in E:\myapp\yii\web\CWebApplication.php:287
+Stack trace:
+#0 E:\myapp\yii\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 E:\myapp\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\myapp\yiicms\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/12/12 11:32:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in E:\myapp\yii\web\CWebApplication.php:287
+Stack trace:
+#0 E:\myapp\yii\web\CWebApplication.php(142): CWebApplication->runController('favicon.ico')
+#1 E:\myapp\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\myapp\yiicms\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
