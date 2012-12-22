@@ -8,7 +8,12 @@
 
 $backend = dirname( dirname( __FILE__ ) );
 $frontend = dirname( $backend );
-$main =  array(
+Yii::setpathofalias( "backend", $backend );
+$frontendArray = require( $frontend."/config/main.php" );
+unset( $frontendArray['components']['urlManager'] );
+unset( $frontendArray['modules'] );
+unset( $frontendArray['import'] );
+$backmain =  array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'后台管理',
 	"language" => "zh_cn",
@@ -21,19 +26,21 @@ $main =  array(
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
-		'application.components.*',
+		'application.components.*', 
+		'backend.models.*', 
+		'backend.components.*',
 	),
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		/*
+		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
+			'password'=>'sa',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
-		*/
+		
 	),
 
 	// application components
@@ -55,19 +62,6 @@ $main =  array(
 			*/
 		),
 		
-		'db'=>array(
-			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
-		),
-		// uncomment the following to use a MySQL database
-		/*
-		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
-			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
-			'charset' => 'utf8',
-		),
-		*/
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
@@ -96,5 +90,7 @@ $main =  array(
 		'adminEmail'=>'webmaster@example.com',
 	),
 );
-
-return $main;
+$config = new CMap( $frontendArray );
+$config->mergeWith( $backmain );
+$config = $config->toArray( );
+return $config;

@@ -58,11 +58,12 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=yiicms',
+			'connectionString' => 'mysql:host=localhost;dbname=6kzz',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '',
 			'charset' => 'utf8',
+			'tablePrefix' => 'zzdb_',
 		),
 		
 		'errorHandler'=>array(
