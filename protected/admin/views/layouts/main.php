@@ -17,54 +17,19 @@
   </head>
 
   <body>
-    <!-- Navbar================================================== -->
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="./index.html">萍萍店</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active">
-                <a href="./index.html">主页</a>
-              </li>
-              <li class="">
-                <a href="./getting-started.html">公司动态</a>
-              </li>
-              <li class="">
-                <a href="./scaffolding.html">产品展示</a>
-              </li>
-              <li class="">
-                <a href="./base-css.html">联系我们</a>
-              </li>
-              <li class="">
-                <a href="./components.html">关于我们</a>
-              </li>
-              <li class="">
-                <a href="./javascript.html">留言</a>
-              </li>
-			  <li class="dropdown">
-				  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown 
-				  <span class="caret"></span></a>
-				  <ul id="yw3" class="dropdown-menu">
-				  <li><a tabindex="-1" href="#">Action</a></li>
-				  <li><a tabindex="-1" href="#">Another action</a></li>
-				  <li><a tabindex="-1" href="#">Something else here</a>
-				  </li><li class="divider"></li>
-				  <li class="nav-header">NAV HEADER</li>
-				  <li><a tabindex="-1" href="#">Separated link</a></li>
-				  <li><a tabindex="-1" href="#">One more separated link</a></li>
-				  </ul>
-			  </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+  <?php $this->widget('bootstrap.TbNavbar', array(
+    'type'=>'inverse', // null or 'inverse'
+    'brand'=>'后台管理',
+    'brandUrl'=>'#',
+    'fixed' => '',
+    'collapse'=>true, // requires bootstrap-responsive.css
+    'items'=>array(
+        array(
+            'class'=>'bootstrap.TbMenu',
+            'items'=>$this->channels,
+        ),
+    ),
+)); ?>
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="span3">
@@ -193,8 +158,8 @@
           </div>
         </div><!--/span3-->
         <div class="span9">
-          <?php $this->widget('ext.bootstrap.TbBreadcrumbs',array('links'=>array('Library'=>'#', 'Data'),'htmlOptions'=>array('class'=>''),'separator'=>'/'));?>
-          <div class="row-fluid">
+          <?php $this->widget('bootstrap.TbBreadcrumbs',array('links'=>array('Library'=>'#', 'Data'),'htmlOptions'=>array('class'=>''),'separator'=>'/'));?>
+          <div class="row-fluid" id="maincontent">
               <div class="span4">
                 <h2>Heading</h2>
                 <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>

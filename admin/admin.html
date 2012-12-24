@@ -221,8 +221,17 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/bootstrap.js"></script>
-    <script>
-
+     <script>
+    //sidebar icon
+      $('.accordion-toggle').live('click',function(){
+          if( $(this).hasClass('collapsed') ){
+            $(this).find('i').removeClass('icon-chevron-down').addClass('icon-chevron-right');
+            $('.accordion-toggle').not(this).find('i').removeClass('icon-chevron-down').addClass('icon-chevron-right');
+          }else{
+            $(this).find('i').removeClass('icon-chevron-right').addClass('icon-chevron-down');
+            $('.accordion-toggle').not(this).find('i').removeClass('icon-chevron-down').addClass('icon-chevron-right');
+          }
+        });
     </script>
   </body>
 </html>
