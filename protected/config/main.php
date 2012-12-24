@@ -61,7 +61,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=6kzz',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => '789852',
 			'charset' => 'utf8',
 			'tablePrefix' => 'zzdb_',
 		),

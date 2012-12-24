@@ -9,16 +9,24 @@
 $backend = dirname( dirname( __FILE__ ) );
 $frontend = dirname( $backend );
 Yii::setpathofalias( "backend", $backend );
+Yii::setPathOfAlias('bootstrap', $frontend.'/extensions/bootstrap');
+
 $frontendArray = require( $frontend."/config/main.php" );
 unset( $frontendArray['components']['urlManager'] );
 unset( $frontendArray['modules'] );
 unset( $frontendArray['import'] );
 $backmain =  array(
-	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
+	//'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'后台管理',
 	"language" => "zh_cn",
 	"charset" => "utf-8",
 	"timeZone" => "Asia/Chongqing",
+
+	"basePath" => $frontend,//controll application path
+	"controllerPath" => $backend."/controllers",
+	"viewPath" => $backend."/views",
+	"modulePath" => $backend."/modules",
+	//"extPath" => $backend."/extensions",
 	"runtimePath" => $backend."/../runtime/backend",
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -26,9 +34,10 @@ $backmain =  array(
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
-		'application.components.*', 
-		'backend.models.*', 
+		'application.components.*',
+		'backend.models.*',
 		'backend.components.*',
+		'backend.extensions.*',
 	),
 
 	'modules'=>array(
