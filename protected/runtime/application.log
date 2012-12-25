@@ -1137,3 +1137,101 @@ Stack trace:
 REQUEST_URI=/attachment.php?id=1
 HTTP_REFERER=http://www.yiicms.com/admin.php
 ---
+2012/12/24 18:37:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/img/bootstrap-mdo-sfmoma-02.jpg".' in E:\myapp\yii\web\CWebApplication.php:287
+Stack trace:
+#0 E:\myapp\yii\web\CWebApplication.php(142): CWebApplication->runController('admin/img/boots...')
+#1 E:\myapp\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\myapp\yiicms\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/img/bootstrap-mdo-sfmoma-02.jpg
+HTTP_REFERER=http://www.yiicms.com/admin/
+---
+2012/12/24 18:37:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/js/google-code-prettify/prettify.css".' in E:\myapp\yii\web\CWebApplication.php:287
+Stack trace:
+#0 E:\myapp\yii\web\CWebApplication.php(142): CWebApplication->runController('admin/js/google...')
+#1 E:\myapp\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\myapp\yiicms\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/js/google-code-prettify/prettify.css
+HTTP_REFERER=http://www.yiicms.com/admin/
+---
+2012/12/24 18:37:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/css/docs.css".' in E:\myapp\yii\web\CWebApplication.php:287
+Stack trace:
+#0 E:\myapp\yii\web\CWebApplication.php(142): CWebApplication->runController('admin/css/docs....')
+#1 E:\myapp\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\myapp\yiicms\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/css/docs.css
+HTTP_REFERER=http://www.yiicms.com/admin/
+---
+2012/12/24 18:37:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/img/bootstrap-mdo-sfmoma-01.jpg".' in E:\myapp\yii\web\CWebApplication.php:287
+Stack trace:
+#0 E:\myapp\yii\web\CWebApplication.php(142): CWebApplication->runController('admin/img/boots...')
+#1 E:\myapp\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\myapp\yiicms\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/img/bootstrap-mdo-sfmoma-01.jpg
+HTTP_REFERER=http://www.yiicms.com/admin/
+---
+2012/12/24 18:37:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/img/bootstrap-mdo-sfmoma-03.jpg".' in E:\myapp\yii\web\CWebApplication.php:287
+Stack trace:
+#0 E:\myapp\yii\web\CWebApplication.php(142): CWebApplication->runController('admin/img/boots...')
+#1 E:\myapp\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\myapp\yiicms\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/img/bootstrap-mdo-sfmoma-03.jpg
+HTTP_REFERER=http://www.yiicms.com/admin/
+---
+2012/12/24 18:37:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/ico/favicon.ico".' in E:\myapp\yii\web\CWebApplication.php:287
+Stack trace:
+#0 E:\myapp\yii\web\CWebApplication.php(142): CWebApplication->runController('admin/ico/favic...')
+#1 E:\myapp\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\myapp\yiicms\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/ico/favicon.ico
+---
+2012/12/25 08:37:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/css/docs.css".' in E:\myapp\yii\web\CWebApplication.php:287
+Stack trace:
+#0 E:\myapp\yii\web\CWebApplication.php(142): CWebApplication->runController('admin/css/docs....')
+#1 E:\myapp\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\myapp\yiicms\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/css/docs.css
+HTTP_REFERER=http://www.yiicms.com/admin/
+---
+2012/12/25 08:37:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/js/google-code-prettify/prettify.css".' in E:\myapp\yii\web\CWebApplication.php:287
+Stack trace:
+#0 E:\myapp\yii\web\CWebApplication.php(142): CWebApplication->runController('admin/js/google...')
+#1 E:\myapp\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\myapp\yiicms\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/js/google-code-prettify/prettify.css
+HTTP_REFERER=http://www.yiicms.com/admin/
+---
+2012/12/25 08:37:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/img/bootstrap-mdo-sfmoma-03.jpg".' in E:\myapp\yii\web\CWebApplication.php:287
+Stack trace:
+#0 E:\myapp\yii\web\CWebApplication.php(142): CWebApplication->runController('admin/img/boots...')
+#1 E:\myapp\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\myapp\yiicms\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/img/bootstrap-mdo-sfmoma-03.jpg
+HTTP_REFERER=http://www.yiicms.com/admin/
+---
+2012/12/25 08:37:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/img/bootstrap-mdo-sfmoma-01.jpg".' in E:\myapp\yii\web\CWebApplication.php:287
+Stack trace:
+#0 E:\myapp\yii\web\CWebApplication.php(142): CWebApplication->runController('admin/img/boots...')
+#1 E:\myapp\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\myapp\yiicms\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/img/bootstrap-mdo-sfmoma-01.jpg
+HTTP_REFERER=http://www.yiicms.com/admin/
+---
+2012/12/25 08:37:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/img/bootstrap-mdo-sfmoma-02.jpg".' in E:\myapp\yii\web\CWebApplication.php:287
+Stack trace:
+#0 E:\myapp\yii\web\CWebApplication.php(142): CWebApplication->runController('admin/img/boots...')
+#1 E:\myapp\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\myapp\yiicms\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/img/bootstrap-mdo-sfmoma-02.jpg
+HTTP_REFERER=http://www.yiicms.com/admin/
+---
