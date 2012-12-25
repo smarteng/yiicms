@@ -2,8 +2,34 @@
 /* @var $this SiteController */
 $this->pageTitle=Yii::app()->name;
 ?>
-<?php $this->widget('bootstrap.TbBreadcrumbs',array('homeLink'=>CHtml::link('菜单',Yii::app()->homeUrl),'links'=>array('Library'=>'#', 'Data'),'htmlOptions'=>array('class'=>''),'separator'=>'/'));?>
+<?php $this->widget('bootstrap.TbBreadcrumbs',
+	array('links'=>array('后台首页'=>'#', '欢迎登陆Yiicms后台'),
+		  'homeLink'=>CHtml::link('菜单',Yii::app()->homeUrl),
+		  'htmlOptions'=>array('class'=>''),
+		  'separator'=>'/'));
+?>
 <div class="row-fluid">
+<?php 
+$gridDataProvider = new CArrayDataProvider(array(
+    array('id'=>1, 'firstName'=>'Mark', 'lastName'=>'Otto', 'language'=>'CSS'),
+    array('id'=>2, 'firstName'=>'Jacob', 'lastName'=>'Thornton', 'language'=>'JavaScript'),
+    array('id'=>3, 'firstName'=>'Stu', 'lastName'=>'Dent', 'language'=>'HTML'),
+));
+$this->widget('bootstrap.TbGridView', array(
+    'type'=>'striped bordered condensed',//default striped bordered condensed
+    'dataProvider'=>$gridDataProvider,
+    'template'=>"{items}",
+    'columns'=>array(
+        array('name'=>'id', 'header'=>'#'),
+        array('name'=>'firstName', 'header'=>'First name'),
+        array('name'=>'lastName', 'header'=>'Last name'),
+        array('name'=>'language', 'header'=>'Language'),
+        array(
+            'class'=>'bootstrap.TbButtonColumn',
+            'htmlOptions'=>array('style'=>'width: 50px'),
+        ),
+    ),
+)); ?>
      <h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 
 	<p>Congratulations! You have successfully created your Yii application.</p>

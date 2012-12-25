@@ -38,12 +38,12 @@
             <div class="accordion-group">
               <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<?php echo $key;?>">
-                  <?php echo $sub['name'];?><i class="icon-chevron-right floright"></i>
+                  <?php echo $sub['name'];?><var class="icon-chevron-right floright"></var>
                 </a>
               </div>
               <div id="collapse<?php echo $key;?>" class="accordion-body collapse">
                 <div class="accordion-inner">
-                <?php $this->widget('bootstrap.widgets.TbMenu', array(
+                <?php $this->widget('bootstrap.TbMenu', array(
                     'type'=>'list',
                     'items'=>$sub['items'],
                 )); ?>
@@ -70,15 +70,16 @@
     $(document).ready(function() {
         //init change display
         $('#collapse0').addClass('in');
-        $('i').first().removeClass('icon-chevron-right').addClass('icon-chevron-down');
+        $('var').first().removeClass('icon-chevron-right').addClass('icon-chevron-down');
+        $('a[rel="tooltip"]').tooltip();
         //sidebar icon
         $('.accordion-toggle').live('click',function(){
             if( $(this).hasClass('collapsed') ){
-              $(this).find('i').removeClass('icon-chevron-down').addClass('icon-chevron-right');
-              $('.accordion-toggle').not(this).find('i').removeClass('icon-chevron-down').addClass('icon-chevron-right');
+              $(this).find('var').removeClass('icon-chevron-down').addClass('icon-chevron-right');
+              $('.accordion-toggle').not(this).find('var').removeClass('icon-chevron-down').addClass('icon-chevron-right');
             }else{
-              $(this).find('i').removeClass('icon-chevron-right').addClass('icon-chevron-down');
-              $('.accordion-toggle').not(this).find('i').removeClass('icon-chevron-down').addClass('icon-chevron-right');
+              $(this).find('var').removeClass('icon-chevron-right').addClass('icon-chevron-down');
+              $('.accordion-toggle').not(this).find('var').removeClass('icon-chevron-down').addClass('icon-chevron-right');
             }
         });
     });

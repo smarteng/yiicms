@@ -8,7 +8,7 @@
  * @since 0.9.7
  */
 
-Yii::import('ext.bootstrap.TbCollapse');
+Yii::import('bootstrap.TbCollapse');
 
 /**
  * Bootstrap navigation bar widget.

@@ -203,7 +203,7 @@ class TbButton extends CWidget
 
 		if ($this->hasDropdown())
 		{
-			$this->controller->widget('bootstrap.widgets.TbDropdown', array(
+			$this->controller->widget('bootstrap.TbDropdown', array(
 				'encodeLabel'=>$this->encodeLabel,
 				'items'=>$this->items,
 				'htmlOptions'=>$this->dropdownOptions,

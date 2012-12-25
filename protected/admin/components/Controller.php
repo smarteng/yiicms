@@ -60,7 +60,7 @@ class Controller extends CController
 	{
 		$channels = Yii::app()->db->createCommand()
 				    ->select('*')
-				    ->from('zzdb_channels')
+				    ->from('{{channels}}')
 				    ->order('ordernum,id')
 				    ->queryAll();
 		return $channels;

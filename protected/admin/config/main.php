@@ -9,7 +9,7 @@
 $backend = dirname( dirname( __FILE__ ) );
 $frontend = dirname( $backend );
 Yii::setpathofalias( "backend", $backend );
-Yii::setPathOfAlias('bootstrap', $frontend.'/extensions/bootstrap');
+Yii::setPathOfAlias('bootstrap', $backend.'/extensions/bootstrap');
 
 $frontendArray = require( $frontend."/config/main.php" );
 unset( $frontendArray['components']['urlManager'] );

@@ -7,7 +7,7 @@
  * @package bootstrap.widgets
  */
 
-Yii::import('ext.bootstrap.TbBaseMenu');
+Yii::import('bootstrap.TbBaseMenu');
 
 /**
  * Bootstrap menu.
@@ -61,7 +61,7 @@ class TbMenu extends TbBaseMenu
 		if (isset($this->scrollspy))
 		{
 			$scrollspy = is_string($this->scrollspy) ? array('target'=>$this->scrollspy) : $this->scrollspy;
-			$this->widget('bootstrap.widgets.TbScrollSpy', $scrollspy);
+			$this->widget('bootstrap.TbScrollSpy', $scrollspy);
 		}
 
 		if (!empty($classes))
