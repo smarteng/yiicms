@@ -34,161 +34,27 @@
     <div class="row-fluid">
         <div class="span3">
           <div class="accordion" id="accordion2">
+          <?php foreach($this->sidebarmenu as $key=>$sub){ ?>
             <div class="accordion-group">
               <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse1">
-                  网站栏目<i class="icon-chevron-down floright"></i>
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<?php echo $key;?>">
+                  <?php echo $sub['name'];?><i class="icon-chevron-right floright"></i>
                 </a>
               </div>
-              <div id="collapse1" class="accordion-body collapse in">
+              <div id="collapse<?php echo $key;?>" class="accordion-body collapse">
                 <div class="accordion-inner">
                 <?php $this->widget('bootstrap.widgets.TbMenu', array(
                     'type'=>'list',
-                    'items'=>array(
-                        array('label'=>'LIST HEADER'),
-                        array('label'=>'Home', 'icon'=>'home', 'url'=>'#', 'active'=>true),
-                        array('label'=>'Library', 'icon'=>'book', 'url'=>'#'),
-                        array('label'=>'Application', 'icon'=>'pencil', 'url'=>'#'),
-                        array('label'=>'ANOTHER LIST HEADER'),
-                        array('label'=>'Profile', 'icon'=>'user', 'url'=>'#'),
-                        array('label'=>'Settings', 'icon'=>'cog', 'url'=>'#'),
-                        array('label'=>'Help', 'icon'=>'flag', 'url'=>'#'),
-                    ),
+                    'items'=>$sub['items'],
                 )); ?>
-                  <ul class="nav nav-list">
-                    <li><a href="#">添加栏目</a></li>
-                    <li><a href="#">栏目管理</a></li>
-                  </ul>
                 </div>
               </div>
             </div>
-            <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse2">
-                  内容管理<i class="icon-chevron-right floright"></i>
-                </a>
-              </div>
-              <div id="collapse2" class="accordion-body collapse">
-                <div class="accordion-inner">
-                   <ul class="nav nav-list">
-                    <li><a href="#">添加文章</a></li>
-                    <li><a href="#">文章管理</a></li>
-                    <li><a href="#">添加分类</a></li>
-                    <li><a href="#">分类管理</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse3">
-                  产品管理<i class="icon-chevron-right floright"></i>
-                </a>
-              </div>
-              <div id="collapse3" class="accordion-body collapse">
-                <div class="accordion-inner">
-                   <ul class="nav nav-list">
-                    <li><a href="#">产品分类</a></li>
-                    <li><a href="#">添加产品</a></li>
-                    <li><a href="#">产品管理</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-              <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse4">
-                  订单管理<i class="icon-chevron-right floright"></i>
-                </a>
-              </div>
-              <div id="collapse4" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  <ul class="nav nav-list">
-                    <li><a href="#">待处理订单</a></li>
-                    <li><a href="#">处理中订单</a></li>
-                    <li><a href="#">已发货订单</a></li>
-                    <li><a href="#">已完成订单</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-              <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse5">
-                  会员管理<i class="icon-chevron-right floright"></i>
-                </a>
-              </div>
-              <div id="collapse5" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  <ul class="nav nav-list">
-                    <li><a href="#">会员注册设置</a></li>
-                    <li><a href="#">会员注册审核</a></li>
-                    <li><a href="#">添加会员</a></li>
-                    <li><a href="#">会员管理</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-               <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse6">
-                  网站设置<i class="icon-chevron-right floright"></i>
-                </a>
-              </div>
-              <div id="collapse6" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  <ul class="nav nav-list">
-                    <li><a href="#">网站全局设置</a></li>
-                    <li><a href="#">首页横幅广告</a></li>
-                    <li><a href="#">网站联系资料</a></li>
-                    <li><a href="#">语音设置</a></li>
-                    <li><a href="#">管理员设置</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-               <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse7">
-                  其他设置<i class="icon-chevron-right floright"></i>
-                </a>
-              </div>
-              <div id="collapse7" class="accordion-body collapse">
-                <div class="accordion-inner">
-                  <ul class="nav nav-list">
-                    <li><a href="#">更新网站缓存</a></li>
-                    <li><a href="#">友情链接管理</a></li>
-                    <li><a href="#">在线留言管理</a></li>
-                    <li><a href="#">网站投票管理</a></li>
-                    <li><a href="#">邮箱设置</a></li>
-                    <li><a href="#">上传图片设置</a></li>
-                    <li><a href="#">数据库管理</a></li>
-                    <li><a href="#">网站功能开启</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            <?php } ?>
           </div>
         </div><!--/span3-->
-        <div class="span9">
-          <?php $this->widget('bootstrap.TbBreadcrumbs',array('homeLink'=>CHtml::link('菜单',Yii::app()->homeUrl),'links'=>array('Library'=>'#', 'Data'),'htmlOptions'=>array('class'=>''),'separator'=>'/'));?>
-          <div class="row-fluid" id="maincontent">
-              <div class="span4">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><a class="btn" href="#">View details &raquo;</a></p>
-              </div><!--/span-->
-              <div class="span4">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><a class="btn" href="#">View details &raquo;</a></p>
-              </div><!--/span-->
-              <div class="span4">
-                <h2>Heading</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                <p><a class="btn" href="#">View details &raquo;</a></p>
-              </div><!--/span-->
-            </div><!--/row-->
+        <div class="span9" id="maincontent">
+          <?php echo $content; ?>
         </div><!--/span9-->
     </div>
   <hr>
@@ -200,17 +66,22 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/admin/js/jquery.js" type="text/javascript"></script>
     <script src="/admin/js/bootstrap.js"></script>
-    <script>
-    //sidebar icon
-   		$('.accordion-toggle').live('click',function(){
-          if( $(this).hasClass('collapsed') ){
-            $(this).find('i').removeClass('icon-chevron-down').addClass('icon-chevron-right');
-            $('.accordion-toggle').not(this).find('i').removeClass('icon-chevron-down').addClass('icon-chevron-right');
-          }else{
-            $(this).find('i').removeClass('icon-chevron-right').addClass('icon-chevron-down');
-            $('.accordion-toggle').not(this).find('i').removeClass('icon-chevron-down').addClass('icon-chevron-right');
-          }
-      	});
+    <script type="text/javascript">
+    $(document).ready(function() {
+        //init change display
+        $('#collapse0').addClass('in');
+        $('i').first().removeClass('icon-chevron-right').addClass('icon-chevron-down');
+        //sidebar icon
+        $('.accordion-toggle').live('click',function(){
+            if( $(this).hasClass('collapsed') ){
+              $(this).find('i').removeClass('icon-chevron-down').addClass('icon-chevron-right');
+              $('.accordion-toggle').not(this).find('i').removeClass('icon-chevron-down').addClass('icon-chevron-right');
+            }else{
+              $(this).find('i').removeClass('icon-chevron-right').addClass('icon-chevron-down');
+              $('.accordion-toggle').not(this).find('i').removeClass('icon-chevron-down').addClass('icon-chevron-right');
+            }
+        });
+    });
     </script>
   </body>
 </html>
