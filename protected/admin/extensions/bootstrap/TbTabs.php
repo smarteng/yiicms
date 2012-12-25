@@ -7,7 +7,7 @@
  * @package bootstrap.widgets
  */
 
-Yii::import('bootstrap.widgets.TbMenu');
+Yii::import('bootstrap.TbMenu');
 
 /**
  * Bootstrap JavaScript tabs widget.
@@ -84,7 +84,7 @@ class TbTabs extends CWidget
 		$items = $this->normalizeTabs($this->tabs, $content);
 
 		ob_start();
-		$this->controller->widget('bootstrap.widgets.TbMenu', array(
+		$this->controller->widget('bootstrap.TbMenu', array(
 			'type'=>$this->type,
 			'encodeLabel'=>$this->encodeLabel,
 			'items'=>$items,

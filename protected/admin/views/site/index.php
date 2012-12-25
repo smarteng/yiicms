@@ -9,6 +9,20 @@ $this->pageTitle=Yii::app()->name;
 		  'separator'=>'/'));
 ?>
 <div class="row-fluid">
+
+<?php $this->widget('bootstrap.TbMenu', array(
+    'type'=>'tabs', // '', 'tabs', 'pills' (or 'list')
+    'stacked'=>false, // whether this is a stacked menu
+    'id'=>'yiitab',
+    'items'=>array(
+        array('label'=>'网站基本信息', 'url'=>'#home'),
+        array('label'=>'profile', 'url'=>'#profile'),
+        array('label'=>'messages', 'url'=>'#messages'),
+        array('label'=>'settings', 'url'=>'#settings'),
+    ),
+)); ?>
+<div class="tab-content">
+  <div class="tab-pane" id="home">
 <?php 
 $gridDataProvider = new CArrayDataProvider(array(
     array('id'=>1, 'firstName'=>'Mark', 'lastName'=>'Otto', 'language'=>'CSS'),
@@ -29,20 +43,25 @@ $this->widget('bootstrap.TbGridView', array(
             'htmlOptions'=>array('style'=>'width: 50px'),
         ),
     ),
-)); ?>
-     <h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+)); 
+?>
+</div>
+  <div class="tab-pane" id="profile">...profile</div>
+  <div class="tab-pane" id="messages">..messages.</div>
+  <div class="tab-pane" id="settings">...settings</div>
+</div>
 
-	<p>Congratulations! You have successfully created your Yii application.</p>
 
-	<p>You may change the content of this page by modifying the following two files:</p>
-	<ul>
-		<li>View file: <code><?php echo __FILE__; ?></code></li>
-		<li>Layout file: <code><?php echo $this->getLayoutFile('main'); ?></code></li>
-	</ul>
 
-	<p>For more details on how to further develop this application, please read
-	the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-	Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-	should you have any questions.</p>
-	       
+
+
+<script>
+  $(function () {
+    $('#yiitab a:first').tab('show');
+    $('#yiitab a').click(function (e) {
+	  e.preventDefault();
+	  $(this).tab('show');
+	});
+  });
+</script>
 </div><!--/row-->

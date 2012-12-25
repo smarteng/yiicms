@@ -64,7 +64,6 @@
       </footer>
 </div><!--/.fluid-container-->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/admin/js/jquery.js" type="text/javascript"></script>
     <script src="/admin/js/bootstrap.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {

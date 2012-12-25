@@ -1235,3 +1235,56 @@ Stack trace:
 REQUEST_URI=/admin/img/bootstrap-mdo-sfmoma-02.jpg
 HTTP_REFERER=http://www.yiicms.com/admin/
 ---
+2012/12/25 17:19:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/settings/update".' in E:\myapp\yii\web\CWebApplication.php:287
+Stack trace:
+#0 E:\myapp\yii\web\CWebApplication.php(142): CWebApplication->runController('admin/settings/...')
+#1 E:\myapp\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#2 E:\myapp\yiicms\yiicms\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/settings/update
+---
+2012/12/25 17:21:32 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.TbBreadcrumbs" is invalid. Make sure it points to an existing directory or file.' in E:\myapp\yii\YiiBase.php:343
+Stack trace:
+#0 E:\myapp\yii\web\CWidgetFactory.php(147): YiiBase::import('bootstrap.TbBre...', true)
+#1 E:\myapp\yii\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.TbBre...', Array)
+#2 E:\myapp\yii\web\CBaseController.php(173): CBaseController->createWidget('bootstrap.TbBre...', Array)
+#3 E:\myapp\yiicms\yiicms\protected\views\site\index.php(5): CBaseController->widget('bootstrap.TbBre...', Array)
+#4 E:\myapp\yii\web\CBaseController.php(127): require('E:\myapp\yiicms...')
+#5 E:\myapp\yii\web\CBaseController.php(96): CBaseController->renderInternal('E:\myapp\yiicms...', NULL, true)
+#6 E:\myapp\yii\web\CController.php(870): CBaseController->renderFile('E:\myapp\yiicms...', NULL, true)
+#7 E:\myapp\yii\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#8 E:\myapp\yiicms\yiicms\protected\controllers\SiteController.php(32): CController->render('index')
+#9 E:\myapp\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 E:\myapp\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 E:\myapp\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 E:\myapp\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\myapp\yii\web\CWebApplication.php(283): CController->run('')
+#14 E:\myapp\yii\web\CWebApplication.php(142): CWebApplication->runController('')
+#15 E:\myapp\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#16 E:\myapp\yiicms\yiicms\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/
+---
+2012/12/25 17:21:46 [error] [exception.CException] exception 'CException' with message 'Alias "bootstrap.TbBreadcrumbs" is invalid. Make sure it points to an existing directory or file.' in E:\myapp\yii\YiiBase.php:343
+Stack trace:
+#0 E:\myapp\yii\web\CWidgetFactory.php(147): YiiBase::import('bootstrap.TbBre...', true)
+#1 E:\myapp\yii\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.TbBre...', Array)
+#2 E:\myapp\yii\web\CBaseController.php(173): CBaseController->createWidget('bootstrap.TbBre...', Array)
+#3 E:\myapp\yiicms\yiicms\protected\views\site\index.php(5): CBaseController->widget('bootstrap.TbBre...', Array)
+#4 E:\myapp\yii\web\CBaseController.php(127): require('E:\myapp\yiicms...')
+#5 E:\myapp\yii\web\CBaseController.php(96): CBaseController->renderInternal('E:\myapp\yiicms...', NULL, true)
+#6 E:\myapp\yii\web\CController.php(870): CBaseController->renderFile('E:\myapp\yiicms...', NULL, true)
+#7 E:\myapp\yii\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#8 E:\myapp\yiicms\yiicms\protected\controllers\SiteController.php(32): CController->render('index')
+#9 E:\myapp\yii\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#10 E:\myapp\yii\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 E:\myapp\yii\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 E:\myapp\yii\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 E:\myapp\yii\web\CWebApplication.php(283): CController->run('')
+#14 E:\myapp\yii\web\CWebApplication.php(142): CWebApplication->runController('')
+#15 E:\myapp\yii\base\CApplication.php(162): CWebApplication->processRequest()
+#16 E:\myapp\yiicms\yiicms\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/index.php
+HTTP_REFERER=http://www.yiicms.com/site/login.html
+---

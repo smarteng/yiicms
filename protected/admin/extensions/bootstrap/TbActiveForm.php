@@ -7,7 +7,7 @@
  * @package bootstrap.widgets
  */
 
-Yii::import('bootstrap.widgets.input.TbInput');
+Yii::import('bootstrap.input.TbInput');
 
 /**
  * Bootstrap active form widget.
@@ -21,10 +21,10 @@ class TbActiveForm extends CActiveForm
 	const TYPE_SEARCH = 'search';
 
 	// Input classes.
-	const INPUT_HORIZONTAL = 'bootstrap.widgets.input.TbInputHorizontal';
-	const INPUT_INLINE = 'bootstrap.widgets.input.TbInputInline';
-	const INPUT_SEARCH = 'bootstrap.widgets.input.TbInputSearch';
-	const INPUT_VERTICAL = 'bootstrap.widgets.input.TbInputVertical';
+	const INPUT_HORIZONTAL = 'bootstrap.input.TbInputHorizontal';
+	const INPUT_INLINE = 'bootstrap.input.TbInputInline';
+	const INPUT_SEARCH = 'bootstrap.input.TbInputSearch';
+	const INPUT_VERTICAL = 'bootstrap.input.TbInputVertical';
 
 	/**
 	 * @var string the form type. See class constants.

@@ -36,9 +36,9 @@ return array(
 	array(
 		'name' => '会员管理',
 		'items' => array(
-				array('label'=>'会员注册设置', 'icon'=>'user', 'url'=>$this->createUrl('goods/index'), 'active'=>false),
-				array('label'=>'会员注册审核', 'icon'=>'user', 'url'=>$this->createUrl('goods/index'), 'active'=>false),
-				array('label'=>'添加会员', 'icon'=>'user', 'url'=>$this->createUrl('goods/index'), 'active'=>false),
+				array('label'=>'会员注册设置', 'icon'=>'cog', 'url'=>$this->createUrl('goods/index'), 'active'=>false),
+				array('label'=>'会员注册审核', 'icon'=>'info-sign', 'url'=>$this->createUrl('goods/index'), 'active'=>false),
+				array('label'=>'添加会员', 'icon'=>'inbox', 'url'=>$this->createUrl('goods/index'), 'active'=>false),
 				array('label'=>'会员管理', 'icon'=>'user', 'url'=>$this->createUrl('goods/index'), 'active'=>false),
 		)
 	),
@@ -55,7 +55,7 @@ return array(
 	array(
 		'name' => '其他设置',
 		'items' => array(
-				array('label'=>'更新网站缓存', 'icon'=>'inbox', 'url'=>$this->createUrl('goods/index'), 'active'=>false),
+				array('label'=>'更新网站缓存', 'icon'=>'refresh', 'url'=>$this->createUrl('goods/index'), 'active'=>false),
 				array('label'=>'友情链接管理', 'icon'=>'random', 'url'=>$this->createUrl('goods/index'), 'active'=>false),
 				array('label'=>'在线留言管理', 'icon'=>'comment', 'url'=>$this->createUrl('goods/index'), 'active'=>false),
 				array('label'=>'网站投票管理', 'icon'=>'wrench', 'url'=>$this->createUrl('goods/index'), 'active'=>false),
