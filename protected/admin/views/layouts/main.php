@@ -171,7 +171,7 @@
           </div>
         </div><!--/span3-->
         <div class="span9">
-          <?php $this->widget('bootstrap.TbBreadcrumbs',array('links'=>array('Library'=>'#', 'Data'),'htmlOptions'=>array('class'=>''),'separator'=>'/'));?>
+          <?php $this->widget('bootstrap.TbBreadcrumbs',array('homeLink'=>CHtml::link('菜单',Yii::app()->homeUrl),'links'=>array('Library'=>'#', 'Data'),'htmlOptions'=>array('class'=>''),'separator'=>'/'));?>
           <div class="row-fluid" id="maincontent">
               <div class="span4">
                 <h2>Heading</h2>
