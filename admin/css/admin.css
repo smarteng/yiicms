@@ -42,7 +42,9 @@ h3 code {
   padding: 5px 15px;
   font-weight: bold;
 }
-
+#maincontent{
+  height: 100%;
+}
 #admin-iframe{
   width: 100%;
   height: 100%;
