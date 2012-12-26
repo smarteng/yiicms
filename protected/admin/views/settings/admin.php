@@ -10,14 +10,15 @@
 $this->widget('bootstrap.TbGridView', array(
     'type'=>'striped bordered condensed',//default striped bordered condensed
     'dataProvider'=>$model->search(),
-    //'template'=>"{items}",
+    'template'=>"{items}{pager}",
+    'pagerCssClass'=>'pagination pagination-right',
     //'pager' => array('class'=>'CombPager'),
     'columns'=>array(
         array('name'=>'id', 'header'=>'#'),
-        array('name'=>'categoryid', 'header'=>'categoryid'),
-        array('name'=>'property', 'header'=>'property'),
-        array('name'=>'setvalue', 'header'=>'setvalue'),
-        array('name'=>'name', 'header'=>'name'),
+        array('name'=>'categoryid', 'header'=>'分类'),
+        array('name'=>'property', 'header'=>'键值'),
+        array('name'=>'setvalue', 'header'=>'设置'),
+        array('name'=>'name', 'header'=>'名称'),
         array(
             'class'=>'bootstrap.TbButtonColumn',
             'htmlOptions'=>array('style'=>'width: 50px'),

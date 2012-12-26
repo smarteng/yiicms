@@ -7,7 +7,7 @@
  * @package bootstrap.widgets.input
  */
 
-Yii::import('bootstrap.widgets.input.BootInput');
+Yii::import('bootstrap.input.BootInput');
 
 /**
  * Bootstrap horizontal form input widget.
