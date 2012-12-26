@@ -17,52 +17,9 @@
   </head>
 
   <body>
-  <?php $this->widget('bootstrap.TbNavbar', array(
-    'type'=>'inverse', // null or 'inverse'
-    'brand'=>'后台管理',
-    'brandUrl'=>'#',
-    'fixed' => '',
-    'collapse'=>true, // requires bootstrap-responsive.css
-    'items'=>array(
-        array(
-            'class'=>'bootstrap.TbMenu',
-            'items'=>$this->channels,
-        ),
-    ),
-)); ?>
-<div class="container-fluid">
-    <div class="row-fluid">
-        <div class="span3">
-          <div class="accordion" id="accordion2">
-          <?php foreach($this->sidebarmenu as $key=>$sub){ ?>
-            <div class="accordion-group">
-              <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse<?php echo $key;?>">
-                  <?php echo $sub['name'];?><var class="icon-chevron-right floright"></var>
-                </a>
-              </div>
-              <div id="collapse<?php echo $key;?>" class="accordion-body collapse">
-                <div class="accordion-inner">
-                <?php $this->widget('bootstrap.TbMenu', array(
-                    'type'=>'list',
-                    'items'=>$sub['items'],
-                )); ?>
-                </div>
-              </div>
-            </div>
-            <?php } ?>
-          </div>
-        </div><!--/span3-->
-        <div class="span9" id="maincontent">
-          <?php echo $content; ?>
-        </div><!--/span9-->
-    </div>
-  <hr>
-  <!-- Footer================================================= -->
-     <footer>
-        <p>&copy; Company 2012</p>
-      </footer>
-</div><!--/.fluid-container-->
+    <div class="span9" id="maincontent">
+      <?php echo $content; ?>
+    </div><!--/span9-->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/admin/js/bootstrap.js"></script>
     <script type="text/javascript">
@@ -70,7 +27,10 @@
         //init change display
         $('#collapse0').addClass('in');
         $('var').first().removeClass('icon-chevron-right').addClass('icon-chevron-down');
-        $('a[rel="tooltip"]').tooltip();
+        $('body').tooltip({
+            selector: '[rel=tooltip]'
+        });
+        
         //sidebar icon
         $('.accordion-toggle').live('click',function(){
             if( $(this).hasClass('collapsed') ){

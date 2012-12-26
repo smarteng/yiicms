@@ -8,7 +8,7 @@
  * @since 0.9.10
  */
 
-Yii::import('bootstrap.widgets.TbButton');
+Yii::import('bootstrap.TbButton');
 
 /**
  * Bootstrap button group widget.
@@ -100,7 +100,7 @@ class TbButtonGroup extends CWidget
 			if (isset($button['visible']) && $button['visible'] === false)
 				continue;
 
-			$this->controller->widget('bootstrap.widgets.TbButton', array(
+			$this->controller->widget('bootstrap.TbButton', array(
 				'buttonType'=>isset($button['buttonType']) ? $button['buttonType'] : $this->buttonType,
 				'type'=>isset($button['type']) ? $button['type'] : $this->type,
 				'size'=>$this->size, // all buttons in a group cannot vary in size

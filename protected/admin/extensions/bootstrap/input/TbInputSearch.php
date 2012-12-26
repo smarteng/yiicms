@@ -7,7 +7,7 @@
  * @package bootstrap.widgets.input
  */
 
-Yii::import('bootstrap.widgets.input.TbInputInline');
+Yii::import('bootstrap.input.TbInputInline');
 
 /**
  * Bootstrap vertical form input widget.
