@@ -13,7 +13,6 @@
 body {
   width:980px;
   margin:0 auto;
-  padding:0 auto;
 }
 .container{
 	width:auto;
@@ -41,9 +40,6 @@ h3 code {
   text-decoration: none;
   padding: 5px 15px;
   font-weight: bold;
-}
-#maincontent{
-  height: 100%;
 }
 #admin-iframe{
   width: 100%;
@@ -316,27 +312,8 @@ hr.soften {
 -------------------------------------------------- */
 
 .footer {
-  padding: 20px 20px;
-  margin-top: 20px;
-  border-top: 1px solid #e5e5e5;
-  background-color: #f5f5f5;
+  text-align: center;
 }
-.footer p {
-  margin-bottom: 0;
-  color: #777;
-}
-.footer-links {
-  margin: 10px 0;
-}
-.footer-links li {
-  display: inline;
-  padding: 0 2px;
-}
-.footer-links li:first-child {
-  padding-left: 0;
-}
-
-
 
 /* Special grid styles
 -------------------------------------------------- */
@@ -948,12 +925,6 @@ form.bs-docs-example {
   }
 
   /* Unfloat the back to top link in footer */
-  .footer {
-    margin-left: -20px;
-    margin-right: -20px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
   .footer p {
     margin-bottom: 9px;
   }
@@ -1031,10 +1002,6 @@ form.bs-docs-example {
   }
 
   /* Tighten up footer */
-  .footer {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
   /* Unfloat the back to top in footer to prevent odd text wrapping */
   .footer .pull-right {
     float: none;

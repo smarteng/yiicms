@@ -62,6 +62,7 @@ $backmain =  array(
 		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
+			//'urlSuffix'=>'.html',
 			/*
 			'rules'=>array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',

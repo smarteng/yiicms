@@ -26,13 +26,14 @@
     'items'=>array(
         array(
             'class'=>'bootstrap.TbMenu',
+            'id'=>'navbar_top',
             'items'=>$this->channels,
         ),
     ),
 )); ?>
 <div class="container-fluid">
     <div class="row-fluid">
-        <div class="span3">
+        <div class="span3" id="admin_sidebar">
           <div class="accordion" id="accordion2">
           <?php foreach($this->sidebarmenu as $key=>$sub){ ?>
             <div class="accordion-group">
@@ -60,7 +61,7 @@
     </div>
   <hr>
   <!-- Footer================================================= -->
-     <footer>
+     <footer class="footer">
         <p>&copy; Company 2012</p>
       </footer>
 </div><!--/.fluid-container-->
@@ -70,12 +71,13 @@
     <script type="text/javascript">
     $(document).ready(function() {
         //init change display
-        $('#collapse0').addClass('in');
-        $('var').first().removeClass('icon-chevron-right').addClass('icon-chevron-down');
+        //$('#collapse0').addClass('in');
+        //$('var').first().removeClass('icon-chevron-right').addClass('icon-chevron-down');
+        /*
         $('body').tooltip({
             selector: '[rel=tooltip]'
         });
-        
+        */
         //sidebar icon
         $('.accordion-toggle').live('click',function(){
             if( $(this).hasClass('collapsed') ){
@@ -86,6 +88,38 @@
               $('.accordion-toggle').not(this).find('var').removeClass('icon-chevron-down').addClass('icon-chevron-right');
             }
         });
+        //调整iframe自适应
+        $('#admin-iframe').load(function(){  
+            var iframeh = parseInt($(this).contents().height());  
+            $(this).height(iframeh);  
+        });
+        $('#admin_sidebar').on('click', 'li a', function(event){
+          var li = $(this).parent();
+          $('.accordion-inner').find('li').removeClass('active');
+          li.addClass('active');
+        });
+        //顶部菜单
+         $('#navbar_top').on('click', 'li a', function(event){
+          var li = $(this).parent();
+          li.siblings().removeClass('active');
+          li.addClass('active');
+        });
+        //下拉擦得
+        $('.dropdown-menu').on('click', 'li a', function(event){
+          var li = $(this).parent();
+          $(this).parents('.dropdown').removeClass('open');
+          if (li.hasClass('active')) return true;
+
+          $('li').removeClass('active');
+          li.addClass('active');
+          $(this).parents('.dropdown').addClass('active');
+        });
+        /*
+        $(document).on('mouseenter', '#admin-iframe', function(){
+          $('li.dropdown').removeClass('open');
+          $(this).focus();
+        });
+        */
     });
     </script>
   </body>

@@ -6,7 +6,7 @@ class SiteController extends Controller
 	public $channels = array();
 	//sidebar menu 
 	public $sidebarmenu = array();
-	
+
 	/**
 	 * [init description]
 	 * @return [type] [description]
@@ -17,6 +17,7 @@ class SiteController extends Controller
 		$menus = array();
 		foreach ($channels as $channel) {
 			$menu['label'] = $channel['title'];
+			$menu['linkOptions'] = array('target'=>'main');
 			if ($channel['id'] == 4) {
 				$menu['active'] = true;
 			}else{
@@ -24,7 +25,6 @@ class SiteController extends Controller
 			}
 			if ($channel['pid'] != 0) {
 				$menu['url'] = $this->getChnAdminLink($channel);
-				//$menus[$channel['id']] =$menu;
 				$menus[$channel['pid']]['items'][] =$menu;
 			}else{
 				$menu['url'] = $this->getChnAdminLink($channel);
@@ -56,25 +56,28 @@ class SiteController extends Controller
 	public function getChnAdminLink($row){
 		$clink="";
 		if($row['systemtype']==1){
-			return "admin.php?inc=products&action=list";
+			//return "admin.php?inc=products&action=list";
+			return $this->createUrl('goods/index',array( 'cid'=>'222'));
 		}elseif($row['systemtype']==2){
-			return "admin.php?inc=main&action=contact";
+			//return "admin.php?inc=main&action=contact";
+			return $this->createUrl('goods/index',array( 'cid'=>'222'));
 		}elseif($row['systemtype']==3){
-			return "admin.php?inc=msg&action=list";
+			//return "admin.php?inc=msg&action=list";
+			return $this->createUrl('goods/index',array( 'cid'=>'222'));
 		}
 		switch($row['channeltype']){
 			case 0:
 			case 1:
-				$clink="admin.php?inc=page&action=editpage&channelid={$row['id']}";
+				$clink = $this->createUrl('goods/index',array( 'cid'=>'222'));
 			break;
 			case 2:
-				$clink="admin.php?inc=article&action=list&channelid={$row['id']}";
+				$clink = $this->createUrl('goods/index',array( 'cid'=>'222'));
 			break;
 			case 3:
-				$clink="admin.php?inc=products&action=list";
+				$clink = $this->createUrl('goods/index',array( 'cid'=>'222'));
 			break;
 			case 4:
-				$clink="admin.php?inc=channel&action=link&channelid={$row['id']}";
+				$clink = $this->createUrl('goods/index',array( 'cid'=>'222'));
 			break;
 		}
 		return $clink;
