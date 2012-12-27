@@ -2,6 +2,83 @@
 
 class SiteController extends Controller
 {
+	//top menu
+	public $channels = array();
+	//sidebar menu 
+	public $sidebarmenu = array();
+	
+	/**
+	 * [init description]
+	 * @return [type] [description]
+	 */
+	public function init()
+	{
+		$channels = $this->getChannels();
+		$menus = array();
+		foreach ($channels as $channel) {
+			$menu['label'] = $channel['title'];
+			if ($channel['id'] == 4) {
+				$menu['active'] = true;
+			}else{
+				$menu['active'] = false;
+			}
+			if ($channel['pid'] != 0) {
+				$menu['url'] = $this->getChnAdminLink($channel);
+				//$menus[$channel['id']] =$menu;
+				$menus[$channel['pid']]['items'][] =$menu;
+			}else{
+				$menu['url'] = $this->getChnAdminLink($channel);
+				$menus[$channel['id']] =$menu;
+			}
+		}
+		$this->channels = $menus;
+		$this->sidebarmenu = include(Yii::app()->basePath.'/admin/config/sidebarmenu.php');
+		//print_r($this->sidebarmenu);
+	}
+	/**
+	 * [getChannels description]
+	 * @return [type] [description]
+	 */
+	public function getChannels()
+	{
+		$channels = Yii::app()->db->createCommand()
+				    ->select('*')
+				    ->from('{{channels}}')
+				    ->order('ordernum,id')
+				    ->queryAll();
+		return $channels;
+	}
+	/**
+	 * [getChnAdminLink description]
+	 * @param  [type] $row [description]
+	 * @return [type]      [description]
+	 */
+	public function getChnAdminLink($row){
+		$clink="";
+		if($row['systemtype']==1){
+			return "admin.php?inc=products&action=list";
+		}elseif($row['systemtype']==2){
+			return "admin.php?inc=main&action=contact";
+		}elseif($row['systemtype']==3){
+			return "admin.php?inc=msg&action=list";
+		}
+		switch($row['channeltype']){
+			case 0:
+			case 1:
+				$clink="admin.php?inc=page&action=editpage&channelid={$row['id']}";
+			break;
+			case 2:
+				$clink="admin.php?inc=article&action=list&channelid={$row['id']}";
+			break;
+			case 3:
+				$clink="admin.php?inc=products&action=list";
+			break;
+			case 4:
+				$clink="admin.php?inc=channel&action=link&channelid={$row['id']}";
+			break;
+		}
+		return $clink;
+	}
 	/**
 	 * Declares class-based actions.
 	 */
