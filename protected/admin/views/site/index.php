@@ -114,12 +114,10 @@
           li.addClass('active');
           $(this).parents('.dropdown').addClass('active');
         });
-        /*
         $(document).on('mouseenter', '#admin-iframe', function(){
           $('li.dropdown').removeClass('open');
           $(this).focus();
         });
-        */
     });
     </script>
   </body>

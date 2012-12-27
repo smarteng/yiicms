@@ -10,6 +10,10 @@ $this->pageTitle=Yii::app()->name;
 ?>
 <div class="row-fluid">
 
+<div class="alert">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>警告!</strong> 请使用火狐或者chrome等浏览器，IE浏览器可能会出现问题.
+</div>
 <?php $this->widget('bootstrap.TbMenu', array(
     'type'=>'tabs', // '', 'tabs', 'pills' (or 'list')
     'stacked'=>false, // whether this is a stacked menu
@@ -51,8 +55,7 @@ $this->widget('bootstrap.TbGridView', array(
   <div class="tab-pane" id="settings">...settings</div>
 </div>
 
-
-
+<button type="button" class="btn btn-primary" data-loading-text="提交中...">提交</button>
 
 
 <script>
