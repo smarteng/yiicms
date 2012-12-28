@@ -11,6 +11,8 @@ $this->widget('bootstrap.TbGridView', array(
     'type'=>'striped bordered condensed',//default striped bordered condensed
     'dataProvider'=>$model->search(),
     'template'=>"{items}{pager}",
+    'ajaxUpdate'=>false,
+    //'afterAjaxUpdate'=>'changeiframe',
     'pagerCssClass'=>'pagination pagination-right',
     //'pager' => array('class'=>'CombPager'),
     'columns'=>array(

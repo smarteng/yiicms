@@ -18,7 +18,7 @@
 
   <body>
       <?php echo $content; ?>
-
+<?php Yii::app()->clientScript->registerCoreScript('jquery');?>
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="/admin/js/bootstrap.js"></script>
     <script type="text/javascript">

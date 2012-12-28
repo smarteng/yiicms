@@ -13,3 +13,6 @@
 body {
   padding:0 0;
 }
+.accordion-heading .accordion-toggle {
+  text-decoration: none;
+}

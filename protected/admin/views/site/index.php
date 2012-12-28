@@ -89,10 +89,10 @@
             }
         });
         //调整iframe自适应
-        $('#admin-iframe').load(function(){  
-            var iframeh = parseInt($(this).contents().height());  
-            $(this).height(iframeh);  
+        $('#admin-iframe').load(function(){
+            $(this).height($(this).contents().height());
         });
+        
         $('#admin_sidebar').on('click', 'li a', function(event){
           var li = $(this).parent();
           $('.accordion-inner').find('li').removeClass('active');

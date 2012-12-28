@@ -3,10 +3,10 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 <?php $this->widget('bootstrap.TbBreadcrumbs',
-	array('links'=>array('后台首页'=>'#', '欢迎登陆Yiicms后台'),
-		  'homeLink'=>CHtml::link('菜单',Yii::app()->homeUrl),
-		  'htmlOptions'=>array('class'=>''),
-		  'separator'=>'/'));
+    array('links'=>array('后台首页'=>'#', '欢迎登陆Yiicms后台'),
+          'homeLink'=>CHtml::link('菜单',Yii::app()->homeUrl),
+          'htmlOptions'=>array('class'=>''),
+          'separator'=>'/'));
 ?>
 <div class="row-fluid">
 
@@ -29,8 +29,7 @@ $this->pageTitle=Yii::app()->name;
       </div>
     </div>
   </div>
-<br>
-<p>统计信息：有<span class="badge badge-success">2</span>篇文章 有<span class="badge badge-warning">2</span>件商品</p>
+
 
 <?php $this->widget('bootstrap.TbMenu', array(
     'type'=>'tabs', // '', 'tabs', 'pills' (or 'list')
@@ -43,7 +42,6 @@ $this->pageTitle=Yii::app()->name;
         array('label'=>'settings', 'url'=>'#settings'),
     ),
 )); ?>
-
 <div class="tab-content">
   <div class="tab-pane" id="home">
 <?php 
@@ -73,6 +71,15 @@ $this->widget('bootstrap.TbGridView', array(
   <div class="tab-pane" id="messages">..messages.</div>
   <div class="tab-pane" id="settings">...settings</div>
 </div>
+
+<?php $this->widget('bootstrap.TbButton', array(
+    'buttonType'=>'button',
+    'type'=>'primary',
+    'label'=>'提交',
+    'loadingText'=>'提交中...',
+    'htmlOptions'=>array('id'=>'buttonStateful'),
+)); ?>
+
 <script>
   $(function () {
     $('#yiitab a:first').tab('show');
