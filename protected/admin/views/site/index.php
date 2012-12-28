@@ -56,7 +56,7 @@
           </div>
         </div><!--/span3-->
         <div class="span9" id="maincontent">
-          <iframe id="admin-iframe" src="<?php echo $this->createUrl('site/welcome');?>" name="main"></iframe>
+          <iframe id="admin-iframe" frameBorder="0" src="<?php echo $this->createUrl('site/welcome');?>" name="main"></iframe>
         </div><!--/span9-->
     </div>
   <hr>
@@ -90,7 +90,7 @@
         });
         //调整iframe自适应
         $('#admin-iframe').load(function(){
-            $(this).height($(this).contents().height());
+            $(this).height($(this).contents().height()+30);
         });
         
         $('#admin_sidebar').on('click', 'li a', function(event){
