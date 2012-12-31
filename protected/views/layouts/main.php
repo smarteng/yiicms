@@ -46,24 +46,8 @@
         </li>
     </ul>
 
-<!--加载首页轮播图-->
-<div id="myjQuery">
-  <div id="myjQueryContent">
-        <div style="z-index: 0; opacity: 0;" class="smask"><a href="http://www.afuvip.com/Article/ArticleList?type=about" target="_top"><img src="./uploads/slider/01.jpg" alt="阿芙的诞生"></a></div>
-        <div style="z-index: 1; opacity: 1;" class="smask"><a href="http://www.afuvip.com/goods/130" target="_top"><img src="./uploads/slider/02.jpg" alt="阿芙荷荷巴系列"></a></div>
-        <div style="z-index: 0; opacity: 0;" class="smask"><a href="http://www.afuvip.com/liuye.htm" target="_top"><img src="129930278916615855aa.jpg" alt="阿芙×刘野限定版 "></a></div>
-        <div style="z-index: 0; opacity: 0;" class="smask"><a href="http://www.afuvip.com/goods/132" target="_top"><img src="./uploads/slider/04.jpg" alt="阿芙人参系列"></a></div>
-        <div style="z-index: 0; opacity: 0;" class="smask"><a href="http://www.afuvip.com/goods/136" target="_top"><img src="./uploads/slider/05.jpg" alt="阿芙玫瑰系列"></a></div>
-  </div>
-  <ul id="myjQueryNav">
-        <li class=""><a href="http://www.afuvip.com/Article/ArticleList?type=about" target="_top">阿芙的诞生</a> </li>
-        <li class="current"><a href="http://www.afuvip.com/goods/130" target="_top">阿芙荷荷巴系列</a> </li>
-        <li class=""><a href="http://www.afuvip.com/liuye.htm" target="_top">阿芙×刘野限定版 </a> </li>
-        <li class=""><a href="http://www.afuvip.com/goods/132" target="_top">阿芙人参系列</a> </li>
-        <li class=""><a href="http://www.afuvip.com/goods/136" target="_top">阿芙玫瑰系列</a> </li>
-  </ul>
-  <div style="left: 190px;" id="flow"></div>
-  <!--slide end --> 
+<?php echo $content; ?>
+
 <div id="flow"></div><div id="flow"></div></div><div id="content">
 <div id="left">
     <h1 class="pro_Category"></h1>
