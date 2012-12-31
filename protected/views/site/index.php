@@ -2,7 +2,6 @@
 /* @var $this SiteController */
 $this->pageTitle=Yii::app()->name;
 ?>
-<?php $this->widget('bootstrap.TbBreadcrumbs',array('homeLink'=>CHtml::link('菜单',Yii::app()->homeUrl),'links'=>array('Library'=>'#', 'Data'),'htmlOptions'=>array('class'=>''),'separator'=>'/'));?>
 <div class="row-fluid">
      <h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
 

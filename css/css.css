@@ -1,0 +1,207 @@
+﻿/* CSS Document */
+/*----------------------Start of index----------------------*/
+/*----------------------Start of slide----------*/
+#myjQuery { margin: 0px auto; width: 950px; height: 500px; }
+#myjQueryContent { overflow: hidden; }
+#myjQueryContent div { position: absolute; height: 500px; }
+#myjQueryContent .smask { display: block; z-index: 1; opacity: 0; }
+#myjQueryNav { position: relative; line-height: 35px; width: 950px; z-index: 100; left: 0px; overflow: hidden; top: 465px; }
+#myjQueryNav li { border-right: 1px solid transparent; text-align: center; width: 189px; background: url(../images/t29y4mxkxxxxxxxxxx_293009952.png) repeat scroll left top transparent; float: left; }
+#myjQueryNav a { color: rgb(0, 0, 0); text-decoration: none; font-size: 14px; }
+#myjQueryNav a:hover { color: rgb(255, 255, 255); text-decoration: none; font-size: 14px; }
+#myjQueryNav .current { background: url(../images/t2qy8mxjjxxxxxxxxx_293009952.png) repeat scroll 0% 0% transparent; }
+#myjQueryNav .current a { color: rgb(255, 255, 255); background: url(../images/t2ii8mxj4xxxxxxxxx_293009952.gif) no-repeat scroll center bottom transparent; display: block; line-height: 34px; height: 34px; text-decoration: none; }
+#myjQuery #flow { color: rgb(255, 255, 255); background: url(../images/t2ii8mxj4xxxxxxxxx_293009952.gif) no-repeat scroll center bottom transparent; display: block; line-height: 34px; height: 34px; }
+/*----------------------Start of product category----------*/
+#left { width:713px; height:189px; float:left; overflow:hidden; background:url(../images/column_bg.jpg) 0 0 repeat; margin:7px 0 0 0; font-size:12px; font-family: "宋体", Arial, Helvetica, sans-serif; }
+#left h1.pro_Category { display:block; background:url(../images/product_cate.jpg) 0 0 no-repeat; width:713px; height:34px; text-indent:-9999px; }
+#left .series { display:block; background:url(../images/category.jpg) 0 0 no-repeat; width:52px; height:13px; text-indent:-9999px; padding-top:5px; }
+#left .faceCare { display:block; background:url(../images/faceCare.jpg) 0 0 no-repeat; width:52px; height:13px; text-indent:-9999px; }
+#left .bodyCare { display:block; background:url(../images/bodyCare.jpg) 0 0 no-repeat; width:52px; height:13px; text-indent:-9999px; }
+#left .effect { display:block; background:url(../images/effect.jpg) 0 0 no-repeat; width:52px; height:13px; text-indent:-9999px; }
+
+.new_box{width:690px;margin:15px 0 0 35px; overflow:hidden;}
+.new_box .new_list{width:690px; overflow:hidden;}
+.new_box .new_list .new_title{width:80px; font-weight:bold; color:#FC914B; float:left; overflow:hidden;}
+.new_box .new_list .new_text{width:600px; float:left; overflow:hidden;}
+.new_box .new_list .new_text li{height:25px; margin-right:20px; float:left; white-space:nowrap;}
+
+
+
+/*----------------------Start of shop news----------*/
+#right { width:228px; height:189px; float:right; background:url(../images/shopNew.jpg) 0 0 no-repeat; margin:7px 0 0 0; }
+#right h1.shopNews { text-indent:-9999px; }
+#right .scrollword { overflow:hidden; height:140px; width:160px; line-height:24px; margin:16px 0 0 20px; }
+#right .scrollword ul li { display:block; background:url(../images/biaozhi.gif) 2px 6px no-repeat; padding:0 0 2px 13px; font:normal 12px/24px "宋体", Arial, Helvetica, sans-serif; }
+#afuBuffer { width: 200px; overflow: hidden; position: relative; height: 155px; }
+#afuBuffer ul { width:95%; display:inline; line-height: 22px; margin-left:12px; position: absolute; }
+#afuBuffer ul li { float: left;  width: 100%;  border-bottom: #d8d8d8 1px dashed; display:block; background:url(http://www.afuvip.com/images/biaozhi.gif) 2px 11px no-repeat; padding:5px 0 5px 13px; }
+#afuBuffer ul li .msg { float: right; width:413px; }
+#afuBuffer ul li .msg p { font-size: 14px; }
+#right { width:228px; height:189px; float:right; background:url(../images/shopNew.jpg) 0 0 no-repeat; margin:7px 0 0 0; }
+#right h1.shopNews { text-indent:-9999px; }
+/*----------------------Start of banner----------*/
+.mid_banner { width:950px; overflow:hidden; margin:0 auto; padding:0; }
+.mid_banner ul li { display:block; float:left; font-size:0; line-height:0; }
+.mid_banner ul li a { color:#000; text-decoration:none; }
+.mid_banner ul li a.recommend { display:block; background:url(../images/recommend.jpg) 0 0 no-repeat; width:231px; height:111px; margin:8px 0 0 0; }
+.mid_banner ul li a.new { display:block; background:url(../images/new_pro.jpg) 0 0 no-repeat; width:232px; height:111px; margin:8px 0 0 9px; }
+.mid_banner ul li a.afu { display:block; background:url(../images/brandAfu.jpg) 0 0 no-repeat; width:232px; height:111px; margin:8px 0 0 9px; }
+.mid_banner ul li a.shop { display:block; background:url(../images/shopAfu.jpg) 0 0 no-repeat; width:228px; height:111px; margin:8px 0 0 9px; }
+/*----------------------Start of featured products----------*/
+#pro_content { width:950px; height:auto; margin:0 auto; }
+.feature_product { width:176px; height:auto; background:#fff; float:left; margin:auto; padding:15px 0 15px 8px; margin:10px 4px 10px 0; border:1px #f5f5f5 solid; }
+/*product info*/
+.product_detail { float:left; width:165px; }
+.product_detail a.details { display:block; width:106px; overflow:hidden; padding:10px 0 10px 37px; }
+.product_detail a.details:hover { color:#fc7820; text-decoration:none; }
+/*----------------------Start of brand Afu----------------------*/
+.intro { background:#fefdf4; width:930px; height:auto; font-size:13px; padding:12px 10px 0 10px; }
+.intro p { line-height:26px; font-size:13px; text-indent: 2em; }
+.intro h1 { text-align:center; font-size:20px; font-family:"宋体", Arial, Helvetica, sans-serif,; font-weight:bold; color:#fc7820; line-height:60px; }
+/*----------------------Start of news----------------------*/
+.col_bg .news_list { width:295px; height:auto; float:left; display:inline; margin-left:20px; }
+.col_bg .news_list ul li { line-height:24px; }
+.col_bg .news_list ul li span { text-align:right; }
+.col_bg .news_list ul li a, .content .col_bg .news_list ul li a:visited { color:#000; text-decoration:none; }
+.col_bg .news_list ul li a:hover { color:#da3b23; text-decoration:none; }
+.col_bg .news_article { width:520px; height:auto; float:right; display:inline; margin-right:60px; }
+.col_bg .news_article h2 { font-size:14px; font-family:"宋体", Arial, Helvetica, sans-serif,; font-weight:bold; color:#000; line-height:18px; margin:3px 0 42px 0; }
+.col_bg .news_article p { text-indent:2em; padding:5px; margin-bottom:24px; }
+.news_article ul li { text-indent:2em; line-height:24px; }
+/*----------------------Start of products----------------------*/
+.menu_product { width: 125px; height: auto; margin:0; padding:0; overflow:hidden; float:left; }
+.menu_product ul li { margin-bottom:24px; }
+.menu_product ul li a { color:#000; text-decoration:none; }
+.menu_product ul li a.essential { display:block; background:url(../images/essential_oil.jpg) 0 0 no-repeat; width:125px; height:31px; color:#000; font:normal 14px/35px "宋体", Arial, Helvetica, sans-serif; text-indent:-9999px; overflow:hidden; }
+.menu_product ul li a.essential:hover { background:url(../images/essential_oil.jpg) 0 0 no-repeat; }
+.menu_product ul li a.rose { display:block; background:url(../images/rose.jpg) 0 0 no-repeat; width:125px; height:31px; color:#000; font:normal 14px/35px "宋体", Arial, Helvetica, sans-serif; text-indent:-9999px; overflow:hidden; }
+.menu_product ul li a.rose:hover { background:url(../images/rose.jpg) 0 0 no-repeat; }
+.menu_product ul li a.jojoba { display:block; background:url(../images/jojoba.jpg) 0 0 no-repeat; width:125px; height:31px; color:#000; font:normal 14px/35px "宋体", Arial, Helvetica, sans-serif; text-indent:-9999px; overflow:hidden; }
+.menu_product ul li a.jojoba:hover { background:url(../images/jojoba.jpg) 0 0 no-repeat; }
+.menu_product ul li a.almonds { display:block; background:url(../images/almonds.jpg) 0 0 no-repeat; width:125px; height:31px; color:#000; font:normal 14px/35px "宋体", Arial, Helvetica, sans-serif; text-indent:-9999px; overflow:hidden; }
+.menu_product ul li a.almonds:hover { background:url(../images/almonds.jpg) 0 0 no-repeat; }
+.menu_product ul li a.green_tea { display:block; background:url(../images/green_tea.jpg) 0 0 no-repeat; width:125px; height:31px; color:#000; font:normal 14px/35px "宋体", Arial, Helvetica, sans-serif; text-indent:-9999px; overflow:hidden; }
+.menu_product ul li a.green_tea:hover { background:url(../images/green_tea.jpg) 0 0 no-repeat; }
+.menu_product ul li a.ginseng { display:block; background:url(../images/ginseng.jpg) 0 0 no-repeat; width:125px; height:31px; color:#000; font:normal 14px/35px "宋体", Arial, Helvetica, sans-serif; text-indent:-9999px; overflow:hidden; }
+.menu_product ul li a.ginseng:hover { background:url(../images/ginseng.jpg) 0 0 no-repeat; }
+.menu_product ul li a.olives { display:block; background:url(../images/olives.jpg) 0 0 no-repeat; width:125px; height:31px; color:#000; font:normal 14px/35px "宋体", Arial, Helvetica, sans-serif; text-indent:-9999px; overflow:hidden; }
+.menu_product ul li a.olives:hover { background:url(../images/olives.jpg) 0 0 no-repeat; }
+.menu_product ul li a.lavender { display:block; background:url(../images/lavender.jpg) 0 0 no-repeat; width:125px; height:31px; color:#000; font:normal 14px/35px "宋体", Arial, Helvetica, sans-serif; text-indent:-9999px; overflow:hidden; }
+.menu_product ul li a.lavender:hover { background:url(../images/lavender.jpg) 0 0 no-repeat; }
+.menu_product ul li a.chamomile { display:block; background:url(../images/chamomile.jpg) 0 0 no-repeat; width:125px; height:31px; color:#000; font:normal 14px/35px "宋体", Arial, Helvetica, sans-serif; text-indent:-9999px; overflow:hidden; }
+.menu_product ul li a.chamomile:hover { background:url(../images/chamomile.jpg) 0 0 no-repeat; }
+.menu_product ul li a.shea { display:block; background:url(../images/shea.jpg) 0 0 no-repeat; width:125px; height:31px; color:#000; font:normal 14px/35px "宋体", Arial, Helvetica, sans-serif; text-indent:-9999px; overflow:hidden; }
+.menu_product ul li a.shea:hover { background:url(../images/shea.jpg) 0 0 no-repeat; }
+.menu_product ul li a.sun_flower { display:block; background:url(../images/sunflower.jpg) 0 0 no-repeat; width:125px; height:31px; color:#000; font:normal 14px/35px "宋体", Arial, Helvetica, sans-serif; text-indent:-9999px; overflow:hidden; }
+.menu_product ul li a.sun_flower:hover { background:url(../images/sunflower.jpg) 0 0 no-repeat; }
+.menu_product ul li a.calendula { display:block; background:url(../images/calendula.jpg) 0 0 no-repeat; width:125px; height:31px; color:#000; font:normal 14px/35px "宋体", Arial, Helvetica, sans-serif; text-indent:-9999px; overflow:hidden; }
+.menu_product ul li a.calendula:hover { background:url(../images/calendula.jpg) 0 0 no-repeat; }
+.menu_product ul li a.single_product { display:block; background:url(../images/single_product.jpg) 0 0 no-repeat; width:125px; height:33px; color:#000; font:normal 14px/35px "宋体", Arial, Helvetica, sans-serif; text-indent:-9999px; overflow:hidden; }
+.menu_product ul li a.single_product:hover { background:url(../images/single_product.jpg) 0 0 no-repeat; }
+/*----------------------Start of products details----------------------*/
+.product_box_details { width:750px; height: auto; margin:auto; float:left; padding:8px; margin:0 0 0 8px; line-height:30px; }
+img.prod_image { background:#fff; float:left; padding:0 10px 0 0; margin:0 10px 0 0; border:1px #f5f5f5 solid; }
+.product_details { float:left; width:165px; }
+.product_details_wide { float:left; width:550px; }
+.prod_title { color:#d4847f; padding:0 10px 0 0; font-size:16px; }
+span.price { font-size:14px; color:#033933; }
+p.price { color:#d4847f; }
+a.details { display:block; padding:10px 0 0 0; }
+p.shop_by_brand { width:400px; float:left; padding:0 10px 0 0; line-height:17px; }
+p.gifts_details { width:275px; float:left; padding:0 0 0 10px; line-height:17px; }
+img.sp { float:left; padding:0 5px 0 5px; }
+img.gift { float:left; padding:5px; margin:5px; border:1px #9e1c50 solid; }
+/*---------------Start of product item------------------*/
+.product_sale { width:820px; float:left; font-size: 12px; font-family: "宋体", Arial, Helvetica, sans-serif; }
+.product_item { width:165px; height:240px; background:#fff; float:left; padding:5px 18px 10px 15px; margin:0 0 10px 2px; border:1px #f5f5f5 solid; font-size: 12px; font-family: "宋体", Arial, Helvetica, sans-serif; }
+.item_detail { float:left; width:156px; }
+.item_detail a.details { display:block; width:180px; overflow:hidden; padding:10px 0 5px 5px; }
+.item_detail a.details:hover { color:#fc7820; text-decoration:none; }
+/*----------------------Start of shop----------------------*/
+.shop_colL { width: 370px; float:left; display:inline; margin-left:50px; }
+.shop_colR { width:370px; float:right; display:inline; margin-right:50px; }
+.shop_colL ul li h3, .shop_colR ul li h3 { color:#252fa6; }
+.shop_colL ul li, .shop_colR ul li { line-height:24px; margin-bottom:15px; }
+.search_box { width:600px; position:relative; }
+.search_box form { display:inline; }
+.search_box form input.submit { background:url(../images/search_s.gif) no-repeat; width:82px; height:18px; float:right; margin-right:40px; border:none 0; cursor:pointer; font:bold 12px/0px Arial, Helvetica, sans-serif; color:#000; display:block; vertical-align:middle; margin-top:5px; *margin-top:-22px;
+*display:inline;
+}
+.search_box form input.submit:hover { background:url(../images/search_s.gif) no-repeat; width:82px; height:18px; border:none 0; _display:inline; cursor:pointer; }
+/*----------------------Start of lifestyle----------------------*/
+.col_bg .menu_lifestyle { width:145px; height:auto; float:left; display:inline; margin-left:40px; }
+.col_bg .menu_lifestyle ul li { line-height:24px; }
+.col_bg .menu_lifestyle ul li a, .content .col_l_bg .menu_lifestyle ul li a:visited { color:#000; text-decoration:none; }
+.col_bg .menu_lifestyle ul li a:hover { color:#da3b23; text-decoration:none; }
+.col_bg .article_lifestyle { width:685px; height:auto; float:right; display:inline; margin-right:60px; }
+.col_bg .article_lifestyle h2 { font-size:14px; font-family:"宋体", Arial, Helvetica, sans-serif; font-weight:bold; color:#000; line-height:18px; margin:3px 0 42px 0; }
+.col_bg .article_lifestyle p { text-indent:2em; padding:5px; margin-bottom:24px; }
+/*----------------------Start of agency train----------------------*/
+.train { background:url(../images/train_bg.jpg) no-repeat; width:950px; height:366px; }
+.train_box { float:right; width:380px; height:190px; text-align:left; margin:140px 0 0 0; padding:5px; }
+.train_box p { line-height:26px; font-size:13px; color:#fff; }
+.train_box h2 { font-size:17px; font-family:"宋体", Arial, Helvetica, sans-serif; font-weight:bold; color:#fc7820; line-height:24px; }
+/*login input*/
+#loginbar { width:370px; height:auto; float:left; margin-top:50px; }
+#loginbar .inputter { font-size:13px; font-family: "宋体", Arial, Helvetica, sans-serif; color:#000; float:left; padding:2px 0 0 0; display:block; }
+#loginbar form input.txtBox1 { width:110px; height:12px; border:#b5b5b5 1px solid; padding:4px 0 2px 0; font:normal 12px "宋体", Arial, Helvetica, sans-serif; color:#040404; background-color:#fff; margin:2px 11px 11px 0; float:left; display:inline-block; }
+#loginbar form input.txtBox2 { width:110px; height:12px; border:#b5b5b5 1px solid; padding:4px 0 2px 0; font:normal 12px "宋体", Arial, Helvetica, sans-serif; color:#040404; background-color:#fff; margin:2px 11px 11px 0; float:left; display:inline-block; }
+#loginbar form input.login { width:32px; height:20px; background:#fff; border:#b5b5b5 1px solid; float:left; cursor:pointer; margin:2px 0 0 0; font:normal 13px "宋体", Arial, Helvetica, sans-serif; color:#000; display:inline-block; }
+/*----------------------Start of investment cooperation----------------------*/
+.co_bg { background:url(../images/productlist_bg.jpg) repeat; width:950px; display:table!important; height:auto; font-size:13px; }
+.co_title { background:url(../images/co_banner.jpg) 0 0 no-repeat; width:455px; height:320px; position:relative; top:20px; left:20px; float:left; border:3px #d1eaef solid; margin-bottom:40px; }
+.co_title h1 { font-size:30px; font-weight:bold; color:#fff; margin:30px 0 0 30px; font-family:"宋体", Arial, Helvetica, sans-serif; }
+.co_title p { font-size:18px; margin:15px 0 0 200px; color:#fdf3e9; line-height:30px; }
+.co_introAfu { width:425px; height:300px; float:right; margin:20px 15px 0 0; }
+.co_introAfu h2 { font-size:18px; color:#fc7820; margin-left:20px; }
+.co_introAfu p.ideaAfu { width:400px; height:auto; margin:15px 0 0 25px; line-height:28px; }
+.co_introAfu img { margin:10px 0 10px 25px; }
+/*------------------------------------------------Start of join--------------------*/
+#join { width:580px; height:310px; float:left; margin:0 0 10px 20px; padding: 10px 0 0 10px; background:#fff; border:1px #D1EAEF solid; display:inline; overflow:hidden; }
+#join p.joinTxt1 { display:block; font-size:12px; line-height:17px; padding:0 0 14px 0; margin:0 0 0 40px; }
+#join p.joinTxt1 span { color:#9D0303; background-color:inherit; }/*提示颜色*/
+/*------------------------------------------------Start of input box--------------------*/
+.contacttext { margin: 3px; padding: 3px; height: 18px; *height:20px;
+line-height: 19px; width: 100px; float: left; font-family: Verdana; font-size: 11px; color: #616161; *display:inline;
+}
+.submitarea { margin: 5px; height: 30px; width: 600px; padding:5px 5px 5px 120px; float: left; }
+.submitbutton { font-family: Verdana; font-size: 11px; color: #fff; background:#b1b1b1; height: 30px; width: 100px; float: left; border: 1px solid #7f7f7f; margin:0 0 0 60px; padding: 0px; cursor:pointer; }
+.textboxEffect { background-color:#FFFFFF; color:#000; border:1px solid #616161; height: 18px; width: 145px; font-family: Verdana; font-size: 11px; line-height: 19px; margin:0 0 11px 0; padding: 0 0 0 5px; float: left; }
+.textboxEffect:hover { background-color:#FFFFFF; color:#616161; margin:0px; padding:0px; border:1px solid #D1EAEF; font-family: Verdana; font-size: 11px; line-height: 19px; margin:0 0 11px 0; padding: 0 0 0 5px; }
+.addressEffect { background-color:#FFFFFF; color:#000; border:1px solid #616161; height: 18px; width: 200px; font-family: Verdana; font-size: 11px; line-height: 19px; margin:0 0 11px 10px; padding: 0 0 0 5px; float: left; }
+.addressEffect:hover { background-color:#FFFFFF; color:#616161; margin:0px; padding:0px; border:1px solid #D1EAEF; font-family: Verdana; font-size: 11px; line-height: 19px; margin:0 0 11px 10px; padding: 0 0 0 5px; }
+.dropdownEffect { background-color:#FFFFFF; color:#000; border:1px solid #616161; height: 18px; width: 85px; font-family: Verdana; font-size: 11px; line-height: 19px; margin:0 0 11px 0; padding: 0 0 0 10px; float: left; *height:20px;
+}
+.dropdownEffect:hover { background-color:#FFFFFF; color:#000; margin:0px; padding:0px; border:1px solid #D1EAEF; font-family: Verdana; font-size: 11px; *height:20px;
+line-height: 19px; margin:0 0 11px 0; padding: 0 0 0 10px; }
+.contactformfield { font-family: Verdana; font-size: 11px; color: #FC7820; height: 20px; width: 75%; float: left; margin: 3px; padding: 3px; top: 1px; clip: rect(1px,auto,auto,auto); clear: none; right: 30px; }
+.contactdropdownformfield { font-family: Verdana; font-size: 11px; color: #95A334; height: 20px; width: 75%; float: left; margin: 3px; top: 1px; clip: rect(1px,auto,auto,auto); clear: none; right: 30px; padding-top: 3px; padding-right: 3px; padding-bottom: 3px; padding-left: 3px; display:inline; }
+/*------------------------------------------------form tip color--------------------*/
+input, select { border: 1px solid #888; background: #ffffff; padding: 3px 4px; color: #222; margin: 0px 5px 0px 0px; border-radius: 7px; -moz-border-radius: 7px; }
+input:focus, select:focus { outline: none; }
+.InputGroup { display: inline-block; padding: 3px 4px; border: 1px solid #FFF; border-radius: 7px; -moz-border-radius: 7px; }
+.ErrorField { border-color: #D00; color: #D00; background: #FFFFFE; }
+span.ValidationErrors { display: inline-block; font-size: 12px; color: #D00; padding-left: 10px; font-style:normal; }
+.shops { position:relative; left:15px; top:50px; }
+/*------------------------------------------------Start of contact us--------------------*/
+.afuBox { z-index:99; right:0; width:128px; height:128px; position:absolute; }
+.afuBox .press { right:0; width:44px; cursor:pointer; position:absolute; height:141px; }
+.afuBox .CSlist { left:0; width:200px; position:absolute; height:141px; background:url(../images/floatFAQ.gif) left center no-repeat; }
+.afuBox .CSlist ul { padding:43px 0 0 21px; }
+.afuBox .CSlist li { height:26px; margin-bottom:11px; _margin-bottom:7px; list-style-type:none; }
+/*------------------------------------------------Start of news articles--------------------*/
+.mrg_10{ margin:10px;*display:inline;}
+.borderGrey{ border:1px solid #CCC;}
+
+
+.col_type{padding:5px;}
+.col_type a{ color:#FC914B;}
+
+.area{clear:both; width:950px; color:#77848c; font-size:13px; font-family:Microsoft YaHei,Arial,Helvetica,sans-serif; margin:0 auto; overflow:hidden;}
+.area p{line-height:21px; padding:8px 55px 0 55px;}
+.text_01{height:280px;padding-top:5px;background:url(../images/brand_new_02.jpg) no-repeat;}
+.text_02{height:242px;padding-top:10px;background:url(../images/brand_new_04.jpg) no-repeat;}
+.text_03{height:397px;background:url(../images/brand_new_05.jpg) no-repeat;}
+.text_04{height:337px;padding-top:7px;background:url(../images/brand_new_07.jpg) no-repeat;}
+.text_05{height:360px;padding-top:5px;background:url(../images/brand_new_09.jpg) no-repeat;}

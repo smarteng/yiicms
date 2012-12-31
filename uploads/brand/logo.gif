@@ -1,0 +1,31 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>404页面</title>
+</head>
+<body>
+<div align="center" class="w950">
+<div><image src="../../Content/image/error/4041.jpg" border="0" usemap="#Map" />
+  <map name="Map" id="Map">
+    <area shape="rect" coords="23,26,174,97" href="http://www.afuvip.com/" />
+  </map>
+</div>
+<div><image src="../../Content/image/error/4042.jpg" /></div>
+<div><image src="../../Content/image/error/4043.jpg" border="0" usemap="#Map2" />
+  <map name="Map2" id="Map2">
+    <area shape="rect" coords="428,14,523,46" href="http://www.afuvip.com/" />
+  </map>
+</div>
+<div><image src="../../Content/image/error/4044.jpg" /></div>
+<div><image src="../../Content/image/error/4045.jpg" /></div>
+<div><image src="../../Content/image/error/4046.jpg" border="0" usemap="#Map3" />
+  <map name="Map3" id="Map3">
+    <area shape="rect" coords="429,11,523,43" href="http://www.afuvip.com/" />
+  </map>
+</div>
+<div><image src="../../Content/image/error/4047.jpg" /></div>
+</div>
+</body>
+</html>
