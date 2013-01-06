@@ -12,8 +12,9 @@
 <link href="/css/public.css" rel="stylesheet" type="text/css">
 <link href="/css/css.css" rel="stylesheet" type="text/css">
 <link href="/css/reset.css" rel="stylesheet" type="text/css">
+<link href="/css/scrollNav.css" rel="stylesheet" type="text/css">
 <script src="/js/jquery-1.4.4.min.js" type="text/javascript"></script>
-<script src="/js/stuHover.js" type="text/javascript"></script>
+<script src="/js/navScroll.js" type="text/javascript"></script>
 <script src="/js/player.js" type="text/javascript"></script>    
 </head>
 <body>
@@ -26,25 +27,36 @@
         </div>
         <!--header end -->
     </div>
-    <ul id="nav">
-        <li class="top"><a href="afu.htm" class="home"><span>首页</span></a></li>
-        <li class="top"><a href="http://www.afuvip.com/article/about" class="brandAfu"><span>阿芙品牌</span></a></li>
-        <li class="top"><a href="http://www.afuvip.com/article/news" class="news"><span>新闻</span></a></li>
-        <li class="top"><a href="http://www.afuvip.com/goods" class="product"><span>产品</span></a></li>
-        <li class="top"><a href="http://www.afuvip.com/maps" class="shop"><span>专柜分布</span></a></li>
-        <li class="top"><a href="http://www.afuvip.com/#" class="lifeStyle"><span>芳香之旅</span></a>
-            <ul class="sub_width">
-                <li><a href="http://www.afuvip.com/article/fragrant/32">保加利亚玫瑰节</a></li>
-                <li><a href="http://www.afuvip.com/article/fragrant/35">法国寻香之旅</a></li>
+    <div class="nav">
+    <ul class="ulBox">
+        <li><a href="http://www.yiicms.com">首页</a></li>
+        <li><a href="http://www.yiicms.com">新闻</a>
+            <ul>
+                <li><a href="http://www.yiicms.com">新闻分类</a></li>
+                <li><a href="http://www.yiicms.com">新闻分类</a></li>
+                <li><a href="http://www.yiicms.com">新闻分类</a></li>
+                <li><a href="http://www.yiicms.com">新闻分类</a></li>
             </ul>
         </li>
-        <li class="top"><a href="http://www.afuvip.com/#" class="agency"><span class="down">品牌代理</span></a>
-            <ul class="sub">
-                <li><a href="http://www.afuvip.com/engageagent">诚聘代理商</a></li>
-                <li><a href="http://www.afuvip.com/agent">代理商专区</a></li>
+        <li><a href="#">精油产品</a>
+            <ul>
+                <li><a href="http://www.yiicms.com">单方精油</a></li>
+                <li><a href="http://www.yiicms.com">复方精油</a></li>
             </ul>
         </li>
+        <li><a href="#">精油品牌</a>
+            <ul>
+                <li><a href="http://www.yiicms.com">膜膜皇后</a></li>
+                <li><a href="http://www.yiicms.com">香草园精油</a></li>
+            </ul>
+        </li>
+        <li><a href="http://www.yiicms.com">膜膜皇后</a></li>
+        <li><a href="http://www.yiicms.com">香草园精油</a></li>
+        <li><a href="http://www.yiicms.com">膜膜皇后</a></li>
+        <li><a href="http://www.yiicms.com">香草园精油</a></li>
     </ul>
+    <div class="scrollObj"></div>
+</div>
 
 <?php echo $content; ?>
 
@@ -238,5 +250,13 @@
         </p>
     </div>
 
-
+<script>
+$(function(){
+    $(".nav > ul > li").ScrollNav({
+        scrollObj:".nav > .scrollObj", //滑动的对象
+        speed:"fast" //速度
+    });
+});
+$('.ulBox li').first().addClass('current');
+</script>
 </body></html>
