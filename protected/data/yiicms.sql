@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2012 年 12 月 31 日 17:00
+-- 生成日期: 2013 年 01 月 07 日 18:45
 -- 服务器版本: 5.0.51
 -- PHP 版本: 5.2.6
 
@@ -443,22 +443,36 @@ CREATE TABLE IF NOT EXISTS `zzdb_procates` (
   KEY `alias` (`alias`),
   KEY `ordernum` (`ordernum`),
   KEY `langid` (`langid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
 --
 -- 转存表中的数据 `zzdb_procates`
 --
 
 INSERT INTO `zzdb_procates` (`id`, `pid`, `ordernum`, `ishidden`, `alias`, `title`, `seotitle`, `metakeywords`, `metadesc`, `langid`) VALUES
-(1, 0, 1, 0, '', 'ThinkPad', '', '', '', 1),
-(2, 0, 2, 0, '', '戴尔 (DELL)', '', '', '', 1),
-(3, 0, 3, 0, '', '宏碁 (Acer)', '', '', '', 1),
-(4, 0, 4, 0, '', '华硕 (ASUS)', '', '', '', 1),
-(5, 0, 5, 0, '', '惠普 (HP)', '', '', '', 1),
-(6, 0, 6, 0, '', '联想 (Lenovo)', '', '', '', 1),
-(8, 1, 8, 0, '', '商务本', '', '', '', 1),
-(9, 1, 9, 0, '', '游戏本', '', '', '', 1),
-(10, 1, 10, 0, '', '学生本', '', '', '', 1);
+(1, 0, 1, 0, '', '系列分类', '', '', '', 1),
+(2, 0, 2, 0, '', '面部保养', '', '', '', 1),
+(3, 0, 3, 0, '', '身体保养', '', '', '', 1),
+(4, 0, 4, 0, '', '功效分类', '', '', '', 1),
+(12, 1, 12, 0, '', '玫瑰系列', '', '', '', 1),
+(8, 1, 8, 0, '', '洋甘菊系列', '', '', '', 1),
+(9, 1, 9, 0, '', '向日葵系列', '', '', '', 1),
+(10, 1, 10, 0, '', '金盏花系列', '', '', '', 1),
+(11, 1, 11, 0, '', '复方精油', '', '', '', 1),
+(13, 1, 13, 0, '', '绿茶系列', '', '', '', 1),
+(14, 1, 14, 0, '', '人参系列', '', '', '', 1),
+(15, 1, 15, 0, '', '荷荷巴系列', '', '', '', 1),
+(16, 1, 16, 0, '', '薰衣草系列', '', '', '', 1),
+(17, 1, 17, 0, '', '杏仁系列', '', '', '', 1),
+(18, 1, 18, 0, '', '乳木果系列', '', '', '', 1),
+(19, 1, 19, 0, '', '洋甘菊系列', '', '', '', 1),
+(20, 2, 20, 0, '', '洁面', '', '', '', 1),
+(21, 2, 21, 0, '', '去角质', '', '', '', 1),
+(22, 2, 22, 0, '', '爽肤', '', '', '', 1),
+(23, 3, 23, 0, '', '发丝', '', '', '', 1),
+(24, 3, 24, 0, '', '颈部', '', '', '', 1),
+(25, 3, 25, 0, '', '手部', '', '', '', 1),
+(26, 4, 26, 0, '', '美白滋润', '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -502,10 +516,6 @@ CREATE TABLE IF NOT EXISTS `zzdb_products` (
 --
 
 INSERT INTO `zzdb_products` (`id`, `cid`, `type`, `hits`, `posttime`, `alias`, `name`, `serialnum`, `seotitle`, `metakeywords`, `metadesc`, `content`, `picids`, `picpaths`, `price1`, `price2`, `store`, `sold`, `level`, `ordernum`, `langid`) VALUES
-(7, 6, 0, 2, 1301044096, '', '联想Lenovo G460ALN 14英寸笔记本电脑', 'Z1301044096', '', '', '', '<br>', '14	0	0	0	0', '201103/1_1301039854_7321.jpg				', 2988, 0, 100, 10, 3, 100, 1),
-(8, 6, 0, 4, 1301039989, '', '联想（Lenovo） G470AH-ITH', 'Z1301039989', '', '', '', '<br>', '13	0	0	0	0', '201103/1_1301039854_4970.jpg				', 3999.99, 0, 100, 10, 3, 100, 1),
-(9, 5, 0, 6, 1301040001, '', '惠普（hp）HP G4-1014TX', 'Z1301040001', '', '', '', '<br>', '12	0	0	0	0', '201103/1_1301039854_9222.jpg				', 4500, 0, 100, 10, 3, 100, 1),
-(10, 5, 2, 14, 1301811070, '', '惠普2230S WC577PA 12.1英寸笔记本', 'Z1301811070', '', '', '', '<ul id="i-detail"><li title="惠普2230S（WC577PA）">商品名称：惠普2230S（WC577PA）</li><li>商品产地：中国大陆</li><li>商品毛重：2.8</li><li>上架时间：2010-1-19 10:57:59</li></ul>\r\n<p><strong>外观<br></strong></p>\r\n<p align="center"><strong><img src="http://img20.360buyimg.com/ImgUpload/vclistimg/20091241354199682009-12-04_134149.png" border="0" width="421" height="292"></strong></p>\r\n<p><strong><br></strong>Compaq \r\n2230s外观采用了纯黑色丝光表面，并且进行了亚光效果设计，尽显商务风尚。内部屏幕的边框和键盘部分区域采用了黑色的钢琴烤漆材质，在商务气息中也透\r\n露出少许的华丽。而且这种丝光的表面耐磨性也很好，在外出携带的时候也无需特别的小心翼翼，使用起来更加的随心了。<br><br><strong>接口<br><br></strong>虽然2230s的体态非常的小巧，但丰富的接口配备却把这台笔记本的功能性最大化。而且虽然作为商用笔记本，但是2230S仍然配备了HDMI高清输出接口，对影音的体验做了进一步的提升。</p>\r\n<p align="center"><img src="http://img20.360buyimg.com/ImgUpload/vclistimg/20091241355284372009-12-04_134248.png" border="0" width="435" height="204"></p>\r\n<p><br>左侧：电源插孔、网线接口、电话线接口、USB接口、DVD刻录光驱<br></p>\r\n<p align="center"><img src="http://img20.360buyimg.com/ImgUpload/vclistimg/20091241355538902009-12-04_134259.png" border="0" width="451" height="207"></p>\r\n<p><br>右侧：Express 卡/34 卡插槽，SD/MMC读卡器、HDMI接口、2×USB接口、VGA视频接口、散热孔、笔记本安全锁孔<br></p>\r\n<p align="center"><img src="http://img20.360buyimg.com/ImgUpload/vclistimg/20091241356102342009-12-04_134310.png" border="0" width="410" height="169"></p>\r\n<p><br>前方：耳机插孔、麦克风插孔<br></p>\r\n<p align="center"><img src="http://img20.360buyimg.com/ImgUpload/vclistimg/2009124135624622009-12-04_134334.png" border="0" width="375" height="211"></p>\r\n<p><br>后方：由于屏幕采用下沉式的设计，后面并没有设计任何的接口。<br><br><strong>键盘及触摸板<br><br></strong></p><strong></strong>\r\n<p align="center"><img src="http://img20.360buyimg.com/ImgUpload/vclistimg/20091241356566712009-12-04_134348.png" border="0" width="470" height="303"></p>\r\n<p><br>2230s的C面上面部分采用钢琴烤漆扁状网格设计，给商务色彩浓重的机体上添加了少许的典雅元素。在网格面的中间划出来一个区域，内置了6个触摸式的背光按键，方便开启无线或者调整音量等一些常用的操作。<br><br></p>\r\n<p align="center"><img src="http://img20.360buyimg.com/ImgUpload/vclistimg/2009124135821712009-12-04_134411.png" border="0" width="475" height="292"></p>\r\n<p><br>键盘采用了全尺寸的标准按键设计，键帽采用了磨砂表面，合理的键程和适中的回弹力度使得操作起来非常的舒服。右侧的shift键采用了小尺寸设计。<br></p>\r\n<p align="center"><img src="http://img20.360buyimg.com/ImgUpload/vclistimg/20091241358584532009-12-04_134426.png" border="0" width="384" height="287"></p>\r\n<p><br>2230s采用了一块相对12英寸笔记本较大尺寸的触摸板，触摸板采用的和掌托一样的材质，指针的定位也是相对准确。和直上直下的按键设计有所不同的是，2230s的触摸板按键是斜式下压的按键设计。<br><br><strong>显示屏<br></strong></p>\r\n<p align="center"><strong><img src="http://img20.360buyimg.com/ImgUpload/vclistimg/2009124135949152009-12-04_134505.png" border="0" width="406" height="189"></strong></p>\r\n<p><strong><br></strong>HP 2230s显示屏，采用下沉式设计，更符合人们使用时的视觉角度。最佳分辨率为1280×800。屏幕边框采用的是钢琴烤漆塑料材质。另外就是，为了更好的抓取声音，屏幕上方内置麦克风，内置一个高像素的摄像头，堪称完美。</p>', '11	0	0	0	0', '201103/1_1301039854_3411.jpg				', 4100, 0, 100, 10, 3, 100, 1),
 (11, 1, 0, 13, 1301045990, '', '惠普Compaq CQ326 13.3英寸笔记本电脑', 'Z1301045990', '', '', '', '<ul id="i-detail"><li title="惠普CQ326">商品名称：惠普CQ326</li><li>商品产地：中国大陆</li><li>商品毛重：2.66</li><li>上架时间：2010-7-6 19:47:03</li></ul>', '10	0	0	0	0', '201103/1_1301039854_7811.jpg				', 3999.99, 0, 100, 10, 3, 100, 1),
 (12, 4, 1, 5, 1301409672, '', '华硕N82EI48JV-SL 14.0英寸笔记本电脑', 'Z1301409672', '', '', '', '<ul id="i-detail"><li title="华硕N82EI48JV-SL">商品名称：华硕N82EI48JV-SL</li><li>商品产地：中国大陆</li><li>商品毛重：3.72</li><li>上架时间：2011-2-23 16:46:49</li></ul>', '9	0	0	0	0', '201103/1_1301039854_5954.jpg				', 4300, 0, 100, 10, 3, 100, 1),
 (13, 4, 0, 10, 1301045971, '', '华硕A40EI46JP-SL 14.0 英寸笔记本电脑', 'Z1301045971', '', '', '', '<ul id="i-detail"><li title="华硕A40EI46JP-SL">商品名称：华硕A40EI46JP-SL</li><li>商品产地：中国大陆</li><li>商品毛重：3.64</li><li>上架时间：2011-1-5 10:17:22</li></ul>', '8	0	0	0	0', '201103/1_1301039854_1215.jpg				', 3999.99, 0, 100, 10, 3, 100, 1),
@@ -697,6 +707,27 @@ INSERT INTO `zzdb_settingsb` (`id`, `categoryid`, `property`, `setvalue`, `name`
 -- --------------------------------------------------------
 
 --
+-- 表的结构 `zzdb_shop`
+--
+
+CREATE TABLE IF NOT EXISTS `zzdb_shop` (
+  `id` int(11) NOT NULL auto_increment,
+  `category_id` int(11) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `logo` varchar(250) NOT NULL,
+  `tags` text NOT NULL,
+  `nick` varchar(250) NOT NULL COMMENT '卖家昵称',
+  `url` varchar(250) NOT NULL,
+  `share_count` int(11) NOT NULL,
+  `created` datetime NOT NULL,
+  `updated` datetime NOT NULL,
+  PRIMARY KEY  (`id`),
+  KEY `category_id` (`category_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- 表的结构 `zzdb_slideshow`
 --
 
@@ -775,7 +806,7 @@ CREATE TABLE IF NOT EXISTS `zzdb_users` (
 
 INSERT INTO `zzdb_users` (`id`, `username`, `userpass`, `email`, `realname`, `phone`, `lastip`, `addtime`, `lasttime`, `popedom`, `ishidden`) VALUES
 (1, 'zym', '10027794a5c77b28984e5ce110cef597', 'zymzeng@qq.com', '曾勇民', '13538288822', '127.0.0.1', 1298332800, 1301034299, '|channel|page|article|procate|products|order|member|main|lang|template|link|msg|vote|user|database|', 1),
-(2, 'admin', '362864ed70a8b0c71d144b7a556f1797', 'smarteng@qq.com', '', '', '127.0.0.1', 1346203000, 1356679022, '|channel|page|article|procate|products|order|member|main|lang|template|link|msg|vote|user|database|', 0);
+(2, 'admin', '362864ed70a8b0c71d144b7a556f1797', 'smarteng@qq.com', '', '', '127.0.0.1', 1346203000, 1357548708, '|channel|page|article|procate|products|order|member|main|lang|template|link|msg|vote|user|database|', 0);
 
 -- --------------------------------------------------------
 
