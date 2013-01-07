@@ -12,7 +12,6 @@
 <link href="/css/public.css" rel="stylesheet" type="text/css">
 <link href="/css/css.css" rel="stylesheet" type="text/css">
 <link href="/css/reset.css" rel="stylesheet" type="text/css">
-<link href="/css/scrollNav.css" rel="stylesheet" type="text/css">
 <script src="/js/jquery-1.4.4.min.js" type="text/javascript"></script>
 <script src="/js/navScroll.js" type="text/javascript"></script>
 <script src="/js/player.js" type="text/javascript"></script>    
@@ -28,227 +27,39 @@
         <!--header end -->
     </div>
     <div class="nav">
-    <ul class="ulBox">
-        <li><a href="http://www.yiicms.com">首页</a></li>
-        <li><a href="http://www.yiicms.com">新闻</a>
-            <ul>
-                <li><a href="http://www.yiicms.com">新闻分类</a></li>
-                <li><a href="http://www.yiicms.com">新闻分类</a></li>
-                <li><a href="http://www.yiicms.com">新闻分类</a></li>
-                <li><a href="http://www.yiicms.com">新闻分类</a></li>
-            </ul>
-        </li>
-        <li><a href="#">精油产品</a>
-            <ul>
-                <li><a href="http://www.yiicms.com">单方精油</a></li>
-                <li><a href="http://www.yiicms.com">复方精油</a></li>
-            </ul>
-        </li>
-        <li><a href="#">精油品牌</a>
-            <ul>
-                <li><a href="http://www.yiicms.com">膜膜皇后</a></li>
-                <li><a href="http://www.yiicms.com">香草园精油</a></li>
-            </ul>
-        </li>
-        <li><a href="http://www.yiicms.com">膜膜皇后</a></li>
-        <li><a href="http://www.yiicms.com">香草园精油</a></li>
-        <li><a href="http://www.yiicms.com">膜膜皇后</a></li>
-        <li><a href="http://www.yiicms.com">香草园精油</a></li>
-    </ul>
+<?php
+        $this->widget('zii.widgets.CMenu', array(
+        'htmlOptions'=>array('class'=>'ulBox'),
+        'items'=>array(
+            array('label'=>'首页', 'url'=>array('site/index')),
+            array('label'=>'新闻', 'url'=>'#', 
+            'items'=>array(
+                array('label'=>'新闻分类', 'url'=>array('product/new', 'tag'=>'new')),
+                array('label'=>'新闻分类', 'url'=>array('product/index', 'tag'=>'popular')),
+            )),
+            array('label'=>'精油产品', 'url'=>'#', 
+            'items'=>array(
+                array('label'=>'单方精油', 'url'=>array('product/new', 'tag'=>'new')),
+                array('label'=>'复方精油', 'url'=>array('product/index', 'tag'=>'popular')),
+            )),
+            array('label'=>'膜膜皇后', 'url'=>array('site/login')),
+            array('label'=>'香草园精油', 'url'=>array('site/login')),
+            array('label'=>'膜膜皇后', 'url'=>array('site/login')),
+            array('label'=>'香草园精油', 'url'=>array('site/login')),
+        ),
+    ));
+?>
     <div class="scrollObj"></div>
 </div>
 
 <?php echo $content; ?>
-
-<div id="flow"></div><div id="flow"></div></div><div id="content">
-<div id="left">
-    <h1 class="pro_Category"></h1>
-    <div class="new_box">
-                <div class="new_list">
-                    <div class="new_title">系列分类</div>
-                    <div class="new_text">
-                        <ul>
-                            <li><a href="http://www.afuvip.com/goods/141">单方精油</a></li>
-                            <li><a href="http://www.afuvip.com/goods/138">基础油</a></li>
-                            <li><a href="http://www.afuvip.com/goods/140">复方油</a></li>
-                            <li><a href="http://www.afuvip.com/goods/136">玫瑰系列</a></li>
-                            <li><a href="http://www.afuvip.com/goods/134">绿茶系列</a></li>
-                            <li><a href="http://www.afuvip.com/goods/132">人参系列</a></li>
-                            <li><a href="http://www.afuvip.com/goods/130">荷荷巴系列</a></li>
-                            <li><a href="http://www.afuvip.com/goods/129">薰衣草系列</a></li>
-                            <li><a href="http://www.afuvip.com/goods/127">杏仁系列</a></li>
-                            <li><a href="http://www.afuvip.com/goods/125">乳木果系列</a></li>
-                            <li><a href="http://www.afuvip.com/goods/124">洋甘菊系列</a></li>
-                            <li><a href="http://www.afuvip.com/goods/123">向日葵系列</a></li>
-                            <li><a href="http://www.afuvip.com/goods/122">金盏花系列</a></li>
-                            <li><a href="http://www.afuvip.com/goods/160">金缕梅系列</a></li>
-                            <li><a href="http://www.afuvip.com/goods/121">其它单品</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="new_list">
-                    <div class="new_title">面部保养</div>
-                    <div class="new_text">
-                        <ul>
-                            <li><a href="http://www.afuvip.com/goods/158">洁面</a></li>
-                            <li><a href="http://www.afuvip.com/goods/150">去角质</a></li>
-                            <li><a href="http://www.afuvip.com/goods/157">爽肤</a></li>
-                            <li><a href="http://www.afuvip.com/goods/156">精华</a></li>
-                            <li><a href="http://www.afuvip.com/goods/155">眼霜</a></li>
-                            <li><a href="http://www.afuvip.com/goods/154">乳液</a></li>
-                            <li><a href="http://www.afuvip.com/goods/153">面霜</a></li>
-                            <li><a href="http://www.afuvip.com/goods/152">隔离/防晒</a></li>
-                            <li><a href="http://www.afuvip.com/goods/159">按摩膏</a></li>
-                            <li><a href="http://www.afuvip.com/goods/151">面贴/面膜</a></li>
-                            <li><a href="http://www.afuvip.com/goods/149">唇膏/唇膜</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="new_list">
-                    <div class="new_title">身体保养</div>
-                    <div class="new_text">
-                        <ul>
-                            <li><a href="http://www.afuvip.com/goods/148">发丝</a></li>
-                            <li><a href="http://www.afuvip.com/goods/147">颈部</a></li>
-                            <li><a href="http://www.afuvip.com/goods/146">手部</a></li>
-                            <li><a href="http://www.afuvip.com/goods/145">胸部</a></li>
-                            <li><a href="http://www.afuvip.com/goods/144">身体</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="new_list">
-                    <div class="new_title">功效分类</div>
-                    <div class="new_text">
-                        <ul>
-                            <li><a href="http://www.afuvip.com/goods/142">美白滋润</a></li>
-                            <li><a href="http://www.afuvip.com/goods/139">补水保湿</a></li>
-                            <li><a href="http://www.afuvip.com/goods/137">祛痘祛印</a></li>
-                            <li><a href="http://www.afuvip.com/goods/135">淡化色斑</a></li>
-                            <li><a href="http://www.afuvip.com/goods/133">清爽控油</a></li>
-                            <li><a href="http://www.afuvip.com/goods/131">紧致抗皱</a></li>
-                            <li><a href="http://www.afuvip.com/goods/128">眼袋/黑眼圈</a></li>
-                        </ul>
-                    </div>
-                </div>
-    </div>
+<div id="footer">
+    <p class="footerText">
+        北京茂思商贸有限公司&nbsp;&nbsp;&nbsp;
+        全国统一客服咨询热线：010-56297999&nbsp;&nbsp;&nbsp;
+        <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11015484号</a>
+    </p>
 </div>
-    <!--rightTop start -->
-    <div id="right">
-        <h1 class="shopNews">
-            最新开店消息</h1>
-        <!--notice start -->
-        <div id="notice" class="scrollword">
-            <div id="notice1">
-                <ul class="slideNotice">
-                            <li> &nbsp;上海浦东商场现代城<br>开业时间:2012-08-16</li>
-                            <li> &nbsp;厦门SM城市广场<br>开业时间:2012-08-14</li>
-                            <li> &nbsp;上海万达广场宝山店<br>开业时间:2012-08-11</li>
-                            <li> &nbsp;兰州国芳百货<br>开业时间:2012-07-20</li>
-                            <li> &nbsp;贵州星力瑞金店<br>开业时间:2012-07-15</li>
-                            <li> &nbsp;天津米莱欧<br>开业时间:2012-07-13</li>
-                            <li> &nbsp;唐山五联百货<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;任县专卖店<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;抚顺新玛特<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;江阴万达<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;当代商城<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;烟台百盛购物中心<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;武林银泰<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;济南银座商城店<br>开业时间:2012-12-04</li>
-                </ul>
-            </div>
-            <div id="notice2">
-                <ul class="slideNotice">
-                            <li> &nbsp;兰州国芳百货<br>开业时间:2012-07-20</li>
-                            <li> &nbsp;贵州星力瑞金店<br>开业时间:2012-07-15</li>
-                            <li> &nbsp;天津米莱欧<br>开业时间:2012-07-13</li>
-                            <li> &nbsp;唐山五联百货<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;任县专卖店<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;抚顺新玛特<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;江阴万达<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;当代商城<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;烟台百盛购物中心<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;武林银泰<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;济南银座商城店<br>开业时间:2012-12-04</li>
-                </ul>
-            </div>
-        </div>
-        <script>
-            var speed = 30;
-            var notice2 = document.getElementById("notice2");
-            var notice1 = document.getElementById("notice1");
-            var notice = document.getElementById("notice");
-            notice2.innerHTML = notice1.innerHTML; //克隆notice1为notice2
-            function Marquee1() {
-                //当滚动至notice1与notice2交界时
-                if (notice2.offsetTop - notice.scrollTop <= 0) {
-                    notice.scrollTop -= notice1.offsetHeight; //notice跳到最顶端
-                } else {
-                    notice.scrollTop++
-                }
-            }
-            var MyMar1 = setInterval(Marquee1, speed)//设置定时器
-            //鼠标移上时清除定时器达到滚动停止
-            notice.onmouseover = function () { clearInterval(MyMar1) }
-            //鼠标移开时重设定时器
-            notice.onmouseout = function () { MyMar1 = setInterval(Marquee1, speed) }
-        </script>
-        <!--向上滚动代码结束-->
-        <!--notice end -->
-    </div>
-    <!--rightTop end -->
-</div>
-<!--店铺广告-->
-
-<div class="mid_banner">
-  <ul class="midlink" style="width:960px; overflow:hidden;">
-    <li style="margin:9px 9px 0 0;"><a href=""><img src="./uploads/brand/recommend.jpg"></a></li>
-    <li style="margin:9px 9px 0 0;"><a href="http://www.afuvip.com/goods/124"><img src="./uploads/brand/129972708117133882未标题-1.jpg"></a></li>
-    <li style="margin:9px 9px 0 0;"><a href="http://www.afuvip.com/Article/ArticleList?type=about"><img src="./uploads/brand/brandAfu.jpg"></a></li>
-    <li style="margin:9px 9px 0 0;"><a href="http://www.afuvip.com/Home/Maps"><img src="./uploads/brand/shopAfu.jpg"></a></li>
-  </ul>
-</div>
-<div id="pro_content">
-    <!--featured products start -->
-        <div class="feature_product">
-            <a href="http://www.afuvip.com/details/10006109">
-                <img src="./uploads/goods/129852513053177321p03.jpg" width="170" height="195" title="" alt="阿芙·玫瑰精油"></a>
-            <div class="product_detail">
-                <a href="http://www.afuvip.com/details/10006109" class="details">阿芙·玫瑰精油</a></div>
-        </div>  
-        <div class="feature_product">
-            <a href="http://www.afuvip.com/details/10006106">
-                <img src="./uploads/goods/129852507317827248p02.jpg" width="170" height="195" title="" alt="阿芙·檀香精油"></a>
-            <div class="product_detail">
-                <a href="http://www.afuvip.com/details/10006106" class="details">阿芙·檀香精油</a></div>
-        </div>  
-        <div class="feature_product">
-            <a href="http://www.afuvip.com/details/10006110">
-                <img src="./uploads/goods/129852513464550044p01.jpg" width="170" height="195" title="" alt="阿芙·甜橙精油"></a>
-            <div class="product_detail">
-                <a href="http://www.afuvip.com/details/10006110" class="details">阿芙·甜橙精油</a></div>
-        </div>  
-        <div class="feature_product">
-            <a href="http://www.afuvip.com/details/10006102">
-                <img src="./uploads/goods/129852515492241605p04.jpg" width="170" height="195" title="" alt="阿芙·茶树精油"></a>
-            <div class="product_detail">
-                <a href="http://www.afuvip.com/details/10006102" class="details">阿芙·茶树精油</a></div>
-        </div>  
-        <div class="feature_product">
-            <a href="http://www.afuvip.com/details/10006115">
-                <img src="./uploads/goods/129852515776630105p05.jpg" width="170" height="195" title="" alt="阿芙·薰衣草精油"></a>
-            <div class="product_detail">
-                <a href="http://www.afuvip.com/details/10006115" class="details">阿芙·薰衣草精油</a></div>
-        </div>  
-    <!--featured products end -->
-</div>
-
-    <div id="footer">
-        <p class="footerText">
-            北京茂思商贸有限公司&nbsp;&nbsp;&nbsp;
-            全国统一客服咨询热线：010-56297999&nbsp;&nbsp;&nbsp;
-            <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11015484号</a>
-        </p>
-    </div>
 
 <script>
 $(function(){
@@ -259,4 +70,5 @@ $(function(){
 });
 $('.ulBox li').first().addClass('current');
 </script>
-</body></html>
+</body>
+</html>

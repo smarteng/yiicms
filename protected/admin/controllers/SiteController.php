@@ -18,16 +18,15 @@ class SiteController extends Controller
 		foreach ($channels as $channel) {
 			$menu['label'] = $channel['title'];
 			$menu['linkOptions'] = array('target'=>'main');
+			$menu['url'] = $this->getChnAdminLink($channel);
 			if ($channel['id'] == 4) {
 				$menu['active'] = true;
 			}else{
 				$menu['active'] = false;
 			}
 			if ($channel['pid'] != 0) {
-				$menu['url'] = $this->getChnAdminLink($channel);
 				$menus[$channel['pid']]['items'][] =$menu;
 			}else{
-				$menu['url'] = $this->getChnAdminLink($channel);
 				$menus[$channel['id']] =$menu;
 			}
 		}
@@ -44,7 +43,7 @@ class SiteController extends Controller
 		$channels = Yii::app()->db->createCommand()
 				    ->select('*')
 				    ->from('{{channels}}')
-				    ->order('ordernum,id')
+				    ->order('pid,ordernum,id')
 				    ->queryAll();
 		return $channels;
 	}
