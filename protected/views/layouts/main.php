@@ -11,10 +11,7 @@
 <meta name="Copyright" content="阿芙精油享有版权">
 <link href="/css/public.css" rel="stylesheet" type="text/css">
 <link href="/css/css.css" rel="stylesheet" type="text/css">
-<link href="/css/reset.css" rel="stylesheet" type="text/css">
-<script src="/js/jquery-1.4.4.min.js" type="text/javascript"></script>
-<script src="/js/navScroll.js" type="text/javascript"></script>
-<script src="/js/player.js" type="text/javascript"></script>    
+<link href="/css/reset.css" rel="stylesheet" type="text/css">   
 </head>
 <body>
     <div id="container">
@@ -60,7 +57,11 @@
         <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11015484号</a>
     </p>
 </div>
-
+<?php
+Yii::app()->clientScript->registerCoreScript('jquery'); 
+?>
+<script src="/js/navScroll.js" type="text/javascript"></script>
+<script src="/js/player.js" type="text/javascript"></script> 
 <script>
 $(function(){
     $(".nav > ul > li").ScrollNav({
