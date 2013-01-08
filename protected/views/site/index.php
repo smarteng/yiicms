@@ -6,8 +6,8 @@ $this->pageTitle=Yii::app()->name;
 <?php $this->widget('ext.SliderWidget', array('asbg'=>false, 'width'=>'640px', 'height'=>'240px', 'token'=>'首页640*240'));?>
 <!--slide end -->
 
-
-<div id="flow"></div><div id="flow"></div></div><div id="content">
+<div id="flow"></div><div id="flow"></div></div>
+<div id="content">
 <div id="left">
     <h1 class="pro_Category"></h1>
     <div class="new_box">
@@ -16,44 +16,7 @@ $this->pageTitle=Yii::app()->name;
 </div>
     <!--rightTop start -->
     <div id="right">
-        <h1 class="shopNews">
-            最新开店消息</h1>
-        <!--notice start -->
-        <div id="notice" class="scrollword">
-            <div id="notice1">
-                <ul class="slideNotice">
-                            <li> &nbsp;上海浦东商场现代城<br>开业时间:2012-08-16</li>
-                            <li> &nbsp;厦门SM城市广场<br>开业时间:2012-08-14</li>
-                            <li> &nbsp;上海万达广场宝山店<br>开业时间:2012-08-11</li>
-                            <li> &nbsp;兰州国芳百货<br>开业时间:2012-07-20</li>
-                            <li> &nbsp;贵州星力瑞金店<br>开业时间:2012-07-15</li>
-                            <li> &nbsp;天津米莱欧<br>开业时间:2012-07-13</li>
-                            <li> &nbsp;唐山五联百货<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;任县专卖店<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;抚顺新玛特<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;江阴万达<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;当代商城<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;烟台百盛购物中心<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;武林银泰<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;济南银座商城店<br>开业时间:2012-12-04</li>
-                </ul>
-            </div>
-            <div id="notice2">
-                <ul class="slideNotice">
-                            <li> &nbsp;兰州国芳百货<br>开业时间:2012-07-20</li>
-                            <li> &nbsp;贵州星力瑞金店<br>开业时间:2012-07-15</li>
-                            <li> &nbsp;天津米莱欧<br>开业时间:2012-07-13</li>
-                            <li> &nbsp;唐山五联百货<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;任县专卖店<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;抚顺新玛特<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;江阴万达<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;当代商城<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;烟台百盛购物中心<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;武林银泰<br>开业时间:2012-12-04</li>
-                            <li> &nbsp;济南银座商城店<br>开业时间:2012-12-04</li>
-                </ul>
-            </div>
-        </div>
+         <?php $this->widget('ext.portlets.NewArticles',array('limit'=>6));?>
     </div>
     <!--rightTop end -->
 </div>
