@@ -61,8 +61,7 @@
 Yii::app()->clientScript->registerCoreScript('jquery'); 
 ?>
 <script src="/js/navScroll.js" type="text/javascript"></script>
-<script src="/js/player.js" type="text/javascript"></script> 
-<script>
+<script type="text/javascript">
 $(function(){
     $(".nav > ul > li").ScrollNav({
         scrollObj:".nav > .scrollObj", //滑动的对象

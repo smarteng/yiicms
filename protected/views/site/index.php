@@ -3,7 +3,7 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 <!--加载首页轮播图-->
-<?php $this->widget('ext.SliderWidget', array('asbg'=>false, 'width'=>'640px', 'height'=>'240px', 'token'=>'首页640*240'));?>
+<?php $this->widget('ext.slider.SliderWidget', array('asbg'=>false, 'width'=>'640px', 'height'=>'240px', 'token'=>'首页640*240'));?>
 <!--slide end -->
 
 <div id="flow"></div><div id="flow"></div></div>
@@ -36,36 +36,7 @@ $this->pageTitle=Yii::app()->name;
 
 <div id="pro_content">
     <!--featured products start -->
-        <div class="feature_product">
-            <a href="http://www.afuvip.com/details/10006109">
-                <img src="./uploads/goods/129852513053177321p03.jpg" width="170" height="195" title="" alt="阿芙·玫瑰精油"></a>
-            <div class="product_detail">
-                <a href="http://www.afuvip.com/details/10006109" class="details">阿芙·玫瑰精油</a></div>
-        </div>  
-        <div class="feature_product">
-            <a href="http://www.afuvip.com/details/10006106">
-                <img src="./uploads/goods/129852507317827248p02.jpg" width="170" height="195" title="" alt="阿芙·檀香精油"></a>
-            <div class="product_detail">
-                <a href="http://www.afuvip.com/details/10006106" class="details">阿芙·檀香精油</a></div>
-        </div>  
-        <div class="feature_product">
-            <a href="http://www.afuvip.com/details/10006110">
-                <img src="./uploads/goods/129852513464550044p01.jpg" width="170" height="195" title="" alt="阿芙·甜橙精油"></a>
-            <div class="product_detail">
-                <a href="http://www.afuvip.com/details/10006110" class="details">阿芙·甜橙精油</a></div>
-        </div>  
-        <div class="feature_product">
-            <a href="http://www.afuvip.com/details/10006102">
-                <img src="./uploads/goods/129852515492241605p04.jpg" width="170" height="195" title="" alt="阿芙·茶树精油"></a>
-            <div class="product_detail">
-                <a href="http://www.afuvip.com/details/10006102" class="details">阿芙·茶树精油</a></div>
-        </div>  
-        <div class="feature_product">
-            <a href="http://www.afuvip.com/details/10006115">
-                <img src="./uploads/goods/129852515776630105p05.jpg" width="170" height="195" title="" alt="阿芙·薰衣草精油"></a>
-            <div class="product_detail">
-                <a href="http://www.afuvip.com/details/10006115" class="details">阿芙·薰衣草精油</a></div>
-        </div>  
+        <?php $this->widget('ext.portlets.HotProducts',array('limit'=>5));?> 
     <!--featured products end -->
 </div>
 <?php
