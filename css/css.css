@@ -50,14 +50,13 @@
 #afuBuffer ul li .msg p { font-size: 14px; }
 /* portlets */
 .portlet{width:244px;border:1px solid #C1C1C2;padding:2px;padding-top:0px;height:185px;}
-.portlet-title{height:35px;line-height:35px;font-weight:bold;text-indent:3px;color:#282829;background-image:url(../images/sidebar_title.gif);}
+.portlet-title{height:35px;line-height:35px;font-weight:bold;text-indent:3px;color:#3F3F3F;background-image:url(../images/sidebar_title.gif);}
 #hotcates .portlet-title{background-position:0px -82px;}
 #newarticles .portlet-title{background-position:0px -2px;}
 .portlet-content{padding:0px 5px;}
 #hotcates .portlet-content ul{padding-left:25px;background-image:url(../images/num/prefix.gif);background-repeat:no-repeat;background-position:0 0px;}
 .portlet-content li{height:19px;line-height:19px;border-bottom:1px solid #efefef;}
 #newarticles li{text-indent:20px;height:23px;line-height:23px;background:url(../images/icon1.gif) 0 4px no-repeat;}
-.portlet a:hover{text-decoration:underline;}
 .portlet .more{height:13px;text-align:right;}
 .slider{border:1px solid #c2d5e3;margin-top:10px;}
 .sliderbeta{border:1px solid #c2d5e3;}
