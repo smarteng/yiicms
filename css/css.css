@@ -12,16 +12,6 @@
 #myjQueryNav .current { background: url(../images/t2qy8mxjjxxxxxxxxx_293009952.png) repeat scroll 0% 0% transparent; }
 #myjQueryNav .current a { color: rgb(255, 255, 255); background: url(../images/t2ii8mxj4xxxxxxxxx_293009952.gif) no-repeat scroll center bottom transparent; display: block; line-height: 34px; height: 34px; text-decoration: none; }
 #myjQuery #flow { color: rgb(255, 255, 255); background: url(../images/t2ii8mxj4xxxxxxxxx_293009952.gif) no-repeat scroll center bottom transparent; display: block; line-height: 34px; height: 34px; }
-/*scrollNav Css*/
-.nav{ width:948px; height:35px; margin: 0 auto; position:relative; z-index:2; background:#F7B220; border:2px solid #D9A41C;box-shadow: 4px 4px 4px rgba(158, 112, 15, 0.4); }
-.nav ul.ulBox{ display:block; width:100%; height:35px; position:relative; z-index:2;}
-.nav ul.ulBox li{ display:block; width:100px;  height:35px; float:left; position:relative;}
-.nav ul.ulBox li a{ display:block; width:100%; text-decoration:none; height:35px; line-height:35px; text-align:center; color:black; font-size:14px;}
-.nav ul.ulBox li ul{ display: block; overflow:hidden; width:100%; height:0px; background:#FAEB7A; position:absolute; top:35px; left:0px;}
-.nav ul.ulBox li ul li{ height:30px; width:100%;}
-.nav ul.ulBox li ul li a{ height:30px; line-height:30px;}
-.nav ul.ulBox li ul li a:hover{ background:#F7B220; height:30px; line-height:30px; color:#131212;}
-.nav .scrollObj{ width:100px; height:35px; position:absolute; z-index:1; left:0px; top:0px; background:#FAEB7A;}
 /*----------------------Start of product category----------*/
 #left { width:690px; height:189px; float:left; overflow:hidden; background:url(../images/column_bg.jpg) 0 0 repeat; margin:5px 0 0 0; font-size:12px; font-family: "宋体", Arial, Helvetica, sans-serif; }
 #left h1.pro_Category { display:block; background:url(../images/product_cate.jpg) 0 0 no-repeat; width:690px; height:34px; text-indent:-9999px; }

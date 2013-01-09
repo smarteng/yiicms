@@ -11,14 +11,13 @@
 <meta name="Copyright" content="阿芙精油享有版权">
 <link href="/css/public.css" rel="stylesheet" type="text/css">
 <link href="/css/css.css" rel="stylesheet" type="text/css">
-<link href="/css/reset.css" rel="stylesheet" type="text/css">   
 </head>
 <body>
     <div id="container">
         <!--header start -->
         <div id="header">
-			<a href="afu.htm">
-				<img class="logo" src="logo.gif" width="0" height="0" alt="阿芙-就是精油！" title="阿芙-就是精油！">
+			<a href="<?php echo Yii::app()->homeUrl;?>">
+				<img class="logo" src="<?php echo Yii::app()->baseUrl.'/images/logo.gif';?>" width="0" height="0" alt="阿芙-就是精油！" title="阿芙-就是精油！">
 			</a>
         </div>
         <!--header end -->
