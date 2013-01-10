@@ -20,18 +20,13 @@ $this->pageTitle=Yii::app()->name;
     </div>
     <!--rightTop end -->
 </div>
-<!--店铺广告-->
 
+<div class="wlc_auto">  
+    <?php $this->widget('ext.portlets.PortletShops',array('limit'=>4));?>
+</div>
+<!--店铺广告-->
 <div class="mid_banner">
-  <ul class="midlink" style="width:960px; overflow:hidden;">
-    <li style="margin:9px 9px 0 0;"><a href=""><img src="./uploads/brand/recommend.jpg"></a></li>
-    <li style="margin:9px 9px 0 0;"><a href="http://www.afuvip.com/goods/124">
-    <img src="./uploads/brand/129972708117133882未标题-1.jpg"></a></li>
-    <li style="margin:9px 9px 0 0;"><a href="http://www.afuvip.com/Article/ArticleList?type=about">
-    <img src="./uploads/brand/brandAfu.jpg"></a></li>
-    <li style="margin:9px 9px 0 0;"><a href="http://www.afuvip.com/Home/Maps">
-    <img src="./uploads/brand/shopAfu.jpg"></a></li>
-  </ul>
+    <?php $this->widget('ext.portlets.IndexAd',array('limit'=>4));?>
 </div>
 
 <div id="pro_content">

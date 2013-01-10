@@ -81,6 +81,24 @@
 .col_bg .news_article h2 { font-size:14px; font-family:"宋体", Arial, Helvetica, sans-serif,; font-weight:bold; color:#000; line-height:18px; margin:3px 0 42px 0; }
 .col_bg .news_article p { text-indent:2em; padding:5px; margin-bottom:24px; }
 .news_article ul li { text-indent:2em; line-height:24px; }
+/*good shop*/
+.wlc_auto{margin-left:auto;margin-right:auto;width:960px;}
+.darenBox,.groupBox{display:inline;margin-right:6px;margin-left:6px;word-wrap:break-word;float:left;width:228px;}
+.groupCon{background:#ffffff;box-shadow:0 0px 1px rgba(34, 25, 25, 0.1);-webkit-box-shadow:rgba(34, 25, 25, 0.1) 0px 0px 1px;border:1px solid #E6E4E4;margin-top:14px;width:226px;position:relative;overflow:hidden;}.groupCon .gc_title{height:18px;line-height:18px;overflow:hidden;padding:10px 13px 0;}.groupCon .gc_title h4{font-size:14px;float:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:140px;}
+.groupCon .gc_title p{font-size:14px;color:#999999;float:right;}
+.groupCon .btn,.groupCon .followed{float:right;height:20px;line-height:20px;width:64px;}
+.groupCon .picBox{margin-top:10px;display:block;margin-left:auto;margin-right:auto;width:200px;}
+.groupCon .imgBox{margin-top:5px;display:block;width:200px;margin-left:auto;margin-right:auto;height:204px;background:url("../images/pg_bg1.png") no-repeat bottom;}.groupCon .imgBox .minpic,.groupCon .imgBox span{width:64px;height:64px;float:left;margin-right:4px;margin-top:4px;}
+.groupCon .imgBox .maxpic{margin-top:4px;height:200px;width:200px;}
+.groupCon .infoBox{background:#FFECEF;margin-top:8px;overflow:hidden;padding:8px 13px;}
+.groupCon .lookBox{height:20px;padding:13px;}.groupCon .lookBox .tex{color:#999999;line-height:20px;}
+.groupCon .oldBox{height:24px;padding:11px 13px;}.groupCon .oldBox .tex{line-height:24px;margin-left:6px;}
+.groupCon .oldBox .btn,.groupCon .oldBox .followed{float:right;line-height:20px;}
+.groupCon .oldBox img{float:left;}
+.groupCon .picBox{height:200px;overflow:hidden;}
+.groupCon .gc_title h4{width:120px;}
+.groupCon .detail{color:#999999;height:36px;line-height:18px;overflow:hidden;margin:5px 13px 8px;}
+.wlc_heart{background:url("../images/heart.png") no-repeat 0 4px;padding:2px 8px;}
 /*----------------------Start of products----------------------*/
 .menu_product { width: 125px; height: auto; margin:0; padding:0; overflow:hidden; float:left; }
 .menu_product ul li { margin-bottom:24px; }
