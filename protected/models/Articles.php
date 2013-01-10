@@ -7,6 +7,7 @@
  * @property string $id
  * @property string $channelid
  * @property integer $type
+ * @property string $cate
  * @property string $hits
  * @property string $posttime
  * @property string $picid
@@ -14,6 +15,7 @@
  * @property string $alias
  * @property string $title
  * @property string $content
+ * @property string $tag
  * @property string $seotitle
  * @property string $metakeywords
  * @property string $metadesc
@@ -47,14 +49,15 @@ class Articles extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('content', 'required'),
+			array('type, content, tag', 'required'),
 			array('type', 'numerical', 'integerOnly'=>true),
-			array('channelid, hits, posttime, picid, langid', 'length', 'max'=>10),
+			array('channelid, cate, hits, posttime, picid, langid', 'length', 'max'=>10),
 			array('picpath', 'length', 'max'=>45),
 			array('alias, title, seotitle, metakeywords, metadesc', 'length', 'max'=>255),
+			array('tag', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, channelid, type, hits, posttime, picid, picpath, alias, title, content, seotitle, metakeywords, metadesc, langid', 'safe', 'on'=>'search'),
+			array('id, channelid, type, cate, hits, posttime, picid, picpath, alias, title, content, tag, seotitle, metakeywords, metadesc, langid', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -78,6 +81,7 @@ class Articles extends CActiveRecord
 			'id' => 'ID',
 			'channelid' => 'Channelid',
 			'type' => 'Type',
+			'cate' => 'Cate',
 			'hits' => 'Hits',
 			'posttime' => 'Posttime',
 			'picid' => 'Picid',
@@ -85,6 +89,7 @@ class Articles extends CActiveRecord
 			'alias' => 'Alias',
 			'title' => 'Title',
 			'content' => 'Content',
+			'tag' => 'Tag',
 			'seotitle' => 'Seotitle',
 			'metakeywords' => 'Metakeywords',
 			'metadesc' => 'Metadesc',
@@ -106,6 +111,7 @@ class Articles extends CActiveRecord
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('channelid',$this->channelid,true);
 		$criteria->compare('type',$this->type);
+		$criteria->compare('cate',$this->cate,true);
 		$criteria->compare('hits',$this->hits,true);
 		$criteria->compare('posttime',$this->posttime,true);
 		$criteria->compare('picid',$this->picid,true);
@@ -113,6 +119,7 @@ class Articles extends CActiveRecord
 		$criteria->compare('alias',$this->alias,true);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('content',$this->content,true);
+		$criteria->compare('tag',$this->tag,true);
 		$criteria->compare('seotitle',$this->seotitle,true);
 		$criteria->compare('metakeywords',$this->metakeywords,true);
 		$criteria->compare('metadesc',$this->metadesc,true);

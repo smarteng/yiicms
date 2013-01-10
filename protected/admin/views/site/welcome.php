@@ -14,6 +14,7 @@ $this->pageTitle=Yii::app()->name;
   <button type="button" class="close" data-dismiss="alert">&times;</button>
   <strong>警告!</strong> 请使用火狐或者chrome等浏览器，IE浏览器可能会出现问题.
 </div>
+
 <div class="accordion" id="accordion2">
   <div class="accordion-group">
     <div class="accordion-heading">
@@ -29,67 +30,9 @@ $this->pageTitle=Yii::app()->name;
       </div>
     </div>
   </div>
+</div>
 <br>
 <p>统计信息：有<span class="badge badge-success">2</span>篇文章 有<span class="badge badge-warning">2</span>件商品</p>
 
-<?php $this->widget('bootstrap.TbMenu', array(
-    'type'=>'tabs', // '', 'tabs', 'pills' (or 'list')
-    'stacked'=>false, // whether this is a stacked menu
-    'id'=>'yiitab',
-    'items'=>array(
-        array('label'=>'网站基本信息', 'url'=>'#home'),
-        array('label'=>'profile', 'url'=>'#profile'),
-        array('label'=>'messages', 'url'=>'#messages'),
-        array('label'=>'settings', 'url'=>'#settings'),
-    ),
-)); ?>
-
-<div class="tab-content">
-  <div class="tab-pane" id="home">
-<?php 
-$gridDataProvider = new CArrayDataProvider(array(
-    array('id'=>1, 'firstName'=>'Mark', 'lastName'=>'Otto', 'language'=>'CSS'),
-    array('id'=>2, 'firstName'=>'Jacob', 'lastName'=>'Thornton', 'language'=>'JavaScript'),
-    array('id'=>3, 'firstName'=>'Stu', 'lastName'=>'Dent', 'language'=>'HTML'),
-));
-$this->widget('bootstrap.TbGridView', array(
-    'type'=>'striped bordered condensed',//default striped bordered condensed
-    'dataProvider'=>$gridDataProvider,
-    'template'=>"{items}",
-    'columns'=>array(
-        array('name'=>'id', 'header'=>'#'),
-        array('name'=>'firstName', 'header'=>'First name'),
-        array('name'=>'lastName', 'header'=>'Last name'),
-        array('name'=>'language', 'header'=>'Language'),
-        array(
-            'class'=>'bootstrap.TbButtonColumn',
-            'htmlOptions'=>array('style'=>'width: 50px'),
-        ),
-    ),
-)); 
-?>
-</div>
-  <div class="tab-pane" id="profile">...profile</div>
-  <div class="tab-pane" id="messages">..messages.</div>
-  <div class="tab-pane" id="settings">...settings</div>
-</div>
-<script>
-  $(function () {
-    $('#yiitab a:first').tab('show');
-    $('#yiitab a').click(function (e) {
-      e.preventDefault();
-      $(this).tab('show');
-    });
-    $('#buttonStateful').click(function() {
-        var btn = $(this);
-        btn.button('loading'); // call the loading function
-        setTimeout(function() {
-            btn.button('reset'); // call the reset function
-        }, 500);
-    });
-    $('body').tooltip({
-            selector: '[rel=tooltip]'
-    });
-  });
-</script>
+ 
 </div><!--/row-->

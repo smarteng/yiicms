@@ -94,6 +94,9 @@ $this->widget('bootstrap.TbGridView', array(
           btn.button('reset'); // call the reset function
       }, 500);
   });
+  $('body').tooltip({
+            selector: '[rel=tooltip]'
+  });
   });
 </script>
 </div><!--/row-->

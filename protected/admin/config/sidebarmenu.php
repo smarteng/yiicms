@@ -3,7 +3,7 @@ return array(
 	array(
 		'name' => '内容管理',
 		'items' => array(
-				array('label'=>'添加文章', 'icon'=>'pencil', 'url'=>$this->createUrl('goods/index',array( 'cid'=>'222')),'linkOptions'=>array('target'=>'main'),'active'=>false),
+				array('label'=>'添加文章', 'icon'=>'pencil', 'url'=>$this->createUrl('articles/create'),'linkOptions'=>array('target'=>'main'),'active'=>false),
 				array('label'=>'文章管理', 'icon'=>'list', 'url'=>$this->createUrl('goods/index'),'linkOptions'=>array('target'=>'main'),'active'=>false),
 				array('label'=>'添加分类', 'icon'=>'plus-sign', 'url'=>$this->createUrl('goods/index'),'linkOptions'=>array('target'=>'main'),'active'=>false),
 				array('label'=>'分类管理', 'icon'=>'list', 'url'=>$this->createUrl('goods/index'),'linkOptions'=>array('target'=>'main'),'active'=>false),
