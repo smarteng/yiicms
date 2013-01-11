@@ -29,7 +29,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'cate'); ?>
-		<?php echo $form->textField($model,'cate',array('size'=>10,'maxlength'=>10)); ?>
+		<?php echo $form->DropDownList($model,'cate',CHtml::listData(Cate::model()->findAll(),'sid','sortname'));?>
 		<?php echo $form->error($model,'cate'); ?>
 	</div>
 
@@ -71,7 +71,13 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'content'); ?>
-		<?php echo $form->textArea($model,'content',array('rows'=>6, 'cols'=>50)); ?>
+		<?php
+			$this->widget('ext.dxheditor.DxhEditor',array(
+				'model'=>$model,
+				'attribute' => 'content',
+				'htmlOptions' => array('style'=>'width:100%;height:600px;'),
+                'options' =>array('tools'=>'simple'),
+		));?>
 		<?php echo $form->error($model,'content'); ?>
 	</div>
 

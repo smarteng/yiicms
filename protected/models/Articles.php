@@ -49,7 +49,7 @@ class Articles extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('type, content, tag', 'required'),
+			array('content, title', 'required'),
 			array('type', 'numerical', 'integerOnly'=>true),
 			array('channelid, cate, hits, posttime, picid, langid', 'length', 'max'=>10),
 			array('picpath', 'length', 'max'=>45),
@@ -79,20 +79,20 @@ class Articles extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'channelid' => 'Channelid',
-			'type' => 'Type',
-			'cate' => 'Cate',
-			'hits' => 'Hits',
-			'posttime' => 'Posttime',
+			'channelid' => '频道',
+			'type' => '类型',
+			'cate' => '分类',
+			'hits' => '点击',
+			'posttime' => '发布时间',
 			'picid' => 'Picid',
-			'picpath' => 'Picpath',
+			'picpath' => '缩略图路径',
 			'alias' => 'Alias',
-			'title' => 'Title',
-			'content' => 'Content',
-			'tag' => 'Tag',
-			'seotitle' => 'Seotitle',
-			'metakeywords' => 'Metakeywords',
-			'metadesc' => 'Metadesc',
+			'title' => '标题',
+			'content' => '内容',
+			'tag' => '标签',
+			'seotitle' => 'SEO标题',
+			'metakeywords' => '关键词',
+			'metadesc' => '描述',
 			'langid' => 'Langid',
 		);
 	}
