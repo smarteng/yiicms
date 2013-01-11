@@ -40,7 +40,16 @@ class Articles extends CActiveRecord
 	{
 		return '{{articles}}';
 	}
-
+	/**
+     * Prepares posttime  attributes before performing validation.
+     */
+    protected function beforeValidate() {
+ 
+        if ($this->isNewRecord) {
+			$this->posttime = time();
+        }
+        return parent::beforeValidate();
+    }
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -126,6 +135,15 @@ class Articles extends CActiveRecord
 		$criteria->compare('langid',$this->langid,true);
 
 		return new CActiveDataProvider($this, array(
+			/*
+			'pagination'=>array(
+	            'pageSize'=>20,//设置每页显示20条
+	        ),
+	        'sort'=>array(
+	            'defaultOrder'=>'create_time DESC', //设置默认排序是create_time倒序
+	        ),
+	        */
+			'sort'=>false,
 			'criteria'=>$criteria,
 		));
 	}
