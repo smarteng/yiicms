@@ -1,70 +1,30 @@
-<?php
-/* @var $this ArticlesController */
-/* @var $model Articles */
-
-$this->breadcrumbs=array(
-	'Articles'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(
-	array('label'=>'List Articles', 'url'=>array('index')),
-	array('label'=>'Create Articles', 'url'=>array('create')),
-);
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#articles-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
+<?php $this->widget('bootstrap.TbBreadcrumbs',
+    array('links'=>array('文章管理'),
+          'homeLink'=>CHtml::link('菜单',Yii::app()->homeUrl),
+          'htmlOptions'=>array('class'=>''),
+          'separator'=>'/'));
 ?>
 
-<h1>Manage Articles</h1>
-
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'articles-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'id',
-		'channelid',
-		'type',
-		'cate',
-		'hits',
-		'posttime',
-		/*
-		'picid',
-		'picpath',
-		'alias',
-		'title',
-		'content',
-		'tag',
-		'seotitle',
-		'metakeywords',
-		'metadesc',
-		'langid',
-		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+<h3>设置管理</h3>
+<?php
+$this->widget('bootstrap.TbGridView', array(
+    'type'=>'striped bordered condensed',//default striped bordered condensed
+    'dataProvider'=>$model->search(),
+    'template'=>"{items}{pager}",
+    'filter'=>$model,
+    'ajaxUpdate'=>false,
+    //'afterAjaxUpdate'=>'changeiframe',
+    'pagerCssClass'=>'pagination pagination-right',
+    //'pager' => array('class'=>'CombPager'),
+    'columns'=>array(
+        array('name'=>'id', 'header'=>'#'),
+        array('name'=>'title', 'header'=>'标题'),
+        array('name'=>'posttime', 'header'=>'发布时间'),
+   
+        array(
+            'class'=>'bootstrap.TbButtonColumn',
+            'htmlOptions'=>array('style'=>'width: 50px'),
+        ),
+    ),
+)); 
+?>

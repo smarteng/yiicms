@@ -34,5 +34,12 @@ $this->pageTitle=Yii::app()->name;
 <br>
 <p>统计信息：有<span class="badge badge-success">2</span>篇文章 有<span class="badge badge-warning">2</span>件商品</p>
 
- 
+ <div class="alert alert-block">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <h5>Warning!</h5>
+  水温过高！！水温过高！！水温过高！！水温...<br>
+  水温过高！！水温过高！！水温过高！！水温...<br>
+  水温过高！！水温过高！！水温过高！！水温...<br>
+</div>
+
 </div><!--/row-->

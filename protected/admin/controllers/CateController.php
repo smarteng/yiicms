@@ -1,6 +1,6 @@
 <?php
 
-class ArticlesController extends Controller
+class CateController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -28,7 +28,7 @@ class ArticlesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','update'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -62,16 +62,16 @@ class ArticlesController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Articles;
+		$model=new Cate;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Articles']))
+		if(isset($_POST['Cate']))
 		{
-			$model->attributes=$_POST['Articles'];
+			$model->attributes=$_POST['Cate'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->sid));
 		}
 
 		$this->render('create',array(
@@ -91,11 +91,11 @@ class ArticlesController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Articles']))
+		if(isset($_POST['Cate']))
 		{
-			$model->attributes=$_POST['Articles'];
+			$model->attributes=$_POST['Cate'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','id'=>$model->sid));
 		}
 
 		$this->render('update',array(
@@ -122,7 +122,7 @@ class ArticlesController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Articles');
+		$dataProvider=new CActiveDataProvider('Cate');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -133,10 +133,10 @@ class ArticlesController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Articles('search');
+		$model=new Cate('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Articles']))
-			$model->attributes=$_GET['Articles'];
+		if(isset($_GET['Cate']))
+			$model->attributes=$_GET['Cate'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -147,12 +147,12 @@ class ArticlesController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Articles the loaded model
+	 * @return Cate the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Articles::model()->findByPk($id);
+		$model=Cate::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -160,11 +160,11 @@ class ArticlesController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Articles $model the model to be validated
+	 * @param Cate $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='articles-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='cate-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

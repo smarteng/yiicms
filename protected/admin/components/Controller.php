@@ -20,4 +20,13 @@ class Controller extends CController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+	/**
+	 * [init description]
+	 * @return [type] [description]
+	 */
+	public function init(){
+		//error_reporting(0);
+		define('DS',DIRECTORY_SEPARATOR);
+		parent::init();
+	}
 }

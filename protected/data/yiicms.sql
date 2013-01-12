@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 01 月 07 日 18:45
+-- 生成日期: 2013 年 01 月 11 日 09:19
 -- 服务器版本: 5.0.51
--- PHP 版本: 5.2.6
+-- PHP 版本: 5.3.20
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -29,7 +29,8 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `zzdb_articles` (
   `id` int(10) unsigned NOT NULL auto_increment,
   `channelid` int(10) unsigned NOT NULL default '0',
-  `type` tinyint(1) unsigned NOT NULL default '0',
+  `type` tinyint(1) NOT NULL,
+  `cate` int(10) unsigned NOT NULL default '0',
   `hits` int(10) unsigned NOT NULL default '0',
   `posttime` int(10) unsigned NOT NULL default '0',
   `picid` int(10) unsigned NOT NULL default '0',
@@ -37,31 +38,32 @@ CREATE TABLE IF NOT EXISTS `zzdb_articles` (
   `alias` varchar(255) NOT NULL default '',
   `title` varchar(255) NOT NULL default '',
   `content` mediumtext NOT NULL,
+  `tag` varchar(50) NOT NULL,
   `seotitle` varchar(255) NOT NULL default '',
   `metakeywords` varchar(255) NOT NULL default '',
   `metadesc` varchar(255) NOT NULL default '',
   `langid` int(10) unsigned NOT NULL default '0',
   PRIMARY KEY  (`id`),
   KEY `channelid` (`channelid`),
-  KEY `type` (`type`),
   KEY `posttime` (`posttime`),
-  KEY `alias` (`alias`),
-  KEY `langid` (`langid`)
+  KEY `cate` (`cate`),
+  KEY `type` (`type`),
+  KEY `type_2` (`type`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- 转存表中的数据 `zzdb_articles`
 --
 
-INSERT INTO `zzdb_articles` (`id`, `channelid`, `type`, `hits`, `posttime`, `picid`, `picpath`, `alias`, `title`, `content`, `seotitle`, `metakeywords`, `metadesc`, `langid`) VALUES
-(6, 5, 0, 1, 1303355080, 0, '', '', '6KZZ快站更新日志，请各用户及时关注更新。', '<p>6KZZ快站更新日志：</p>\r\n<p><a target="_blank" href="http://www.6kbbs.net/view-976.html">http://www.6kbbs.net/view-976.html</a></p>', '', '', '', 1),
-(7, 5, 0, 0, 1303354954, 0, '', '', '几大步骤，教你制作6KZZ快站模板。', '对于初学者，我们推荐从修改官方的默认模板入手。<br />\r\n<br />\r\n1、打开template文件夹，可以看到6kzz文件夹，这个就是系统默认模板了。在同个目录中，复制6kzz文件夹，粘贴并重命名文件夹，这里我们举例命名为：newstyle。<br />\r\n其实完成了该步骤，系统已经可以检测到新的模板了。不过为了更加个性化自己的模板，还是继续进行下面的步骤吧。<br />\r\n<br />\r\n2、打开刚才的newstyle文件夹，编辑config.xml文件，<br />\r\n修改“&lt;name&gt;6KZZ默认&lt;/name&gt;”为“&lt;name&gt;我的模板名称&lt;/name&gt;”，<br />\r\n修改“&lt;author&gt;zym&lt;/author&gt;”为“&lt;author&gt;我的名字&lt;/author&gt;”。<br />\r\n经过这么修改，整个newstyle模板就属于您的啦。呵呵。<br />\r\n<br />\r\n3、登陆系统后台，进入“网站管理”-&gt;“网站模板”，在模板列表中可以看到您建立的模板了，选择“启用模板”，并选择相应语言的语言包，点击“提交”即可。<br />\r\n<br />\r\n4、访问网站，则可以浏览模板的效果。请注意网站的语言环境，“6KZZ快站”支持在不同语言环境下使用不同的模板。你可能发现网站的样式并没有任何改变，那些进行下面的步骤。<br />\r\n<br />\r\n5、修改global.css样式表，你需要熟悉css了。通过css可以对颜色、布局等进行修改。<br />\r\n<br />\r\n6、必要时请修改newstyle/images文件夹中的图片。<br />\r\n<br />\r\n7、如果对网站中的布局、位置等需要做较大的调整，可以修改newstyle/*.htm 文件。修改时候请注意heredoc的写法哦。每进行一点修改，都可以立即刷新网站，浏览修改之后的样式。<br />\r\n如果您对某些*.htm文件不进行修改，则可以删除。系统将会默认使用6kzz默认模板下面的*.htm文件。', '', '', '', 1),
-(8, 5, 0, 0, 1303354924, 0, '', '', '我如何在官网上面发布免费/收费模板？', '1、模板包必须带有以下文件：<br />\r\n<ul><li>config.xml&nbsp;&nbsp;（配置模板名称、作者信息）</li>\r\n<li>preview.gif&nbsp;&nbsp;（模板预览图片）</li>\r\n<li>language/*.*&nbsp;&nbsp;（语言包）</li>\r\n<li>global.css （样式表）</li>\r\n<li>css.php</li>\r\n<li>素材 （Banner源文件，以便用户修改）</li>\r\n<li>截图 （首页、产品列表、内容页三张100%比例的图片）</li>\r\n</ul>\r\n<br />\r\n2、对以上的模板文件打包后，发送至Email： <a href="mailto:webmaster@6kzz.com">webmaster@6kzz.com</a> ， 或者 在线联系QQ：70767766<br />\r\n<br />\r\n3、官方会对您的模板包进行测试和审核，通过后则可以放置于官方网站进行下载或者出售。', '', '', '', 1),
-(9, 5, 0, 1, 1303355136, 0, '', '', '如何下载并使用6KZZ快站免费模板？', '如何下载使用免费模板？<br />\r\n<br />\r\n1、从<a href="http://www.6kzz.com/" target="_blank">www.6kzz.com</a>浏览并下载适合您网站的免费模板（例如 blue.rar）。<br />\r\n<br />\r\n2、解压下载到的压缩包，把解压出来的文件夹（例如 blue）上传到6KZZ快站的template目录中。（目录结构：6kzz快站程序目录/template/blue/*.*）<br />\r\n<br />\r\n3、登陆系统后台，选择您要修改的语言环境。然后进入“网站管理”-&gt;“网站模板”，在模板列表中可以看到刚才上传的blue模板，选择“启用模\r\n板”，并选择相应语言的语言包，点击“提交”即可以。（模板语言包是由开发模板的作者提供，一般情况下在下载的模板包中已经带有语言包。）<br />\r\n<br />\r\n4、新模板可能需要您更换网站的LOGO、Banner广告，以搭配模板的风格。（LOGO、Banner广告的素材，在下载的模板包中一般都带有。该步骤可以跳过，不过会影响模板的效果。）<br />\r\n<br />\r\n5、访问网站，则可以浏览新模板的效果。请注意网站的语言环境，“6KZZ快站”支持在不同语言环境下使用不同的模板。', '', '6KZZ模板,6KZZ快站模板', '', 1),
-(10, 5, 0, 0, 1303354846, 0, '', '', '我能够免费使用6KZZ快站程序吗？', '<strong>问：我没有获得授权，能够免费使用6KZZ快站程序吗？</strong><br />\r\n答：可以的。您可以免费使用6KZZ快站程序搭建自己的网站。<br />\r\n前提是您必须遵守License的规定：<a href="http://www.6kzz.com/zz/license.php" target="_blank">http://www.6kzz.com/zz/license.php</a><br />\r\n如果您需要进行以下其中一项或者多项的行为，则需要支付企业版授权费用：<br />\r\n1、修改6KZZ版权信息；<br />\r\n2、开通全功能版本；<br />\r\n3、使用6KZZ快站程序为其他企业搭建网站并从中获利。<br />\r\n<br />\r\n是否获得授权，可以通过6KZZ官网的“授权查询”进行查询：<a href="http://www.6kzz.com/zz/copyright.php" target="_blank">http://www.6kzz.com/zz/copyright.php</a>', '', '6KZZ授权', '', 1),
-(11, 5, 0, 2, 1303355114, 0, '', '', '如何下载/安装6KZZ快站程序？', '1、“6KZZ快站”是基于PHP+MySQL开发的，所以您必须先拥有一个支持PHP+MySQL的主机。（<a href="http://www.6kzz.com/zz/service.php" target="_blank">推荐使用高度兼容“6KZZ快站”的国外免备案PHP+MySQL主机</a>）<br />\r\n<br />\r\n2、从<a href="http://www.6kzz.com/" target="_blank">www.6kzz.com</a>下载最新版本的“6KZZ快站”程序。解压后上传到您的主机。<br />\r\n<br />\r\n3、访问上传好的“6KZZ快站”程序，系统自动引导到安装界面。根据界面提示，配置并填写完整数据库参数。<br />\r\n（数据库用户名、密码、表名等，在购买主机的时候会提供）<br />\r\n<br />\r\n4、按照安装步骤进行，即可成功安装“6KZZ快站”。<br />\r\n<br />\r\n5、进入系统后台管理。修改站点名称、LOGO、栏目、内容等；也可以进行风格模板管理，打造一个个性化的企业网站。', '', '', '', 1),
-(12, 5, 0, 1, 1303355040, 0, '', '', '“6KZZ快站”是什么程序？有什么优点？', '<a target="_blank" href="http://www.6kzz.com">“6KZZ快站”是一个基于PHP + MySQL的开源企业快速建站程序(企业网站源码)。</a><br />\r\n<br />\r\n“6KZZ快站”一改过去传统的企业建站方式，不需企业编写任何程序或网页，<br />\r\n只需要登陆管理后台，即可任意编辑网站的栏目、内容，以及进行网站样式的管理，短时间内即可生成企业个性化的精美网站。<br />\r\n<br />\r\n选择“6KZZ快站”的理由：<br />\r\n<strong>一、大方美观的模板</strong><br />\r\n6KZZ快站有优秀的美工团队的支持，提供众多大方美观的模板下载。您也可以定制自己喜欢的模板。<br />\r\n<br />\r\n<strong>二、多国语言支持</strong><br />\r\n您可以通过后台启用网站的多语言功能，让您的企业形象全球化，让来自不同国家的访客都能够方便的了解您的企业。<br />\r\n<br />\r\n<strong>三、极快的访问速度</strong><br />\r\n6KZZ快站程序采用PHP+MySQL架构，并采用缓存机制、Gzip压缩等等，使程序的执行效果更高、速度极快。<br />\r\n<br />\r\n<strong>四、强大的负载能力</strong><br />\r\n6KZZ快站采用数据缓存、最少化数据库查询的设计，使得程序在繁忙的服务器环境下仍然快速稳定运行。<br />\r\n<br />\r\n<strong>五、简洁的程序代码</strong><br />\r\n6KZZ快站一直保持着代码简洁的优点。代码简洁易读，容易进行二次开发、定制属于自己的功能。<br />\r\n<br />\r\n<strong>六、实用、完善的功能</strong><br />\r\n不仅追求简洁的代码，也追求实用完善的功能。企业网站需要的新闻模块、产品模块、页面模块、留言模块等，应有尽有。', '', '', '', 1),
-(13, 9, 0, 1, 1355212800, 30, '201212/1356511993_08_6864.jpg', '', 'asdf;asdfs', 'asdfasdfasdfasdfasdfsdf', 'asdfasdf', 'asdfasdfasdf', '', 1);
+INSERT INTO `zzdb_articles` (`id`, `channelid`, `type`, `cate`, `hits`, `posttime`, `picid`, `picpath`, `alias`, `title`, `content`, `tag`, `seotitle`, `metakeywords`, `metadesc`, `langid`) VALUES
+(6, 5, 0, 0, 1, 1303355080, 0, '', '', '6KZZ快站更新日志，请各用户及时关注更新。', '<p>6KZZ快站更新日志：</p>\r\n<p><a target="_blank" href="http://www.6kbbs.net/view-976.html">http://www.6kbbs.net/view-976.html</a></p>', '', '', '', '', 1),
+(7, 5, 0, 0, 0, 1303354954, 0, '', '', '几大步骤，教你制作6KZZ快站模板。', '对于初学者，我们推荐从修改官方的默认模板入手。<br />\r\n<br />\r\n1、打开template文件夹，可以看到6kzz文件夹，这个就是系统默认模板了。在同个目录中，复制6kzz文件夹，粘贴并重命名文件夹，这里我们举例命名为：newstyle。<br />\r\n其实完成了该步骤，系统已经可以检测到新的模板了。不过为了更加个性化自己的模板，还是继续进行下面的步骤吧。<br />\r\n<br />\r\n2、打开刚才的newstyle文件夹，编辑config.xml文件，<br />\r\n修改“&lt;name&gt;6KZZ默认&lt;/name&gt;”为“&lt;name&gt;我的模板名称&lt;/name&gt;”，<br />\r\n修改“&lt;author&gt;zym&lt;/author&gt;”为“&lt;author&gt;我的名字&lt;/author&gt;”。<br />\r\n经过这么修改，整个newstyle模板就属于您的啦。呵呵。<br />\r\n<br />\r\n3、登陆系统后台，进入“网站管理”-&gt;“网站模板”，在模板列表中可以看到您建立的模板了，选择“启用模板”，并选择相应语言的语言包，点击“提交”即可。<br />\r\n<br />\r\n4、访问网站，则可以浏览模板的效果。请注意网站的语言环境，“6KZZ快站”支持在不同语言环境下使用不同的模板。你可能发现网站的样式并没有任何改变，那些进行下面的步骤。<br />\r\n<br />\r\n5、修改global.css样式表，你需要熟悉css了。通过css可以对颜色、布局等进行修改。<br />\r\n<br />\r\n6、必要时请修改newstyle/images文件夹中的图片。<br />\r\n<br />\r\n7、如果对网站中的布局、位置等需要做较大的调整，可以修改newstyle/*.htm 文件。修改时候请注意heredoc的写法哦。每进行一点修改，都可以立即刷新网站，浏览修改之后的样式。<br />\r\n如果您对某些*.htm文件不进行修改，则可以删除。系统将会默认使用6kzz默认模板下面的*.htm文件。', '', '', '', '', 1),
+(8, 5, 0, 0, 0, 1303354924, 0, '', '', '我如何在官网上面发布免费/收费模板？', '1、模板包必须带有以下文件：<br />\r\n<ul><li>config.xml&nbsp;&nbsp;（配置模板名称、作者信息）</li>\r\n<li>preview.gif&nbsp;&nbsp;（模板预览图片）</li>\r\n<li>language/*.*&nbsp;&nbsp;（语言包）</li>\r\n<li>global.css （样式表）</li>\r\n<li>css.php</li>\r\n<li>素材 （Banner源文件，以便用户修改）</li>\r\n<li>截图 （首页、产品列表、内容页三张100%比例的图片）</li>\r\n</ul>\r\n<br />\r\n2、对以上的模板文件打包后，发送至Email： <a href="mailto:webmaster@6kzz.com">webmaster@6kzz.com</a> ， 或者 在线联系QQ：70767766<br />\r\n<br />\r\n3、官方会对您的模板包进行测试和审核，通过后则可以放置于官方网站进行下载或者出售。', '', '', '', '', 1),
+(9, 5, 0, 0, 1, 1303355136, 0, '', '', '如何下载并使用6KZZ快站免费模板？', '如何下载使用免费模板？<br />\r\n<br />\r\n1、从<a href="http://www.6kzz.com/" target="_blank">www.6kzz.com</a>浏览并下载适合您网站的免费模板（例如 blue.rar）。<br />\r\n<br />\r\n2、解压下载到的压缩包，把解压出来的文件夹（例如 blue）上传到6KZZ快站的template目录中。（目录结构：6kzz快站程序目录/template/blue/*.*）<br />\r\n<br />\r\n3、登陆系统后台，选择您要修改的语言环境。然后进入“网站管理”-&gt;“网站模板”，在模板列表中可以看到刚才上传的blue模板，选择“启用模\r\n板”，并选择相应语言的语言包，点击“提交”即可以。（模板语言包是由开发模板的作者提供，一般情况下在下载的模板包中已经带有语言包。）<br />\r\n<br />\r\n4、新模板可能需要您更换网站的LOGO、Banner广告，以搭配模板的风格。（LOGO、Banner广告的素材，在下载的模板包中一般都带有。该步骤可以跳过，不过会影响模板的效果。）<br />\r\n<br />\r\n5、访问网站，则可以浏览新模板的效果。请注意网站的语言环境，“6KZZ快站”支持在不同语言环境下使用不同的模板。', '', '', '6KZZ模板,6KZZ快站模板', '', 1),
+(10, 5, 0, 0, 0, 1303354846, 0, '', '', '我能够免费使用6KZZ快站程序吗？', '<strong>问：我没有获得授权，能够免费使用6KZZ快站程序吗？</strong><br />\r\n答：可以的。您可以免费使用6KZZ快站程序搭建自己的网站。<br />\r\n前提是您必须遵守License的规定：<a href="http://www.6kzz.com/zz/license.php" target="_blank">http://www.6kzz.com/zz/license.php</a><br />\r\n如果您需要进行以下其中一项或者多项的行为，则需要支付企业版授权费用：<br />\r\n1、修改6KZZ版权信息；<br />\r\n2、开通全功能版本；<br />\r\n3、使用6KZZ快站程序为其他企业搭建网站并从中获利。<br />\r\n<br />\r\n是否获得授权，可以通过6KZZ官网的“授权查询”进行查询：<a href="http://www.6kzz.com/zz/copyright.php" target="_blank">http://www.6kzz.com/zz/copyright.php</a>', '', '', '6KZZ授权', '', 1),
+(11, 5, 0, 0, 2, 1303355114, 0, '', '', '如何下载/安装6KZZ快站程序？', '1、“6KZZ快站”是基于PHP+MySQL开发的，所以您必须先拥有一个支持PHP+MySQL的主机。（<a href="http://www.6kzz.com/zz/service.php" target="_blank">推荐使用高度兼容“6KZZ快站”的国外免备案PHP+MySQL主机</a>）<br />\r\n<br />\r\n2、从<a href="http://www.6kzz.com/" target="_blank">www.6kzz.com</a>下载最新版本的“6KZZ快站”程序。解压后上传到您的主机。<br />\r\n<br />\r\n3、访问上传好的“6KZZ快站”程序，系统自动引导到安装界面。根据界面提示，配置并填写完整数据库参数。<br />\r\n（数据库用户名、密码、表名等，在购买主机的时候会提供）<br />\r\n<br />\r\n4、按照安装步骤进行，即可成功安装“6KZZ快站”。<br />\r\n<br />\r\n5、进入系统后台管理。修改站点名称、LOGO、栏目、内容等；也可以进行风格模板管理，打造一个个性化的企业网站。', '', '', '', '', 1),
+(12, 5, 0, 0, 1, 1303355040, 0, '', '', '“6KZZ快站”是什么程序？有什么优点？', '<a target="_blank" href="http://www.6kzz.com">“6KZZ快站”是一个基于PHP + MySQL的开源企业快速建站程序(企业网站源码)。</a><br />\r\n<br />\r\n“6KZZ快站”一改过去传统的企业建站方式，不需企业编写任何程序或网页，<br />\r\n只需要登陆管理后台，即可任意编辑网站的栏目、内容，以及进行网站样式的管理，短时间内即可生成企业个性化的精美网站。<br />\r\n<br />\r\n选择“6KZZ快站”的理由：<br />\r\n<strong>一、大方美观的模板</strong><br />\r\n6KZZ快站有优秀的美工团队的支持，提供众多大方美观的模板下载。您也可以定制自己喜欢的模板。<br />\r\n<br />\r\n<strong>二、多国语言支持</strong><br />\r\n您可以通过后台启用网站的多语言功能，让您的企业形象全球化，让来自不同国家的访客都能够方便的了解您的企业。<br />\r\n<br />\r\n<strong>三、极快的访问速度</strong><br />\r\n6KZZ快站程序采用PHP+MySQL架构，并采用缓存机制、Gzip压缩等等，使程序的执行效果更高、速度极快。<br />\r\n<br />\r\n<strong>四、强大的负载能力</strong><br />\r\n6KZZ快站采用数据缓存、最少化数据库查询的设计，使得程序在繁忙的服务器环境下仍然快速稳定运行。<br />\r\n<br />\r\n<strong>五、简洁的程序代码</strong><br />\r\n6KZZ快站一直保持着代码简洁的优点。代码简洁易读，容易进行二次开发、定制属于自己的功能。<br />\r\n<br />\r\n<strong>六、实用、完善的功能</strong><br />\r\n不仅追求简洁的代码，也追求实用完善的功能。企业网站需要的新闻模块、产品模块、页面模块、留言模块等，应有尽有。', '', '', '', '', 1),
+(13, 9, 0, 0, 1, 1355212800, 30, '201212/1356511993_08_6864.jpg', '', 'asdf;asdfs', 'asdfasdfasdfasdfasdfsdf', '', 'asdfasdf', 'asdfasdfasdf', '', 1);
 
 -- --------------------------------------------------------
 
@@ -134,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `zzdb_channels` (
   KEY `pid` (`pid`),
   KEY `alias` (`alias`),
   KEY `langid` (`langid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
 -- 转存表中的数据 `zzdb_channels`
@@ -149,7 +151,8 @@ INSERT INTO `zzdb_channels` (`id`, `pid`, `channeltype`, `systemtype`, `ordernum
 (6, 0, 1, 0, 5, 0, '|1|2|', '', '关于我们', '<span style="font-weight: bold;"><img src="attachment.php?id=1"><br>“6KZZ快站”</span>是一个基于PHP + MySQL的开源企业快速建站程序。<br><br>“6KZZ快站”一改过去传统的企业建站方式，不需企业编写任何程序或网页，只需要登陆管理后台，即可任意编辑网站的栏目、内容，以及进行网站样式的管理，短时间内即可生成企业个性化的精美网站。<br><br><span style="font-weight: bold; color: rgb(255, 102, 102);">选择“6KZZ快站”的理由：</span><br><span style="font-weight: bold;">一、大方美观的模板</span><br>6KZZ快站有优秀的美工团队的支持，提供众多大方美观的模板下载。您也可以定制自己喜欢的模板。<br><br><span style="font-weight: bold;">二、多国语言支持</span><br>您可以通过后台启用网站的多语言功能，让您的企业形象全球化，让来自不同国家的访客都能够方便的了解您的企业。<br><br><span style="font-weight: bold;">三、极快的访问速度</span><br>6KZZ快站程序采用PHP+MySQL架构，并采用缓存机制、Gzip压缩等等，使程序的执行效果更高、速度极快。<br><br><span style="font-weight: bold;">四、强大的负载能力</span><br>6KZZ快站采用数据缓存、最少化数据库查询的设计，使得程序在繁忙的服务器环境下仍然快速稳定运行。<br><br><span style="font-weight: bold;">五、简洁的程序代码</span><br>6KZZ快站一直保持着代码简洁的优点。代码简洁易读，容易进行二次开发、定制属于自己的功能。<br><br><span style="font-weight: bold;">六、实用、完善的功能</span><br>不仅追求简洁的代码，也追求实用完善的功能。企业网站需要的新闻模块、产品模块、页面模块、留言模块等，应有尽有。<br><br>', '', '', '', '', 0, 1),
 (7, 6, 1, 0, 7, 0, '', '', '公司文化', '请在这里添加公司文化的内容。<br><br><span style="font-weight: bold;">如何自行安装“6KZZ快站”？</span><br><br>1、“6KZZ快站”是基于PHP+MySQL开发的，所以您必须先拥有一个支持PHP+MySQL的主机。（推荐使用高度兼容“6KZZ快站”的国外免备案PHP+MySQL主机）<br><br>2、从www.6kzz.com下载最新版本的“6KZZ快站”程序。解压后上传到您的主机。<br><br>3、访问上传好的“6KZZ快站”程序，系统自动引导到安装界面。根据界面提示，配置并填写完整数据库参数。（数据库用户名、密码、表名等，在购买主机的时候会提供）<br><br>4、按照安装步骤进行，即可成功安装“6KZZ快站”。<br><br>5、进入系统后台管理。修改站点名称、LOGO、栏目、内容等；也可以进行模板管理，打造一个个性化的企业网站。<br><br>', '', '', '', '', 0, 1),
 (8, 6, 1, 0, 8, 0, '', '', '公司理念', '<span style="font-weight: bold;">如何下载使用免费模板？</span><br><br>1、从www.6kzz.com浏览并下载适合您网站的免费模板（例如 blue.rar）。<br><br>2、解压下载到的压缩包，把解压出来的文件夹（例如 blue）上传到6KZZ快站的template目录中。（目录结构：6kzz快站程序目录/template/blue/*.*）<br><br>3、登陆系统后台，选择您要修改的语言环境。然后进入“网站管理”-&gt;“网站模板”，在模板列表中可以看到刚才上传的blue模板，选择“启用模板”，并选择相应语言的语言包，点击“提交”即可以。（模板语言包是由开发模板的作者提供，一般情况下在下载的模板包中已经带有语言包。）<br><br>4、新模板可能需要您更换网站的LOGO、Banner广告，以搭配模板的风格。（LOGO、Banner广告的素材，在下载的模板包中一般都带有。该步骤可以跳过，不过会影响模板的效果。）<br><br>5、访问网站，则可以浏览新模板的效果。请注意网站的语言环境，“6KZZ快站”支持在不同语言环境下使用不同的模板。<br><br><br>', '', '', '', '', 0, 1),
-(9, 0, 2, 0, 9, 0, '|1|', '', '测试', '', '公司测试', '公司测试', '公司测试', '', 0, 1);
+(9, 0, 2, 0, 9, 0, '|1|', '', '测试', '', '公司测试', '公司测试', '公司测试', '', 0, 1),
+(10, 0, 1, 0, 10, 0, '|1|', '', 'asdfasdf', '<p>asdfasjalasdf了会计师了京东方粮食局啊</p>\r\n<p>阿隆索的解放路空间奥斯卡来单反</p>\r\n<p>阿喀琉斯的解放路嬶尖斯蒂芬</p>\r\n<p>看啦世纪东方乐口居奥斯卡来单反</p>', 'asdfasdf', 'asdfsadf', 'asdfasdf', '', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -222,6 +225,37 @@ CREATE TABLE IF NOT EXISTS `zzdb_folders` (
 INSERT INTO `zzdb_folders` (`id`, `title`, `coverid`, `updatetime`, `filenum`) VALUES
 (1, '默认文件夹', 0, 0, 0),
 (3, '产品图片', 0, 1301089763, 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zzdb_goodshops`
+--
+
+CREATE TABLE IF NOT EXISTS `zzdb_goodshops` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(250) NOT NULL,
+  `logo` varchar(250) NOT NULL,
+  `tags` text NOT NULL,
+  `nick` varchar(250) NOT NULL COMMENT '卖家昵称',
+  `url` varchar(250) NOT NULL,
+  `description` text NOT NULL COMMENT '店铺描述',
+  `share_count` int(11) NOT NULL,
+  `created` datetime NOT NULL,
+  `updated` datetime NOT NULL,
+  PRIMARY KEY  (`id`),
+  KEY `share_count` (`share_count`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- 转存表中的数据 `zzdb_goodshops`
+--
+
+INSERT INTO `zzdb_goodshops` (`id`, `name`, `logo`, `tags`, `nick`, `url`, `description`, `share_count`, `created`, `updated`) VALUES
+(1, '膜膜皇后', '阿萨德法师法', '阿萨德了附件拉丝机地方了是', '膜膜皇后', '阿萨德发生大幅', '阿斯蒂芬阿斯蒂芬阿斯蒂芬', 275, '2013-01-10 00:00:00', '2013-01-10 00:00:00'),
+(2, '膜膜皇后', '阿萨德法师法', '阿萨德了附件拉丝机地方了是', '膜膜皇后', '阿萨德发生大幅', '阿斯蒂芬阿斯蒂芬阿斯蒂芬', 25698, '2013-01-10 00:00:00', '2013-01-10 00:00:00'),
+(3, '膜膜皇后', '阿萨德法师法', '阿萨德了附件拉丝机地方了是', '膜膜皇后', '阿萨德发生大幅', '阿斯蒂芬阿斯蒂芬阿斯蒂芬', 23828, '2013-01-10 00:00:00', '2013-01-10 00:00:00'),
+(4, '膜膜皇后', '阿萨德法师法', '阿萨德了附件拉丝机地方了是', '膜膜皇后', '阿萨德发生大幅', '阿斯蒂芬阿斯蒂芬阿斯蒂芬', 222, '2013-01-10 00:00:00', '2013-01-10 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -707,27 +741,6 @@ INSERT INTO `zzdb_settingsb` (`id`, `categoryid`, `property`, `setvalue`, `name`
 -- --------------------------------------------------------
 
 --
--- 表的结构 `zzdb_shop`
---
-
-CREATE TABLE IF NOT EXISTS `zzdb_shop` (
-  `id` int(11) NOT NULL auto_increment,
-  `category_id` int(11) NOT NULL,
-  `name` varchar(250) NOT NULL,
-  `logo` varchar(250) NOT NULL,
-  `tags` text NOT NULL,
-  `nick` varchar(250) NOT NULL COMMENT '卖家昵称',
-  `url` varchar(250) NOT NULL,
-  `share_count` int(11) NOT NULL,
-  `created` datetime NOT NULL,
-  `updated` datetime NOT NULL,
-  PRIMARY KEY  (`id`),
-  KEY `category_id` (`category_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- 表的结构 `zzdb_slideshow`
 --
 
@@ -806,7 +819,7 @@ CREATE TABLE IF NOT EXISTS `zzdb_users` (
 
 INSERT INTO `zzdb_users` (`id`, `username`, `userpass`, `email`, `realname`, `phone`, `lastip`, `addtime`, `lasttime`, `popedom`, `ishidden`) VALUES
 (1, 'zym', '10027794a5c77b28984e5ce110cef597', 'zymzeng@qq.com', '曾勇民', '13538288822', '127.0.0.1', 1298332800, 1301034299, '|channel|page|article|procate|products|order|member|main|lang|template|link|msg|vote|user|database|', 1),
-(2, 'admin', '362864ed70a8b0c71d144b7a556f1797', 'smarteng@qq.com', '', '', '127.0.0.1', 1346203000, 1357548708, '|channel|page|article|procate|products|order|member|main|lang|template|link|msg|vote|user|database|', 0);
+(2, 'admin', '362864ed70a8b0c71d144b7a556f1797', 'smarteng@qq.com', '', '', '127.0.0.1', 1346203000, 1357812250, '|channel|page|article|procate|products|order|member|main|lang|template|link|msg|vote|user|database|', 0);
 
 -- --------------------------------------------------------
 
