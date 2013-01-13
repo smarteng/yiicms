@@ -16,3 +16,6 @@ body {
 .accordion-heading .accordion-toggle {
   text-decoration: none;
 }
+.grid-view {
+	padding: 0 15px 0 0;
+}

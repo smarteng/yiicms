@@ -31,7 +31,7 @@ $this->menu=array(
 		'picpath',
 		'alias',
 		'title',
-		'content',
+		'content:html',
 		'tag',
 		'seotitle',
 		'metakeywords',

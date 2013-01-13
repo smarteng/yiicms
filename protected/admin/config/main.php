@@ -59,7 +59,9 @@ $backmain =  array(
 			'allowAutoLogin'=>true,
 		),
 		// uncomment the following to enable URLs in path-format
-		
+		'format'=>array(
+                'datetimeFormat' => 'Y-m-d h:i', 
+        ),
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			//'urlSuffix'=>'.html',
