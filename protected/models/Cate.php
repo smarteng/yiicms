@@ -68,9 +68,9 @@ class Cate extends CActiveRecord
 		return array(
 			'sid' => 'ID',
 			'sortname' => '分类名称',
-			'alias' => 'Alias',
-			'taxis' => 'Taxis',
-			'keywords' => '关键词',
+			'alias' => '别名',
+			'taxis' => '排序',
+			'keywords' => '分类标签',
 			'description' => '描述',
 		);
 	}
@@ -94,6 +94,15 @@ class Cate extends CActiveRecord
 		$criteria->compare('description',$this->description,true);
 
 		return new CActiveDataProvider($this, array(
+			/*
+			'pagination'=>array(
+	            'pageSize'=>20,//设置每页显示20条
+	        ),
+	        'sort'=>array(
+	            'defaultOrder'=>'create_time DESC', //设置默认排序是create_time倒序
+	        ),
+	        */
+			'sort'=>false,
 			'criteria'=>$criteria,
 		));
 	}

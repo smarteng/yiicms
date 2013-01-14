@@ -20,8 +20,8 @@ return array(
 	array(
 		'name' => '网站栏目',
 		'items' => array(
-				array('label'=>'添加栏目', 'icon'=>'check', 'url'=>$this->createUrl('settings/index',array('cid'=>2)),'linkOptions'=>array('target'=>'main'), 'active'=>false),
-				array('label'=>'栏目管理', 'icon'=>'plus-sign', 'url'=>$this->createUrl('goods/index'),'linkOptions'=>array('target'=>'main'), 'active'=>false),
+				array('label'=>'添加栏目', 'icon'=>'check', 'url'=>$this->createUrl('channels/create'),'linkOptions'=>array('target'=>'main'), 'active'=>false),
+				array('label'=>'栏目管理', 'icon'=>'plus-sign', 'url'=>$this->createUrl('channels/admin'),'linkOptions'=>array('target'=>'main'), 'active'=>false),
 		)
 	),
 	array(

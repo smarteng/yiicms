@@ -5,7 +5,7 @@ $form = $this->beginWidget('bootstrap.TbActiveForm', array(
     'enableAjaxValidation'=>false,
 )); 
 ?>
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">带有<span class="required">*</span> 的项目为必填项</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
