@@ -23,6 +23,9 @@
  */
 class Channels extends CActiveRecord
 {
+	const TYPE_PAGE=1; 
+	const TYPE_LIST=2;
+	const TYPE_LINK=4;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -32,7 +35,39 @@ class Channels extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-
+	public function getTypeOptions()
+	{
+	    return array( 
+	        self::TYPE_PAGE=>'单页', 
+	        self::TYPE_LIST=>'文章列表',
+	        self::TYPE_LINK=>'链接',
+	    );
+	}
+	/**
+	 * [getPidOptions description]
+	 * @return [type] [description]
+	 */
+	public function getPidOptions()
+	{
+	    $channels = Yii::app()->db->createCommand()
+				    ->select('id,title')
+				    ->from('{{channels}}')
+				    ->where('pid=0')
+				    ->order('ordernum,id')
+				    ->queryAll();
+		$options = array(0=>'作为主分类');
+		foreach ($channels as $key => $value) {
+			$options[$value['id']]=$value['title'];
+		}
+	    return $options;
+	}
+	/**
+	 * @return string the type text display for the current type
+	 */
+	public function getTypeText() {
+	    $typeOptions = $this->getTypeOptions();
+	    return isset($typeOptions[$this->token]) ? $typeOptions[$this->token] :"";
+	}
 	/**
 	 * @return string the associated database table name
 	 */
@@ -78,7 +113,7 @@ class Channels extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'pid' => '父ID',
+			'pid' => '上级栏目',
 			'channeltype' => '频道类型',
 			'systemtype' => '系统类型',
 			'ordernum' => '排序',
@@ -125,6 +160,15 @@ class Channels extends CActiveRecord
 		$criteria->compare('langid',$this->langid,true);
 
 		return new CActiveDataProvider($this, array(
+			/*
+			'pagination'=>array(
+	            'pageSize'=>20,//设置每页显示20条
+	        ),
+	        'sort'=>array(
+	            'defaultOrder'=>'create_time DESC', //设置默认排序是create_time倒序
+	        ),
+	        */
+	       	'sort'=>false,
 			'criteria'=>$criteria,
 		));
 	}

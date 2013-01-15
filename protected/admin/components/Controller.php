@@ -29,4 +29,28 @@ class Controller extends CController
 		define('DS',DIRECTORY_SEPARATOR);
 		parent::init();
 	}
+	/**
+	 * [getUploadDir 取得上传图片路径]
+	 * @param  [type] $path [description]
+	 * @return [type]       [description]
+	 */
+	public function getUploadDir( $path )
+	{
+		$base = Yii::app( )->basePath.DS."..".DS."uploads".DS.$path.DS;
+		if (!file_exists( $base ))
+		{
+			FileHelper::mkdirs( $base );
+		}
+		return $base;
+	}
+	/**
+	 * [getUploadBase 取得url路径]
+	 * @param  [type] $path [description]
+	 * @return [type]       [description]
+	 */
+	public function getUploadBase( $path )
+	{
+		$base = "/uploads/".$path."/";
+		return $base;
+	}
 }

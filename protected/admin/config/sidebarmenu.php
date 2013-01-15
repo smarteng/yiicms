@@ -7,6 +7,8 @@ return array(
 				array('label'=>'文章管理', 'icon'=>'list', 'url'=>$this->createUrl('articles/admin'),'linkOptions'=>array('target'=>'main'),'active'=>false),
 				array('label'=>'添加分类', 'icon'=>'plus-sign', 'url'=>$this->createUrl('cate/create'),'linkOptions'=>array('target'=>'main'),'active'=>false),
 				array('label'=>'分类管理', 'icon'=>'list', 'url'=>$this->createUrl('cate/admin'),'linkOptions'=>array('target'=>'main'),'active'=>false),
+				array('label'=>'添加焦点图', 'icon'=>'picture', 'url'=>$this->createUrl('slideshow/create'),'linkOptions'=>array('target'=>'main'),'active'=>false),
+				array('label'=>'焦点图管理', 'icon'=>'picture', 'url'=>$this->createUrl('slideshow/admin'),'linkOptions'=>array('target'=>'main'),'active'=>false),
 		)
 	),
 	array(

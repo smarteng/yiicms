@@ -3,7 +3,7 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 <?php $this->widget('bootstrap.TbBreadcrumbs',
-	array('links'=>array('后台首页'=>'#', '添加文章分类'),
+	array('links'=>array('后台首页'=>'#', '添加幻灯片'),
 		  'homeLink'=>CHtml::link('菜单',Yii::app()->homeUrl),
 		  'htmlOptions'=>array('class'=>''),
 		  'separator'=>'/'));

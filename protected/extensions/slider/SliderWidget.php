@@ -27,43 +27,30 @@ class SliderWidget extends CWidget
 		$data = Slideshow::model( )->findAllByAttributes( array(
 			"token" => $this->token
 		), array( "limit" => 5, "order" => "sortnum DESC" ) );
-		$html = "";
-		$html2 = '<div id="myjQuery">
-  <div id="myjQueryContent">
-        <div style="z-index: 1; opacity: 1;" class="smask">
-	        <a href="http://www.afuvip.com/Article/ArticleList?type=about" target="_top">
-	        	<img src="./uploads/slider/01.jpg" alt="阿芙的诞生">
-	        </a>
-  		</div>
-        <div class="smask">
-        	<a href="http://www.afuvip.com/goods/130" target="_top">
-        		<img src="./uploads/slider/02.jpg" alt="阿芙荷荷巴系列">
-        	</a>
-        </div>
-        <div class="smask">
-          <a href="http://www.afuvip.com/liuye.htm" target="_top">
-            <img src="./uploads/slider/05.jpg" alt="阿芙×刘野限定版 ">
-          </a>
-        </div>
-        <div class="smask">
-          <a href="http://www.afuvip.com/goods/132" target="_top">
-            <img src="./uploads/slider/04.jpg" alt="阿芙人参系列">
-          </a>
-        </div>
-        <div class="smask">
-          <a href="http://www.afuvip.com/goods/136" target="_top">
-            <img src="./uploads/slider/05.jpg" alt="阿芙玫瑰系列">
-          </a>
-        </div>
-  </div>
-  <ul id="myjQueryNav">
-        <li class="current"><a href="http://www.afuvip.com/Article/ArticleList?type=about" target="_top">阿芙的诞生</a> </li>
-        <li><a href="http://www.afuvip.com/goods/130" target="_top">阿芙荷荷巴系列</a> </li>
-        <li><a href="http://www.afuvip.com/liuye.htm" target="_top">阿芙×刘野限定版 </a> </li>
-        <li><a href="http://www.afuvip.com/goods/132" target="_top">阿芙人参系列</a> </li>
-        <li><a href="http://www.afuvip.com/goods/136" target="_top">阿芙玫瑰系列</a> </li>
-  </ul>';
-  echo $html2;
+
+		$html2 = '<div id="myjQuery"><div id="myjQueryContent">';
+    $html3 = '<ul id="myjQueryNav">';
+    $i = 1;
+    foreach ($data as $key => $value) {
+        if($i ==1){
+          $html2 .='<div style ="z-index:1;opacity:1;" class="smask">';
+          $html3 .= '<li class="current">';
+        }else{
+          $html2 .='<div class="smask">';
+          $html3 .= '<li>';
+        }
+        $html2 .= '<a href="'.$value->url.'" target="_top">
+                      <img src="'.$value->image.'" alt="'.$value->title.'">
+                    </a>
+                </div>';
+        $html3 .= '<a href="'.$value->url.'" target="_top">'.$value->title.'</a> </li>';
+        $i++;
+    }
+
+   $html2 .='</div>';
+   $html3 .='</ul>';
+ 
+  echo $html2.$html3;
 	}
   protected function regFiles(){
     $this->cs->registerScriptFile($this->assetUrl.'/js/player.js',CClientScript::POS_END );

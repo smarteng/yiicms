@@ -41,9 +41,9 @@ class SiteController extends Controller
 	public function getChannels()
 	{
 		$channels = Yii::app()->db->createCommand()
-				    ->select('*')
+				    ->select('id,title')
 				    ->from('{{channels}}')
-				    ->order('pid,ordernum,id')
+				    ->order('ordernum,id')
 				    ->queryAll();
 		return $channels;
 	}

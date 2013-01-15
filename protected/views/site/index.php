@@ -3,7 +3,7 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 <!--加载首页轮播图-->
-<?php $this->widget('ext.slider.SliderWidget', array('asbg'=>false, 'width'=>'640px', 'height'=>'240px', 'token'=>'首页640*240'));?>
+<?php $this->widget('ext.slider.SliderWidget', array('asbg'=>false, 'width'=>'640px', 'height'=>'240px', 'token'=>'1'));?>
 <!--slide end -->
 
 <div id="flow"></div><div id="flow"></div></div>

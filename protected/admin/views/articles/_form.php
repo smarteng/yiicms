@@ -18,7 +18,7 @@ $form = $this->beginWidget('bootstrap.TbActiveForm', array(
 		$this->widget('ext.dxheditor.DxhEditor',array(
 			'model'=>$model,
 			'attribute' => 'content',
-			'htmlOptions' => array('style'=>'width:100%;height:500px;'),
+			'htmlOptions' => array('style'=>'width:100%;height:350px;'),
             'options' =>array('tools'=>'simple'),
 	));?>
 	<?php echo $form->error($model,'content'); ?>
@@ -33,7 +33,7 @@ $form = $this->beginWidget('bootstrap.TbActiveForm', array(
 		$this->widget('ext.dxheditor.DxhEditor',array(
 			'model'=>$model,
 			'attribute' => 'metadesc',
-			'htmlOptions' => array('style'=>'width:100%;height:200px;'),
+			'htmlOptions' => array('style'=>'width:100%;height:100px;'),
             'options' =>array('tools'=>'simple'),
 	));?>
 	<?php echo $form->error($model,'metadesc'); ?>
