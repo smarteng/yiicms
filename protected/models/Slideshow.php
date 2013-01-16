@@ -70,7 +70,7 @@ class Slideshow extends CActiveRecord
 			array('title', 'length', 'max'=>90),
 			array('url', 'length', 'max'=>100),
 			//array('image', 'length', 'max'=>50),
-			array('image', 'file', 'types'=>'jpg,gif,jpeg,png'),
+			array('image', 'file',"allowEmpty" => TRUE,'types'=>'jpg,gif,jpeg,png',"maxSize" => 409600),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, title, url, image, token, sortnum, created', 'safe', 'on'=>'search'),

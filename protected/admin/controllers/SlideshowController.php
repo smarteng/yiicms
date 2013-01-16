@@ -75,9 +75,9 @@ class SlideshowController extends Controller
 				$image = CUploadedFile::getInstance($model,'image');
 				if($image){
 					$filename = uniqid().".".$image->getExtensionName( );
-					$full_filename = $this->getUploadDir( "slideshow" ).$filename;
+					$full_filename = $this->getUploadDir("slideshow").$filename;
 					if ($image->saveAs($full_filename)){
-						$model->image = $this->getUploadBase( "slideshow" ).$filename;
+						$model->image = $this->getUploadBase("slideshow").$filename;
 						$model->save();
 					}
 				}
@@ -106,7 +106,22 @@ class SlideshowController extends Controller
 		if(isset($_POST['Slideshow']))
 		{
 			$model->attributes=$_POST['Slideshow'];
-			if($model->save())
+			unset($model->image);
+			if($model->save()){
+				$image = CUploadedFile::getInstance($model,'image');
+				if($image){
+					$filename = uniqid().".".$image->getExtensionName( );
+					$full_filename = $this->getUploadDir("slideshow").$filename;
+					if ($image->saveAs($full_filename)){
+						$model->image = $this->getUploadBase("slideshow").$filename;
+						$model->save();
+					}
+				}
+			}else{
+				var_dump($model->getErrors());
+				exit;
+			}
+				//Yii::app( )->user->setFlash( "success", "幻灯片“".$model->title."”已成功添加！" );
 				$this->redirect(array('view','id'=>$model->id));
 		}
 

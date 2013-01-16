@@ -5,7 +5,7 @@
           'separator'=>'/'));
 ?>
 
-<h3>设置管理</h3>
+<h4>设置管理</h4>
 <?php
 $this->widget('bootstrap.TbGridView', array(
     'type'=>'striped bordered condensed',//default striped bordered condensed

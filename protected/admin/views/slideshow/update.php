@@ -1,21 +1,11 @@
-<?php
-/* @var $this SlideshowController */
-/* @var $model Slideshow */
-
-$this->breadcrumbs=array(
-	'Slideshows'=>array('index'),
-	$model->title=>array('view','id'=>$model->id),
-	'Update',
-);
-
-$this->menu=array(
-	array('label'=>'List Slideshow', 'url'=>array('index')),
-	array('label'=>'Create Slideshow', 'url'=>array('create')),
-	array('label'=>'View Slideshow', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Slideshow', 'url'=>array('admin')),
-);
+<?php $this->widget('bootstrap.TbBreadcrumbs',
+    array('links'=>array('内容管理'=>'#','更新幻灯片'),
+          'homeLink'=>CHtml::link('菜单',Yii::app()->homeUrl),
+          'htmlOptions'=>array('class'=>''),
+          'separator'=>'/'));
 ?>
 
-<h1>Update Slideshow <?php echo $model->id; ?></h1>
+
+<h4>更新幻灯片：<?php echo $model->id; ?></h4>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -14,6 +14,13 @@ $form = $this->beginWidget('bootstrap.TbActiveForm', array(
 <?php echo $form->textFieldRow($model, 'title', array('class'=>'input-xxlarge')); ?>
 <?php echo $form->textFieldRow($model, 'url', array('class'=>'input-xxlarge')); ?>
 <?php echo $form->fileFieldRow($model, 'image'); ?>
+<?php if($model->image){ ?>
+<div class="control-group ">
+	<div class="controls">
+		<img src="<?php echo Yii::app()->baseUrl . $model->image ?>" height="100"/>
+	</div>
+</div>
+<?php } ?>
 <?php echo $form->dropDownListRow($model, 'token', $model->getTypeOptions()); ?>
 <?php echo $form->textFieldRow($model, 'sortnum', array('class'=>'input-xxlarge')); ?>
 
@@ -24,3 +31,4 @@ $form = $this->beginWidget('bootstrap.TbActiveForm', array(
     <?php $this->widget('bootstrap.TbButton', array('buttonType'=>'reset', 'label'=>'Reset')); ?>
 </div>
 <?php $this->endWidget(); ?>
+	
