@@ -7,24 +7,14 @@ return array(
 				array('label'=>'文章管理', 'icon'=>'list', 'url'=>$this->createUrl('articles/admin'),'linkOptions'=>array('target'=>'main'),'active'=>false),
 				array('label'=>'添加分类', 'icon'=>'plus-sign', 'url'=>$this->createUrl('cate/create'),'linkOptions'=>array('target'=>'main'),'active'=>false),
 				array('label'=>'分类管理', 'icon'=>'list', 'url'=>$this->createUrl('cate/admin'),'linkOptions'=>array('target'=>'main'),'active'=>false),
-				array('label'=>'添加焦点图', 'icon'=>'picture', 'url'=>$this->createUrl('slideshow/create'),'linkOptions'=>array('target'=>'main'),'active'=>false),
-				array('label'=>'焦点图管理', 'icon'=>'picture', 'url'=>$this->createUrl('slideshow/admin'),'linkOptions'=>array('target'=>'main'),'active'=>false),
 		)
 	),
 	array(
 		'name' => '产品管理',
 		'items' => array(
 				array('label'=>'添加产品', 'icon'=>'edit', 'url'=>$this->createUrl('goods/index'),'linkOptions'=>array('target'=>'main'),'active'=>false),
+				array('label'=>'产品分类', 'icon'=>'shopping-cart', 'url'=>$this->createUrl('goods/index'),'linkOptions'=>array('target'=>'main'),'active'=>false),
 				array('label'=>'产品管理', 'icon'=>'shopping-cart', 'url'=>$this->createUrl('goods/index'),'linkOptions'=>array('target'=>'main'),'active'=>false),
-				array('label'=>'添加产品分类', 'icon'=>'shopping-cart', 'url'=>$this->createUrl('procates/create'),'linkOptions'=>array('target'=>'main'),'active'=>false),
-				array('label'=>'管理产品分类', 'icon'=>'shopping-cart', 'url'=>$this->createUrl('procates/admin'),'linkOptions'=>array('target'=>'main'),'active'=>false),
-		)
-	),
-	array(
-		'name' => '好店管理',
-		'items' => array(
-				array('label'=>'添加好店', 'icon'=>'check', 'url'=>$this->createUrl('goodshops/create'),'linkOptions'=>array('target'=>'main'), 'active'=>false),
-				array('label'=>'管理好店', 'icon'=>'plus-sign', 'url'=>$this->createUrl('goodshops/admin'),'linkOptions'=>array('target'=>'main'), 'active'=>false),
 		)
 	),
 	array(
