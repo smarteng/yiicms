@@ -1,5 +1,6 @@
 <?php
-/* @var $this SiteController */
+/* @var $this ChannelsController */
+/* @var $data Channels */
 $this->pageTitle=Yii::app()->name;
 ?>
 <?php $this->widget('bootstrap.TbBreadcrumbs',

@@ -26,8 +26,9 @@
 <?php
         $this->widget('zii.widgets.CMenu', array(
         'htmlOptions'=>array('class'=>'ulBox'),
+        'activeCssClass'=>'current',
         'items'=>array(
-            array('label'=>'首页', 'url'=>array('site/index')),
+            array('label'=>'首页', 'url'=>'http://www.cniska.net/yii-bootstrap','active'=>true),
             array('label'=>'新闻', 'url'=>'#', 
             'items'=>array(
                 array('label'=>'新闻分类', 'url'=>array('product/new', 'tag'=>'new')),
@@ -67,7 +68,7 @@ $(function(){
         speed:"fast" //速度
     });
 });
-$('.ulBox li').first().addClass('current');
+//$('.ulBox li').first().addClass('current');
 </script>
 </body>
 </html>

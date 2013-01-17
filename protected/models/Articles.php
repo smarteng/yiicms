@@ -47,6 +47,7 @@ class Articles extends CActiveRecord
  
         if ($this->isNewRecord) {
 			$this->posttime = time();
+			$this->share_count = 0;
         }
         return parent::beforeValidate();
     }

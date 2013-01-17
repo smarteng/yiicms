@@ -17,11 +17,21 @@ $this->widget('bootstrap.TbGridView', array(
     'columns'=>array(
         array('name'=>'id', 'header'=>'#'),
         array('name'=>'title', 'header'=>'频道名称'),
+        array('name'=>'ishidden', 'header'=>'是否隐藏','type'=>'boolean'),
         array('name'=>'channeltype', 'header'=>'类型'),
         array(
             'class'=>'bootstrap.TbButtonColumn',
-            'buttons' => array('delete' => array('visible' =>'$data->systemtype == 0')),
-            'htmlOptions'=>array('style'=>'width: 50px'),
+            'template'=>'{add}{view}{update}{delete}',
+            'buttons' => array(
+                'delete' => array('visible' =>'$data->systemtype == 0'),
+                'add' => array('label' =>'添加子分类',
+                                'icon'=>'plus',
+                                'options'=>array('style'=>'padding:0 5px;'),
+                                'url'=>'Yii::app()->createUrl("channel/add", array("id"=>$data->id))',
+                                'visible' =>'$data->pid == 0'
+                ),
+            ),
+            'htmlOptions'=>array('style'=>'width: 70px'),
         ),
     ),
 )); 

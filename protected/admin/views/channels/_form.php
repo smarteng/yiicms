@@ -2,6 +2,7 @@
 $form = $this->beginWidget('bootstrap.TbActiveForm', array(
     'id'=>'channels-form',
     'type'=>'horizontal',
+    'htmlOptions'=>array('class'=>'well'),
     'enableAjaxValidation'=>false,
 )); 
 ?>
@@ -10,7 +11,7 @@ $form = $this->beginWidget('bootstrap.TbActiveForm', array(
 
 <?php echo $form->dropDownListRow($model, 'pid',$model->getPidOptions()); ?>
 <?php echo $form->dropDownListRow($model, 'channeltype', $model->getTypeOptions()); ?>
-<?php echo $form->textFieldRow($model, 'ordernum', array('class'=>'input-xlarge')); ?>
+<?php echo $form->textFieldRow($model, 'ordernum'); ?>
 <?php echo $form->radioButtonListInlineRow($model, 'ishidden', array(1=>'是',0=>'否')); ?>
 <?php echo $form->checkBoxListInlineRow($model, 'positions', array(1=>'顶部',2=>'底部')); ?>
 <?php echo $form->textFieldRow($model, 'alias', array('class'=>'input-xlarge')); ?>
@@ -32,7 +33,7 @@ $form = $this->beginWidget('bootstrap.TbActiveForm', array(
  <?php echo $form->textFieldRow($model, 'seotitle', array('class'=>'input-xlarge')); ?>
  <?php echo $form->textFieldRow($model, 'metakeywords', array('class'=>'input-xlarge')); ?>
  <?php echo $form->textFieldRow($model, 'metadesc', array('class'=>'input-xlarge')); ?>
- <?php echo $form->textFieldRow($model, 'link', array('class'=>'input-xlarge')); ?>
+ <?php echo $form->textFieldRow($model, 'link', array('hint'=>'可以是(\'product/new\', \'tag\'=>\'new\')这种连接','hintOptions'=>array('class'=>'help-inline'))); ?>
  <?php echo $form->radioButtonListInlineRow($model, 'target', array(1=>'是',0=>'否')); ?>
  
 <div class="form-actions">

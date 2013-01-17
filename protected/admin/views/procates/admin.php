@@ -1,11 +1,11 @@
 <?php $this->widget('bootstrap.TbBreadcrumbs',
-    array('links'=>array('内容管理'=>'#','幻灯片管理'),
+    array('links'=>array('产品管理'=>'#','产品分类管理'),
           'homeLink'=>CHtml::link('菜单',Yii::app()->homeUrl),
           'htmlOptions'=>array('class'=>''),
           'separator'=>'/'));
 ?>
 
-<h4>幻灯片管理</h4>
+<h4>产品分类管理</h4>
 <?php
 $this->widget('bootstrap.TbGridView', array(
     'type'=>'striped bordered condensed',//default striped bordered condensed
@@ -17,10 +17,10 @@ $this->widget('bootstrap.TbGridView', array(
     //'pager' => array('class'=>'CombPager'),
     'columns'=>array(
         array('name'=>'id', 'header'=>'#'),
-        array('name'=>'title', 'header'=>'链接标题'),
-        array('name'=>'url', 'header'=>'链接URL'),
-        array('name'=>'token', 'header'=>'显示位置','value' => '$data->getTypeText()','type' => 'raw'),
-        array('name'=>'created', 'header'=>'发布时间','type'=>'datetime'),
+        array('name'=>'title', 'header'=>'分类名称'),
+        array('name'=>'pid', 'header'=>'上级分类','value' => '$data->getPidText()','type' => 'raw'),
+        //array('name'=>'metakeywords', 'header'=>'关键词'),
+        array('name'=>'ishidden', 'header'=>'是否隐藏','type'=>'boolean'),
         array(
             'class'=>'bootstrap.TbButtonColumn',
             'htmlOptions'=>array('style'=>'width: 50px'),

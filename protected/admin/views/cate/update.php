@@ -2,20 +2,15 @@
 /* @var $this CateController */
 /* @var $model Cate */
 
-$this->breadcrumbs=array(
-	'Cates'=>array('index'),
-	$model->sid=>array('view','id'=>$model->sid),
-	'Update',
-);
-
-$this->menu=array(
-	array('label'=>'List Cate', 'url'=>array('index')),
-	array('label'=>'Create Cate', 'url'=>array('create')),
-	array('label'=>'View Cate', 'url'=>array('view', 'id'=>$model->sid)),
-	array('label'=>'Manage Cate', 'url'=>array('admin')),
-);
+$this->pageTitle=Yii::app()->name;
+?>
+<?php $this->widget('bootstrap.TbBreadcrumbs',
+	array('links'=>array('后台首页'=>'#', '更新文章分类'),
+		  'homeLink'=>CHtml::link('菜单',Yii::app()->homeUrl),
+		  'htmlOptions'=>array('class'=>''),
+		  'separator'=>'/'));
 ?>
 
-<h1>Update Cate <?php echo $model->sid; ?></h1>
+<h4>更新文章分类：<?php echo $model->sid; ?></h4>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

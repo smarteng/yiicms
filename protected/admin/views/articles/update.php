@@ -2,20 +2,15 @@
 /* @var $this ArticlesController */
 /* @var $model Articles */
 
-$this->breadcrumbs=array(
-	'Articles'=>array('index'),
-	$model->title=>array('view','id'=>$model->id),
-	'Update',
-);
-
-$this->menu=array(
-	array('label'=>'List Articles', 'url'=>array('index')),
-	array('label'=>'Create Articles', 'url'=>array('create')),
-	array('label'=>'View Articles', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Articles', 'url'=>array('admin')),
-);
+$this->pageTitle=Yii::app()->name;
+?>
+<?php $this->widget('bootstrap.TbBreadcrumbs',
+	array('links'=>array('后台首页'=>'#', '更新文章'),
+		  'homeLink'=>CHtml::link('菜单',Yii::app()->homeUrl),
+		  'htmlOptions'=>array('class'=>''),
+		  'separator'=>'/'));
 ?>
 
-<h1>Update Articles <?php echo $model->id; ?></h1>
+<h4>更新文章<?php echo $model->id; ?></h4>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

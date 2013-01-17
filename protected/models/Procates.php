@@ -17,6 +17,7 @@
  */
 class Procates extends CActiveRecord
 {
+	protected static $_pidOptions = NULL;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -25,6 +26,33 @@ class Procates extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+	/**
+	 * [getPidOptions description]
+	 * @return [type] [description]
+	 */
+	public function getPidOptions()
+	{
+	    $pids = Yii::app()->db->createCommand()
+				    ->select('id,title')
+				    ->from('{{procates}}')
+				    ->where('pid=0')
+				    ->order('ordernum,id')
+				    ->queryAll();
+		$options = array(0=>'作为主分类');
+		foreach ($pids as $key => $value) {
+			$options[$value['id']]=$value['title'];
+		}
+	    return $options;
+	}
+	/**
+	 * @return string the type text display for the current type
+	 */
+	public function getPidText() {
+		if (!isset(self::$_pidOptions)) {
+			self::$_pidOptions = $this->getPidOptions();
+		}
+	    return isset(self::$_pidOptions[$this->pid]) ? self::$_pidOptions[$this->pid] :"主分类";
 	}
 
 	/**
@@ -71,14 +99,14 @@ class Procates extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'pid' => 'Pid',
-			'ordernum' => 'Ordernum',
-			'ishidden' => 'Ishidden',
-			'alias' => 'Alias',
-			'title' => 'Title',
-			'seotitle' => 'Seotitle',
-			'metakeywords' => 'Metakeywords',
-			'metadesc' => 'Metadesc',
+			'pid' => '父ID',
+			'ordernum' => '排序',
+			'ishidden' => '是否隐藏',
+			'alias' => '别名',
+			'title' => '分类名称',
+			'seotitle' => 'SEO标题',
+			'metakeywords' => '关键词',
+			'metadesc' => '分类描述',
 			'langid' => 'Langid',
 		);
 	}
@@ -106,6 +134,15 @@ class Procates extends CActiveRecord
 		$criteria->compare('langid',$this->langid,true);
 
 		return new CActiveDataProvider($this, array(
+			'pagination'=>array(
+	            'pageSize'=>20,//设置每页显示20条
+	        ),
+	        /*
+	        'sort'=>array(
+	            'defaultOrder'=>'create_time DESC', //设置默认排序是create_time倒序
+	        ),
+	        */
+			'sort'=>false,
 			'criteria'=>$criteria,
 		));
 	}

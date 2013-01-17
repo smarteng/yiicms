@@ -26,7 +26,18 @@ class Goodshops extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-
+	/**
+     * Prepares posttime  attributes before performing validation.
+     */
+    protected function beforeValidate() {
+ 
+        if ($this->isNewRecord) {
+			$this->created = time();
+        }else{
+        	$this->updated = time();
+        }
+        return parent::beforeValidate();
+    }
 	/**
 	 * @return string the associated database table name
 	 */
@@ -43,9 +54,10 @@ class Goodshops extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, logo, tags, nick, url, description, share_count, created, updated', 'required'),
+			array('name, tags, nick, url, description, share_count, created, updated', 'required'),
 			array('share_count', 'numerical', 'integerOnly'=>true),
 			array('name, logo, nick, url', 'length', 'max'=>250),
+			array('image', 'file',"allowEmpty" => TRUE,'types'=>'jpg,gif,jpeg,png',"maxSize" => 409600),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, logo, tags, nick, url, description, share_count, created, updated', 'safe', 'on'=>'search'),
@@ -70,15 +82,15 @@ class Goodshops extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
-			'logo' => 'Logo',
-			'tags' => 'Tags',
-			'nick' => 'Nick',
-			'url' => 'Url',
-			'description' => 'Description',
-			'share_count' => 'Share Count',
-			'created' => 'Created',
-			'updated' => 'Updated',
+			'name' => '好店名称',
+			'logo' => '好店Logo',
+			'tags' => '标签',
+			'nick' => '掌柜昵称',
+			'url' => 'URL',
+			'description' => '描述',
+			'share_count' => '推荐次数',
+			'created' => '创建时间',
+			'updated' => '更新时间',
 		);
 	}
 
@@ -105,6 +117,15 @@ class Goodshops extends CActiveRecord
 		$criteria->compare('updated',$this->updated,true);
 
 		return new CActiveDataProvider($this, array(
+			/*
+			'pagination'=>array(
+	            'pageSize'=>20,//设置每页显示20条
+	        ),
+	        'sort'=>array(
+	            'defaultOrder'=>'create_time DESC', //设置默认排序是create_time倒序
+	        ),
+	        */
+	       	'sort'=>false,
 			'criteria'=>$criteria,
 		));
 	}

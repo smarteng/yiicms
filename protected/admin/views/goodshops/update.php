@@ -2,20 +2,15 @@
 /* @var $this GoodshopsController */
 /* @var $model Goodshops */
 
-$this->breadcrumbs=array(
-	'Goodshops'=>array('index'),
-	$model->name=>array('view','id'=>$model->id),
-	'Update',
-);
-
-$this->menu=array(
-	array('label'=>'List Goodshops', 'url'=>array('index')),
-	array('label'=>'Create Goodshops', 'url'=>array('create')),
-	array('label'=>'View Goodshops', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Goodshops', 'url'=>array('admin')),
-);
+$this->pageTitle=Yii::app()->name;
+?>
+<?php $this->widget('bootstrap.TbBreadcrumbs',
+	array('links'=>array('后台首页'=>'#', '更新好店'),
+		  'homeLink'=>CHtml::link('菜单',Yii::app()->homeUrl),
+		  'htmlOptions'=>array('class'=>''),
+		  'separator'=>'/'));
 ?>
 
-<h1>Update Goodshops <?php echo $model->id; ?></h1>
+<h4>更新好店：<?php echo $model->id; ?></h4>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

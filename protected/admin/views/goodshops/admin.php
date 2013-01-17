@@ -1,64 +1,29 @@
-<?php
-/* @var $this GoodshopsController */
-/* @var $model Goodshops */
-
-$this->breadcrumbs=array(
-	'Goodshops'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(
-	array('label'=>'List Goodshops', 'url'=>array('index')),
-	array('label'=>'Create Goodshops', 'url'=>array('create')),
-);
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#goodshops-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
+<?php $this->widget('bootstrap.TbBreadcrumbs',
+    array('links'=>array('内容管理'=>'#','好店管理'),
+          'homeLink'=>CHtml::link('菜单',Yii::app()->homeUrl),
+          'htmlOptions'=>array('class'=>''),
+          'separator'=>'/'));
 ?>
 
-<h1>Manage Goodshops</h1>
-
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'goodshops-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'id',
-		'name',
-		'logo',
-		'tags',
-		'nick',
-		'url',
-		/*
-		'description',
-		'share_count',
-		'created',
-		'updated',
-		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+<h4>好店管理</h4>
+<?php
+$this->widget('bootstrap.TbGridView', array(
+    'type'=>'striped bordered condensed',//default striped bordered condensed
+    'dataProvider'=>$model->search(),
+    'template'=>"{items}{pager}",
+    'ajaxUpdate'=>false,
+    //'afterAjaxUpdate'=>'changeiframe',
+    'pagerCssClass'=>'pagination pagination-right',
+    //'pager' => array('class'=>'CombPager'),
+    'columns'=>array(
+        array('name'=>'id', 'header'=>'#'),
+        array('name'=>'name', 'header'=>'好店名称'),
+        array('name'=>'nick', 'header'=>'掌柜昵称'),
+        array('name'=>'created', 'header'=>'发布时间','type'=>'datetime'),
+        array(
+            'class'=>'bootstrap.TbButtonColumn',
+            'htmlOptions'=>array('style'=>'width: 50px'),
+        ),
+    ),
+)); 
+?>

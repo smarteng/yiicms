@@ -33,6 +33,7 @@ class SiteController extends Controller
 		$this->channels = $menus;
 		$this->sidebarmenu = include(Yii::app()->basePath.'/admin/config/sidebarmenu.php');
 		//print_r($this->sidebarmenu);
+		parent::init();
 	}
 	/**
 	 * [getChannels description]

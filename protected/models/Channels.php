@@ -84,7 +84,7 @@ class Channels extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('content', 'required'),
+			//array('content', 'required'),
 			array('channeltype, systemtype, ishidden, target', 'numerical', 'integerOnly'=>true),
 			array('pid, ordernum, langid', 'length', 'max'=>10),
 			array('positions, alias, title', 'length', 'max'=>45),
