@@ -29,14 +29,19 @@ class Controller extends CController
 	public function init(){
 		//error_reporting(0);
 		define('DS',DIRECTORY_SEPARATOR);
-		/*
+		
 		//初始化menu
 		$topmenu = $this->getChannels();
+		$productcates = $this->getProductcate();
 		$menus = array();
 		foreach ($topmenu as $channel) {
+			if ($channel['systemtype'] ==1) {
+				$productMenu = $this->procuctMenuList();
+				$menus[$channel['id']]['items'][] =$productMenu;
+			}
 			$menu['label'] = $channel['title'];
-			$menu['linkOptions'] = array('target'=>'main');
-			$menu['url'] = $this->getChnAdminLink($channel);
+			//$menu['url'] = $this->getChnAdminLink($channel);
+			$menu['url'] ='#';
 			if ($channel['id'] == 4) {
 				$menu['active'] = true;
 			}else{
@@ -49,7 +54,8 @@ class Controller extends CController
 			}
 		}
 		$this->topmenus = $menus;
-		*/
+		var_dump($this->topmenus);
+		exit;
 		parent::init();
 	}
 	/**
@@ -59,10 +65,39 @@ class Controller extends CController
 	public function getChannels()
 	{
 		$channels = Yii::app()->db->createCommand()
-				    ->select('id,title')
+				    ->select('id,pid,channeltype,systemtype,ishidden,title,link')
 				    ->from('{{channels}}')
+				    ->order('pid,ordernum,id')
+				    ->queryAll();
+		return $channels;
+	}
+	/**
+	 * [getProductcate description]
+	 * @return [type] [description]
+	 */
+	public function getProductcate()
+	{
+		$channels = Yii::app()->db->createCommand()
+				    ->select('id,pid,title')
+				    ->from('{{procates}}')
+				    ->where('pid=0 and ishidden=0')
 				    ->order('ordernum,id')
 				    ->queryAll();
 		return $channels;
+	}
+	/**
+	 * [procuctList description]
+	 * @return [type] [description]
+	 */
+	public function procuctMenuList()
+	{
+		$productcates = $this->getProductcate();
+		foreach ($productcates as $key => $value) {
+			$items[] =array(
+				'label'=>$value['title'], 
+				'url'=>array('product/pcate', 'pid'=>$vale['id']),
+			);
+		}
+		return $items;
 	}
 }
