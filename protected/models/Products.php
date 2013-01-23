@@ -5,6 +5,7 @@
  *
  * The followings are the available columns in table '{{products}}':
  * @property string $id
+ * @property string $pid
  * @property string $cid
  * @property integer $type
  * @property string $hits
@@ -28,6 +29,9 @@
  */
 class Products extends CActiveRecord
 {
+	const TYPE_COMMON=0; 
+	const TYPE_RECOMMEND=1;
+	const TYPE_HOT=2;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -37,7 +41,44 @@ class Products extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-
+	/**
+	 * [beforeValidate description]
+	 * @return [type] [description]
+	 */
+	protected function beforeValidate() {
+ 
+        if ($this->isNewRecord) {
+        	$this->hits = 0;
+			$this->posttime = time();
+        }
+        return parent::beforeValidate();
+    }
+	/**
+	 * [getTypeOptions description]
+	 * @return [type] [description]
+	 */
+	public function getTypeOptions()
+	{
+	    return array( 
+	        self::TYPE_COMMON=>'普通产品', 
+	        self::TYPE_RECOMMEND=>'推荐产品',
+	        self::TYPE_HOT=>'热门产品',
+	    );
+	}
+	/**
+	 * [getLevelOptions description]
+	 * @return [type] [description]
+	 */
+	public function getLevelOptions()
+	{
+		 return array( 
+	        1=>'★☆☆☆☆', 
+	        2=>'★★☆☆☆',
+	        3=>'★★★☆☆',
+	        4=>'★★★★☆',
+	        5=>'★★★★★',
+	    );
+	}
 	/**
 	 * @return string the associated database table name
 	 */
@@ -54,16 +95,16 @@ class Products extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('content', 'required'),
+			array('pid, content', 'required'),
 			array('type, level', 'numerical', 'integerOnly'=>true),
 			array('price1, price2', 'numerical'),
-			array('cid, hits, posttime, store, sold, ordernum, langid', 'length', 'max'=>10),
+			array('pid, cid, hits, posttime, store, sold, ordernum, langid', 'length', 'max'=>10),
 			array('alias, seotitle, metakeywords, metadesc, picpaths', 'length', 'max'=>255),
 			array('name, picids', 'length', 'max'=>100),
 			array('serialnum', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, cid, type, hits, posttime, alias, name, serialnum, seotitle, metakeywords, metadesc, content, picids, picpaths, price1, price2, store, sold, level, ordernum, langid', 'safe', 'on'=>'search'),
+			array('id, pid, cid, type, hits, posttime, alias, name, serialnum, seotitle, metakeywords, metadesc, content, picids, picpaths, price1, price2, store, sold, level, ordernum, langid', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -85,25 +126,26 @@ class Products extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'cid' => 'Cid',
-			'type' => 'Type',
-			'hits' => 'Hits',
-			'posttime' => 'Posttime',
-			'alias' => 'Alias',
-			'name' => 'Name',
-			'serialnum' => 'Serialnum',
-			'seotitle' => 'Seotitle',
-			'metakeywords' => 'Metakeywords',
-			'metadesc' => 'Metadesc',
-			'content' => 'Content',
-			'picids' => 'Picids',
-			'picpaths' => 'Picpaths',
-			'price1' => 'Price1',
-			'price2' => 'Price2',
-			'store' => 'Store',
-			'sold' => 'Sold',
-			'level' => 'Level',
-			'ordernum' => 'Ordernum',
+			'pid' => '主分类',
+			'cid' => '二级分类',
+			'type' => '类型',
+			'hits' => '点击',
+			'posttime' => '发布时间',
+			'alias' => '别名',
+			'name' => '产品名称',
+			'serialnum' => '编号',
+			'seotitle' => 'SEO标题',
+			'metakeywords' => '关键词',
+			'metadesc' => '产品描述',
+			'content' => '产品内容',
+			'picids' => '淘宝商品ID',
+			'picpaths' => '图片地址',
+			'price1' => '公司价',
+			'price2' => '市场价',
+			'store' => '库存',
+			'sold' => '售出',
+			'level' => '产品等级',
+			'ordernum' => '排序',
 			'langid' => 'Langid',
 		);
 	}
@@ -120,6 +162,7 @@ class Products extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
+		$criteria->compare('pid',$this->pid,true);
 		$criteria->compare('cid',$this->cid,true);
 		$criteria->compare('type',$this->type);
 		$criteria->compare('hits',$this->hits,true);

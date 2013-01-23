@@ -1,6 +1,6 @@
 <?php
 
-class ProcatesController extends Controller
+class ProductController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -28,7 +28,7 @@ class ProcatesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','subcate'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -62,14 +62,15 @@ class ProcatesController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Procates;
+		$model=new Products;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Procates']))
+		if(isset($_POST['Products']))
 		{
-			$model->attributes=$_POST['Procates'];
+			$model->attributes=$_POST['Products'];
+			//先保存图片
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -91,9 +92,9 @@ class ProcatesController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Procates']))
+		if(isset($_POST['Products']))
 		{
-			$model->attributes=$_POST['Procates'];
+			$model->attributes=$_POST['Products'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -122,7 +123,7 @@ class ProcatesController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Procates');
+		$dataProvider=new CActiveDataProvider('Products');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -133,10 +134,10 @@ class ProcatesController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Procates('search');
+		$model=new Products('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Procates']))
-			$model->attributes=$_GET['Procates'];
+		if(isset($_GET['Products']))
+			$model->attributes=$_GET['Products'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -147,45 +148,24 @@ class ProcatesController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Procates the loaded model
+	 * @return Products the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Procates::model()->findByPk($id);
+		$model=Products::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
-	/**
-	 * [actionSubcate description]
-	 * @return [type] [description]
-	 */
-	public function actionSubcate()
-	{
-		$product = $_POST['Products'];
-		$id = (int)$product['pid'];
-		if ($id ==0) {
-			return false;
-		}
-		$data=Procates::model()->findAll('pid=:pid', 
-                  array(':pid'=>$id));
- 		
-	    $data=CHtml::listData($data,'id','title');
-	    foreach($data as $value=>$name)
-	    {
-	        echo CHtml::tag('option',
-	                   array('value'=>$value),CHtml::encode($name),true);
-	    }
-	}
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Procates $model the model to be validated
+	 * @param Products $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='procates-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='products-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

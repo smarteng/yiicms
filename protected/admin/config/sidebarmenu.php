@@ -14,8 +14,8 @@ return array(
 	array(
 		'name' => '产品管理',
 		'items' => array(
-				array('label'=>'添加产品', 'icon'=>'edit', 'url'=>$this->createUrl('goods/index'),'linkOptions'=>array('target'=>'main'),'active'=>false),
-				array('label'=>'产品管理', 'icon'=>'shopping-cart', 'url'=>$this->createUrl('goods/index'),'linkOptions'=>array('target'=>'main'),'active'=>false),
+				array('label'=>'添加产品', 'icon'=>'edit', 'url'=>$this->createUrl('product/create'),'linkOptions'=>array('target'=>'main'),'active'=>false),
+				array('label'=>'产品管理', 'icon'=>'shopping-cart', 'url'=>$this->createUrl('product/admin'),'linkOptions'=>array('target'=>'main'),'active'=>false),
 				array('label'=>'添加产品分类', 'icon'=>'shopping-cart', 'url'=>$this->createUrl('procates/create'),'linkOptions'=>array('target'=>'main'),'active'=>false),
 				array('label'=>'管理产品分类', 'icon'=>'shopping-cart', 'url'=>$this->createUrl('procates/admin'),'linkOptions'=>array('target'=>'main'),'active'=>false),
 		)

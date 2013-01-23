@@ -1,4 +1,5 @@
 <?php
+header("Content-type: text/html; charset=utf-8"); 
 /**
  * Controller is the customized base controller class.
  * All controller classes for this application should extend from this base class.
@@ -35,27 +36,31 @@ class Controller extends CController
 		$productcates = $this->getProductcate();
 		$menus = array();
 		foreach ($topmenu as $channel) {
-			if ($channel['systemtype'] ==1) {
-				$productMenu = $this->procuctMenuList();
-				$menus[$channel['id']]['items'][] =$productMenu;
-			}
 			$menu['label'] = $channel['title'];
 			//$menu['url'] = $this->getChnAdminLink($channel);
-			$menu['url'] ='#';
-			if ($channel['id'] == 4) {
-				$menu['active'] = true;
-			}else{
-				$menu['active'] = false;
+			$menu['url'] = array($channel['link']);
+			if($channel['link'] == '#'){
+				$menu['url'] = '#';
 			}
-			if ($channel['pid'] != 0) {
-				$menus[$channel['pid']]['items'][] =$menu;
-			}else{
+			if ($channel['systemtype'] ==1) {
 				$menus[$channel['id']] =$menu;
-			}
+				$productMenu = $this->procuctMenuList();
+				$menus[$channel['id']]['items'] =$productMenu;
+			}else if ($channel['systemtype'] ==4) {
+				$menus[$channel['id']] =$menu;
+				$cateMenu = $this->cateMenu();
+				$menus[$channel['id']]['items'] =$cateMenu;
+			}else{
+				if ($channel['pid'] != 0) {
+					$menus[$channel['pid']]['items'][] =$menu;
+				}else{
+					$menus[$channel['id']] =$menu;
+				}
+			}	
 		}
 		$this->topmenus = $menus;
-		var_dump($this->topmenus);
-		exit;
+		//print_r($this->topmenus);
+		//exit;
 		parent::init();
 	}
 	/**
@@ -95,7 +100,35 @@ class Controller extends CController
 		foreach ($productcates as $key => $value) {
 			$items[] =array(
 				'label'=>$value['title'], 
-				'url'=>array('product/pcate', 'pid'=>$vale['id']),
+				'url'=>array('product/pcate', 'pid'=>$value['id']),
+			);
+		}
+		return $items;
+	}
+	/**
+	 * [getCate description]
+	 * @return [type] [description]
+	 */
+	public function getCate()
+	{
+		$cate = Yii::app()->db->createCommand()
+				    ->select('sid,sortname')
+				    ->from('{{cate}}')
+				    ->order('taxis,sid')
+				    ->queryAll();
+		return $cate;
+	}
+	/**
+	 * [cateMenu description]
+	 * @return [type] [description]
+	 */
+	public function cateMenu()
+	{
+		$cates = $this->getCate();
+		foreach ($cates as $key => $cate) {
+			$items[] =array(
+				'label'=>$cate['sortname'], 
+				'url'=>array('article/cate', 'sid'=>$cate['sid']),
 			);
 		}
 		return $items;

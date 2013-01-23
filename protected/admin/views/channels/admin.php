@@ -18,7 +18,8 @@ $this->widget('bootstrap.TbGridView', array(
         array('name'=>'id', 'header'=>'#'),
         array('name'=>'title', 'header'=>'频道名称'),
         array('name'=>'ishidden', 'header'=>'是否隐藏','type'=>'boolean'),
-        array('name'=>'channeltype', 'header'=>'类型'),
+        //array('name'=>'channeltype', 'header'=>'类型'),
+        array('name'=>'link', 'header'=>'链接URL'),
         array(
             'class'=>'bootstrap.TbButtonColumn',
             'template'=>'{add}{view}{update}{delete}',
