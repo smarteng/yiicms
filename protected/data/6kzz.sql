@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 01 月 15 日 18:23
+-- 生成日期: 2013 年 01 月 24 日 18:21
 -- 服务器版本: 5.0.51
 -- PHP 版本: 5.3.20
 
@@ -174,16 +174,14 @@ CREATE TABLE IF NOT EXISTS `zzdb_channels` (
 --
 
 INSERT INTO `zzdb_channels` (`id`, `pid`, `channeltype`, `systemtype`, `ordernum`, `ishidden`, `positions`, `alias`, `title`, `content`, `seotitle`, `metakeywords`, `metadesc`, `link`, `target`, `langid`) VALUES
-(1, 0, 3, 1, 3, 0, '|1|2|', '', '产品展示', ' ', '', '', '', '', 0, 1),
-(2, 0, 1, 2, 4, 0, '|1|2|', '', '联系我们', ' ', '', '', '', '', 0, 1),
-(3, 0, 5, 3, 6, 1, '|1|2|', '', '客户留言', ' ', '', '', '', '', 0, 1),
-(4, 0, 4, 0, 1, 1, '|1|', '', '网站首页', '', '', '', '', 'aasdfas.php', 1, 1),
-(5, 0, 2, 0, 2, 0, '|1|2|', '', '公司动态', '', '', '', '', '', 0, 1),
+(1, 0, 1, 1, 3, 0, '', '', '产品展示', ' ', '', '', '', '#', 0, 1),
+(2, 0, 1, 2, 4, 0, '', '', '联系我们', ' ', '', '', '', '/contact/index', 0, 1),
+(3, 0, 1, 3, 6, 0, '', '', '客户留言', ' ', '', '', '', 'msg', 0, 1),
+(4, 0, 4, 0, 1, 1, '', '', '网站首页', '', '', '', '', 'site/index', 1, 1),
+(5, 0, 2, 4, 2, 0, '|1|2|', '', '公司动态', '', '', '', '', '', 0, 1),
 (6, 0, 1, 0, 5, 0, '|1|2|', '', '关于我们', '<span style="font-weight: bold;"><img src="attachment.php?id=1"><br>“6KZZ快站”</span>是一个基于PHP + MySQL的开源企业快速建站程序。<br><br>“6KZZ快站”一改过去传统的企业建站方式，不需企业编写任何程序或网页，只需要登陆管理后台，即可任意编辑网站的栏目、内容，以及进行网站样式的管理，短时间内即可生成企业个性化的精美网站。<br><br><span style="font-weight: bold; color: rgb(255, 102, 102);">选择“6KZZ快站”的理由：</span><br><span style="font-weight: bold;">一、大方美观的模板</span><br>6KZZ快站有优秀的美工团队的支持，提供众多大方美观的模板下载。您也可以定制自己喜欢的模板。<br><br><span style="font-weight: bold;">二、多国语言支持</span><br>您可以通过后台启用网站的多语言功能，让您的企业形象全球化，让来自不同国家的访客都能够方便的了解您的企业。<br><br><span style="font-weight: bold;">三、极快的访问速度</span><br>6KZZ快站程序采用PHP+MySQL架构，并采用缓存机制、Gzip压缩等等，使程序的执行效果更高、速度极快。<br><br><span style="font-weight: bold;">四、强大的负载能力</span><br>6KZZ快站采用数据缓存、最少化数据库查询的设计，使得程序在繁忙的服务器环境下仍然快速稳定运行。<br><br><span style="font-weight: bold;">五、简洁的程序代码</span><br>6KZZ快站一直保持着代码简洁的优点。代码简洁易读，容易进行二次开发、定制属于自己的功能。<br><br><span style="font-weight: bold;">六、实用、完善的功能</span><br>不仅追求简洁的代码，也追求实用完善的功能。企业网站需要的新闻模块、产品模块、页面模块、留言模块等，应有尽有。<br><br>', '', '', '', '', 0, 1),
 (7, 6, 1, 0, 7, 0, '', '', '公司文化', '请在这里添加公司文化的内容。<br><br><span style="font-weight: bold;">如何自行安装“6KZZ快站”？</span><br><br>1、“6KZZ快站”是基于PHP+MySQL开发的，所以您必须先拥有一个支持PHP+MySQL的主机。（推荐使用高度兼容“6KZZ快站”的国外免备案PHP+MySQL主机）<br><br>2、从www.6kzz.com下载最新版本的“6KZZ快站”程序。解压后上传到您的主机。<br><br>3、访问上传好的“6KZZ快站”程序，系统自动引导到安装界面。根据界面提示，配置并填写完整数据库参数。（数据库用户名、密码、表名等，在购买主机的时候会提供）<br><br>4、按照安装步骤进行，即可成功安装“6KZZ快站”。<br><br>5、进入系统后台管理。修改站点名称、LOGO、栏目、内容等；也可以进行模板管理，打造一个个性化的企业网站。<br><br>', '', '', '', '', 0, 1),
-(8, 6, 1, 0, 8, 0, '', '', '公司理念', '<span style="font-weight: bold;">如何下载使用免费模板？</span><br><br>1、从www.6kzz.com浏览并下载适合您网站的免费模板（例如 blue.rar）。<br><br>2、解压下载到的压缩包，把解压出来的文件夹（例如 blue）上传到6KZZ快站的template目录中。（目录结构：6kzz快站程序目录/template/blue/*.*）<br><br>3、登陆系统后台，选择您要修改的语言环境。然后进入“网站管理”-&gt;“网站模板”，在模板列表中可以看到刚才上传的blue模板，选择“启用模板”，并选择相应语言的语言包，点击“提交”即可以。（模板语言包是由开发模板的作者提供，一般情况下在下载的模板包中已经带有语言包。）<br><br>4、新模板可能需要您更换网站的LOGO、Banner广告，以搭配模板的风格。（LOGO、Banner广告的素材，在下载的模板包中一般都带有。该步骤可以跳过，不过会影响模板的效果。）<br><br>5、访问网站，则可以浏览新模板的效果。请注意网站的语言环境，“6KZZ快站”支持在不同语言环境下使用不同的模板。<br><br><br>', '', '', '', '', 0, 1),
-(12, 0, 1, 0, 12, 0, '|2|', '', 'asdfasdf', '', '', '', '', '', 0, 1),
-(11, 0, 4, 0, 11, 0, '', '', '哇哈哈', '', '', '', '', 'indexc.php', 0, 1);
+(8, 6, 1, 0, 8, 0, '', '', '公司理念', '<span style="font-weight: bold;">如何下载使用免费模板？</span><br><br>1、从www.6kzz.com浏览并下载适合您网站的免费模板（例如 blue.rar）。<br><br>2、解压下载到的压缩包，把解压出来的文件夹（例如 blue）上传到6KZZ快站的template目录中。（目录结构：6kzz快站程序目录/template/blue/*.*）<br><br>3、登陆系统后台，选择您要修改的语言环境。然后进入“网站管理”-&gt;“网站模板”，在模板列表中可以看到刚才上传的blue模板，选择“启用模板”，并选择相应语言的语言包，点击“提交”即可以。（模板语言包是由开发模板的作者提供，一般情况下在下载的模板包中已经带有语言包。）<br><br>4、新模板可能需要您更换网站的LOGO、Banner广告，以搭配模板的风格。（LOGO、Banner广告的素材，在下载的模板包中一般都带有。该步骤可以跳过，不过会影响模板的效果。）<br><br>5、访问网站，则可以浏览新模板的效果。请注意网站的语言环境，“6KZZ快站”支持在不同语言环境下使用不同的模板。<br><br><br>', '', '', '', '', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -283,10 +281,10 @@ CREATE TABLE IF NOT EXISTS `zzdb_goodshops` (
 --
 
 INSERT INTO `zzdb_goodshops` (`id`, `name`, `logo`, `tags`, `nick`, `url`, `description`, `share_count`, `created`, `updated`) VALUES
-(1, '膜膜皇后', '阿萨德法师法', '阿萨德了附件拉丝机地方了是', '膜膜皇后', '阿萨德发生大幅', '阿斯蒂芬阿斯蒂芬阿斯蒂芬', 275, '2013-01-10 00:00:00', '2013-01-10 00:00:00'),
-(2, '膜膜皇后', '阿萨德法师法', '阿萨德了附件拉丝机地方了是', '膜膜皇后', '阿萨德发生大幅', '阿斯蒂芬阿斯蒂芬阿斯蒂芬', 25698, '2013-01-10 00:00:00', '2013-01-10 00:00:00'),
-(3, '膜膜皇后', '阿萨德法师法', '阿萨德了附件拉丝机地方了是', '膜膜皇后', '阿萨德发生大幅', '阿斯蒂芬阿斯蒂芬阿斯蒂芬', 23828, '2013-01-10 00:00:00', '2013-01-10 00:00:00'),
-(4, '膜膜皇后', '阿萨德法师法', '阿萨德了附件拉丝机地方了是', '膜膜皇后', '阿萨德发生大幅', '阿斯蒂芬阿斯蒂芬阿斯蒂芬', 222, '2013-01-10 00:00:00', '2013-01-10 00:00:00');
+(1, '膜膜皇后', '', '阿萨德了附件拉丝机地方了是', '膜膜皇后', '阿萨德发生大幅', '阿斯蒂芬阿斯蒂芬阿斯蒂芬', 275, '2013-01-10 00:00:00', '2013-01-10 00:00:00'),
+(2, '膜膜皇后', '', '阿萨德了附件拉丝机地方了是', '膜膜皇后', '阿萨德发生大幅', '阿斯蒂芬阿斯蒂芬阿斯蒂芬', 25698, '2013-01-10 00:00:00', '2013-01-10 00:00:00'),
+(3, '膜膜皇后', '', '阿萨德了附件拉丝机地方了是', '膜膜皇后', '阿萨德发生大幅', '阿斯蒂芬阿斯蒂芬阿斯蒂芬', 23828, '2013-01-10 00:00:00', '2013-01-10 00:00:00'),
+(4, '膜膜皇后', '', '阿萨德了附件拉丝机地方了是', '膜膜皇后', '阿萨德发生大幅', '阿斯蒂芬阿斯蒂芬阿斯蒂芬', 222, '2013-01-10 00:00:00', '2013-01-10 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -325,11 +323,20 @@ CREATE TABLE IF NOT EXISTS `zzdb_links` (
   `content` varchar(255) NOT NULL default '',
   `logo` varchar(255) NOT NULL default '',
   `ordernum` int(10) unsigned NOT NULL default '0',
+  `created` int(10) unsigned NOT NULL,
+  `updated` int(10) unsigned NOT NULL,
   `langid` int(10) unsigned NOT NULL default '0',
   PRIMARY KEY  (`id`),
   KEY `ordernum` (`ordernum`),
   KEY `langid` (`langid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `zzdb_links`
+--
+
+INSERT INTO `zzdb_links` (`id`, `name`, `url`, `content`, `logo`, `ordernum`, `created`, `updated`, `langid`) VALUES
+(1, '漠漠欢好过', 'http://www.yiicms.com/admin.php/links/create', 'http://www.yiicms.com/admin.php/links/create', '', 0, 0, 1359010437, 0);
 
 -- --------------------------------------------------------
 
@@ -547,6 +554,7 @@ INSERT INTO `zzdb_procates` (`id`, `pid`, `ordernum`, `ishidden`, `alias`, `titl
 
 CREATE TABLE IF NOT EXISTS `zzdb_products` (
   `id` int(10) unsigned NOT NULL auto_increment,
+  `pid` int(10) unsigned NOT NULL COMMENT '产品主分类',
   `cid` int(10) unsigned NOT NULL default '0',
   `type` tinyint(3) unsigned NOT NULL default '0',
   `hits` int(10) unsigned NOT NULL default '0',
@@ -559,6 +567,7 @@ CREATE TABLE IF NOT EXISTS `zzdb_products` (
   `metadesc` varchar(255) NOT NULL default '',
   `content` mediumtext NOT NULL,
   `picids` varchar(100) NOT NULL default '',
+  `thumbnail` varchar(100) NOT NULL,
   `picpaths` varchar(255) NOT NULL default '',
   `price1` float NOT NULL default '0',
   `price2` float NOT NULL default '0',
@@ -573,19 +582,29 @@ CREATE TABLE IF NOT EXISTS `zzdb_products` (
   KEY `posttime` (`posttime`),
   KEY `langid` (`langid`),
   KEY `ordernum` (`ordernum`),
-  KEY `serialnum` (`serialnum`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=16 ;
+  KEY `serialnum` (`serialnum`),
+  KEY `pid` (`pid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=25 ;
 
 --
 -- 转存表中的数据 `zzdb_products`
 --
 
-INSERT INTO `zzdb_products` (`id`, `cid`, `type`, `hits`, `posttime`, `alias`, `name`, `serialnum`, `seotitle`, `metakeywords`, `metadesc`, `content`, `picids`, `picpaths`, `price1`, `price2`, `store`, `sold`, `level`, `ordernum`, `langid`) VALUES
-(11, 1, 0, 13, 1301045990, '', '惠普Compaq CQ326 13.3英寸笔记本电脑', 'Z1301045990', '', '', '', '<ul id="i-detail"><li title="惠普CQ326">商品名称：惠普CQ326</li><li>商品产地：中国大陆</li><li>商品毛重：2.66</li><li>上架时间：2010-7-6 19:47:03</li></ul>', '10	0	0	0	0', '201103/1_1301039854_7811.jpg				', 3999.99, 0, 100, 10, 3, 100, 1),
-(12, 4, 1, 5, 1301409672, '', '华硕N82EI48JV-SL 14.0英寸笔记本电脑', 'Z1301409672', '', '', '', '<ul id="i-detail"><li title="华硕N82EI48JV-SL">商品名称：华硕N82EI48JV-SL</li><li>商品产地：中国大陆</li><li>商品毛重：3.72</li><li>上架时间：2011-2-23 16:46:49</li></ul>', '9	0	0	0	0', '201103/1_1301039854_5954.jpg				', 4300, 0, 100, 10, 3, 100, 1),
-(13, 4, 0, 10, 1301045971, '', '华硕A40EI46JP-SL 14.0 英寸笔记本电脑', 'Z1301045971', '', '', '', '<ul id="i-detail"><li title="华硕A40EI46JP-SL">商品名称：华硕A40EI46JP-SL</li><li>商品产地：中国大陆</li><li>商品毛重：3.64</li><li>上架时间：2011-1-5 10:17:22</li></ul>', '8	0	0	0	0', '201103/1_1301039854_1215.jpg				', 3999.99, 0, 100, 10, 3, 100, 1),
-(14, 3, 2, 28, 1301409665, '', '宏碁（acer）AS4738G-482G32Mnkk ', 'Z1301409665', '', '', '', '<ul id="i-detail"><li title="宏碁AS4738G-482G32Mnkk">商品名称：宏碁AS4738G-482G32Mnkk</li><li>商品产地：中国大陆</li><li>商品毛重：3.6</li><li>上架时间：2011-1-13 10:32:03</li></ul>', '7	0	0	0	0', '201103/1_1301039854_6058.jpg				', 4400, 0, 100, 10, 3, 100, 1),
-(15, 2, 1, 254, 1303355488, '', '戴尔（DELL）Inspiron 14V 14英寸笔记本电脑', 'Z1301811114', '', '', '', '<ul id="i-detail"><li title="戴尔Inspiron 14V">商品名称：戴尔Inspiron 14V</li>\r\n<li>商品产地：中国大陆</li>\r\n<li>商品毛重：2.44</li>\r\n<li>上架时间：2010-12-9 10:18:24</li>\r\n</ul>\r\n<br />', '6	25	26	27	28', '201103/1_1301039854_5610.jpg	201103/1_1301045310_2119.jpg	201103/1_1301045310_9094.jpg	201103/1_1301045310_6742.jpg	201103/1_1301045310_8388.jpg', 4200, 0, 1000, 100, 4, 99, 1);
+INSERT INTO `zzdb_products` (`id`, `pid`, `cid`, `type`, `hits`, `posttime`, `alias`, `name`, `serialnum`, `seotitle`, `metakeywords`, `metadesc`, `content`, `picids`, `thumbnail`, `picpaths`, `price1`, `price2`, `store`, `sold`, `level`, `ordernum`, `langid`) VALUES
+(16, 0, 12, 0, 2, 1358910062, '', 'asdfasdf', '2222', 'asdfasdf', 'asdfasdf', 'asdfasf', 'asfasdfsafd', '0	0	0	0	0', '', '				', 222, 0, 22, 22, 3, 100, 1),
+(11, 0, 1, 0, 14, 1301045990, '', '惠普Compaq CQ326 13.3英寸笔记本电脑', 'Z1301045990', '', '', '', '<ul id="i-detail"><li title="惠普CQ326">商品名称：惠普CQ326</li><li>商品产地：中国大陆</li><li>商品毛重：2.66</li><li>上架时间：2010-7-6 19:47:03</li></ul>', '10	0	0	0	0', '', '201103/1_1301039854_7811.jpg				', 3999.99, 0, 100, 10, 3, 100, 1),
+(12, 0, 4, 1, 5, 1301409672, '', '华硕N82EI48JV-SL 14.0英寸笔记本电脑', 'Z1301409672', '', '', '', '<ul id="i-detail"><li title="华硕N82EI48JV-SL">商品名称：华硕N82EI48JV-SL</li><li>商品产地：中国大陆</li><li>商品毛重：3.72</li><li>上架时间：2011-2-23 16:46:49</li></ul>', '9	0	0	0	0', '', '201103/1_1301039854_5954.jpg				', 4300, 0, 100, 10, 3, 100, 1),
+(13, 0, 4, 0, 10, 1301045971, '', '华硕A40EI46JP-SL 14.0 英寸笔记本电脑', 'Z1301045971', '', '', '', '<ul id="i-detail"><li title="华硕A40EI46JP-SL">商品名称：华硕A40EI46JP-SL</li><li>商品产地：中国大陆</li><li>商品毛重：3.64</li><li>上架时间：2011-1-5 10:17:22</li></ul>', '8	0	0	0	0', '', '201103/1_1301039854_1215.jpg				', 3999.99, 0, 100, 10, 3, 100, 1),
+(14, 0, 3, 2, 29, 1301409665, '', '宏碁（acer）AS4738G-482G32Mnkk ', 'Z1301409665', '', '', '', '<ul id="i-detail"><li title="宏碁AS4738G-482G32Mnkk">商品名称：宏碁AS4738G-482G32Mnkk</li><li>商品产地：中国大陆</li><li>商品毛重：3.6</li><li>上架时间：2011-1-13 10:32:03</li></ul>', '7	0	0	0	0', '', '201103/1_1301039854_6058.jpg				', 4400, 0, 100, 10, 3, 100, 1),
+(15, 0, 2, 1, 257, 1303355488, '', '戴尔（DELL）Inspiron 14V 14英寸笔记本电脑', 'Z1301811114', '', '', '', '<ul id="i-detail"><li title="戴尔Inspiron 14V">商品名称：戴尔Inspiron 14V</li>\r\n<li>商品产地：中国大陆</li>\r\n<li>商品毛重：2.44</li>\r\n<li>上架时间：2010-12-9 10:18:24</li>\r\n</ul>\r\n<br />', '6	25	26	27	28', '', '201103/1_1301039854_5610.jpg	201103/1_1301045310_2119.jpg	201103/1_1301045310_9094.jpg	201103/1_1301045310_6742.jpg	201103/1_1301045310_8388.jpg', 4200, 0, 1000, 100, 4, 99, 1),
+(17, 1, 12, 1, 0, 1358999873, '', '啊啊是的假发斯蒂芬', '111', '阿萨德发生大幅', '阿萨德发生大幅', '阿斯蒂芬阿斯蒂芬阿斯蒂芬', '<p>阿斯蒂芬阿斯蒂芬阿斯蒂芬</p><p>阿斯蒂芬阿斯蒂芬阿斯蒂芬</p><p>阿斯蒂芬阿斯蒂芬阿斯蒂芬</p><p><br /></p>', '12345', '', '', 0, 0, 100, 10, 3, 0, 0),
+(18, 1, 12, 1, 0, 1358999903, '', '啊啊是的假发斯蒂芬', '111', '阿萨德发生大幅', '阿萨德发生大幅', '阿斯蒂芬阿斯蒂芬阿斯蒂芬', '<p>阿斯蒂芬阿斯蒂芬阿斯蒂芬</p><p>阿斯蒂芬阿斯蒂芬阿斯蒂芬</p><p>阿斯蒂芬阿斯蒂芬阿斯蒂芬</p><p><br /></p>', '12345', '', '', 0, 0, 100, 10, 3, 0, 0),
+(19, 1, 12, 1, 0, 1358999964, '', '啊啊是的假发斯蒂芬', '111', '阿萨德发生大幅', '阿萨德发生大幅', '阿斯蒂芬阿斯蒂芬阿斯蒂芬', '<p>阿斯蒂芬阿斯蒂芬阿斯蒂芬</p><p>阿斯蒂芬阿斯蒂芬阿斯蒂芬</p><p>阿斯蒂芬阿斯蒂芬阿斯蒂芬</p><p><br /></p>', '12345', '', '', 0, 0, 100, 10, 3, 0, 0),
+(20, 1, 12, 1, 0, 1358999994, '', '啊啊是的假发斯蒂芬', '111', '阿萨德发生大幅', '阿萨德发生大幅', '阿斯蒂芬阿斯蒂芬阿斯蒂芬', '<p>阿斯蒂芬阿斯蒂芬阿斯蒂芬</p><p>阿斯蒂芬阿斯蒂芬阿斯蒂芬</p><p>阿斯蒂芬阿斯蒂芬阿斯蒂芬</p><p><br /></p>', '12345', '', '/uploads/slideshow/5100b1ba86d5a.jpg,/uploads/slideshow/5100b1ba874e5.jpg', 0, 0, 100, 10, 3, 0, 0),
+(21, 1, 12, 1, 0, 1359004594, '', '暗示的发生地方阿斯蒂芬阿斯蒂芬撒地方', '235', '阿萨德发是否', '暗示的发生', '阿斯蒂芬阿斯蒂芬阿斯蒂芬', '<p>阿斯蒂芬阿斯蒂芬艾丝凡的</p><p>阿斯蒂芬阿斯蒂芬</p><p>阿斯蒂芬阿斯蒂芬</p><p>啊撒地方地方</p><p><br /></p>', '1254', '', '/uploads/products/5100c3b2a9f7a.jpg,/uploads/products/5100c3b2aa6d8.jpg', 0, 0, 100, 10, 3, 0, 0),
+(22, 2, 21, 1, 0, 1359005115, '', '阿萨德发生大幅', '阿斯蒂芬阿斯蒂芬', '阿斯蒂芬', '阿道夫', 'f 阿斯蒂芬', 'asd阿斯蒂芬阿斯蒂芬阿斯蒂芬', '3555', '', '/uploads/products/5100c5bb6d728.jpg', 0, 0, 100, 10, 3, 0, 0),
+(23, 2, 21, 1, 0, 1359022425, '', '阿萨德发生大幅', '11222', '阿斯蒂芬阿斯蒂芬', '阿斯蒂芬阿斯蒂芬', '阿斯蒂芬阿斯蒂芬', '<p>阿斯蒂芬阿斯蒂芬撒地方</p><p>阿斯蒂芬asd飞asdf&nbsp;</p><p>阿斯蒂芬艾丝凡</p><p>阿斯蒂芬阿斯蒂芬</p><p><br /></p>', '222', '/uploads/products/thum/51010959739e6_thum.jpg', '/uploads/products/510109595b8f3.jpg', 0, 0, 100, 10, 3, 0, 0),
+(24, 1, 12, 1, 0, 1359022686, '', '阿斯蒂芬阿斯蒂芬', '', '', '', '阿斯蒂芬', '阿斯蒂芬阿斯蒂芬撒地方', '2222', '/uploads/products/thum/51010a5e3994c_thum.jpg', '/uploads/products/51010a5e3905d.jpg,/uploads/products/51010a5e53c22.jpg,/uploads/products/51010a5e5454d.jpg', 0, 0, 100, 10, 3, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -784,19 +803,18 @@ CREATE TABLE IF NOT EXISTS `zzdb_slideshow` (
   `sortnum` int(11) NOT NULL default '0',
   `created` int(11) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- 转存表中的数据 `zzdb_slideshow`
 --
 
 INSERT INTO `zzdb_slideshow` (`id`, `title`, `url`, `image`, `token`, `sortnum`, `created`) VALUES
-(1, '阿芙的诞生', 'http://www.yiicms.com', '/uploads/slideshow/50f503afae19f.jpg', 1, 0, 1358234543),
-(2, '阿芙荷荷巴系列', 'http://www.yiicms.com', '/uploads/slideshow/50f503c5099e1.jpg', 1, 0, 1358234565),
-(3, '阿芙刘野限定版', 'http://www.yiicms.com', '/uploads/slideshow/50f503e0b62b1.jpg', 1, 0, 1358234592),
-(4, '阿芙人参系列', 'http://www.yiicms.com', '/uploads/slideshow/50f503f554262.jpg', 1, 0, 1358234613),
-(5, '阿芙玫瑰系列', 'http://www.yiicms.com', '/uploads/slideshow/50f50407b82b9.jpg', 1, 0, 1358234631),
-(6, '阿斯蒂芬', 'http://www.yiicms.com', '/uploads/slideshow/50f50995a8e0e.jpg', 2, 0, 1358236053);
+(1, '阿芙的诞生', 'http://www.yiicms.com', '/uploads/slideshow/50f5fd1c9338f.jpg', 1, 0, 1358298396),
+(2, '阿芙荷荷巴系列', 'http://www.yiicms.com/', '/uploads/slideshow/50f5fd506ae44.jpg', 1, 0, 1358298448),
+(3, '阿芙刘野限定版', 'http://www.yiicms.com', '/uploads/slideshow/50f60ce952b04.jpg', 1, 0, 1358298463),
+(4, '阿芙人参系列', 'http://www.yiicms.com', '/uploads/slideshow/50f5fd7163c8c.jpg', 1, 0, 1358298481),
+(5, '阿芙玫瑰系列', 'http://www.yiicms.com', '/uploads/slideshow/50f5fd821c1bb.jpg', 1, 0, 1358298498);
 
 -- --------------------------------------------------------
 
@@ -849,7 +867,7 @@ CREATE TABLE IF NOT EXISTS `zzdb_users` (
 
 INSERT INTO `zzdb_users` (`id`, `username`, `userpass`, `email`, `realname`, `phone`, `lastip`, `addtime`, `lasttime`, `popedom`, `ishidden`) VALUES
 (1, 'zym', '10027794a5c77b28984e5ce110cef597', 'zymzeng@qq.com', '曾勇民', '13538288822', '127.0.0.1', 1298332800, 1301034299, '|channel|page|article|procate|products|order|member|main|lang|template|link|msg|vote|user|database|', 1),
-(2, 'admin', '362864ed70a8b0c71d144b7a556f1797', 'smarteng@qq.com', '', '', '127.0.0.1', 1346203000, 1358237624, '|channel|page|article|procate|products|order|member|main|lang|template|link|msg|vote|user|database|', 0);
+(2, 'admin', '362864ed70a8b0c71d144b7a556f1797', 'smarteng@qq.com', '', '', '127.0.0.1', 1346203000, 1359004633, '|channel|page|article|procate|products|order|member|main|lang|template|link|msg|vote|user|database|', 0);
 
 -- --------------------------------------------------------
 

@@ -73,11 +73,18 @@ class ProductController extends Controller
 			if($model->save()){
 				$images = CUploadedFile::getInstancesByName('picpaths');
 				if (isset($images) && count($images) > 0) {
-					
-                	foreach ($images as $image => $pic) {
+                	foreach ($images as $key => $pic) {
                 		$filename = uniqid().".".$pic->getExtensionName();
 						$full_filename = $this->getUploadDir("products").$filename;
 						if ($pic->saveAs($full_filename)){
+							if ($key ==0) {
+	                			$thumbnail = uniqid()."_thum.".$pic->getExtensionName();
+			                	$full_thumname = $this->getUploadDir("products/thum").$thumbnail;
+			                	$thum = CDFileLocal::resizeimage($full_filename,$full_thumname,170,195);
+			                	if ($thum) {
+			                		$model->thumbnail = $this->getUploadBase("products/thum").$thumbnail;
+			                	}
+	                		}
 							$picpath[] = $this->getUploadBase("products").$filename;
 						}
                 	}

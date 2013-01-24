@@ -82,7 +82,64 @@ class CDFileLocal extends CComponent
             return $data;
         }
     }
-    
+    /**
+    * $filename: 源图片
+    * $targetfile: 保存图片位置
+    * $maxwidth: 保存图片宽
+    * $maxheight:   保存图片高
+    * demo:        resizeimage('./1.jpg', './2.jpg', 500, 250);
+    */
+   public static function resizeimage($filename, $targetfile , $maxwidth, $maxheight){
+        $size = getimagesize($filename);
+        switch($size[2]){ 
+            case 1: 
+            $im = @imagecreatefromgif($filename); 
+            break; 
+            case 2: 
+            $im = @imagecreatefromjpeg($filename); 
+            break; 
+            case 3: 
+            $im = @imagecreatefrompng($filename); 
+            break; 
+        }
+        $width   = imagesx($im);
+        $height = imagesy($im);
+        if(($maxwidth && $width > $maxwidth) && ($maxheight && $height > $maxheight)){
+            if($maxwidth && $width > $maxwidth){
+                $widthratio = $maxwidth/$width;
+                $resizewidth = true;
+            }
+            if($maxheight && $height > $maxheight){
+                $heightratio = $maxheight/$height;
+                $resizeheight = true;
+            }
+            if($resizewidth && $resizeheight){
+                if($widthratio < $heightratio){
+                    $ratio = $widthratio;
+                }else{
+                    $ratio = $heightratio;
+                }
+            }elseif($resizewidth){
+                $ratio = $widthratio;
+            }elseif($resizeheight){
+                $ratio = $heightratio;
+            }
+            $newwidth = $width * $ratio;
+            $newheight = $height * $ratio;
+            if(function_exists("imagecopyresampled")){
+                $newim = imagecreatetruecolor($newwidth, $newheight);
+                imagecopyresampled($newim, $im, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+            }else{
+                $newim = imagecreate($newwidth, $newheight);
+                imagecopyresized($newim, $im, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+            }
+            imagejpeg($newim, $targetfile ? $targetfile : $filename);
+            imagedestroy($newim);
+            return true;
+        }else{
+            return false;
+        }
+    }
     
 }
 

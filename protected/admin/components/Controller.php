@@ -34,12 +34,16 @@ class Controller extends CController
 	 * @param  [type] $path [description]
 	 * @return [type]       [description]
 	 */
-	public function getUploadDir( $path )
+	public function getUploadDir($path)
 	{
-		$base = Yii::app( )->basePath.DS."..".DS."uploads".DS.$path.DS;
-		if (!file_exists( $base ))
-		{
-			FileHelper::mkdirs( $base );
+		$base = Yii::app( )->basePath.DS."..".DS."uploads".DS;
+		$paths = explode('/', trim($path,'/'));
+		foreach ($paths as $key => $pa) {
+			$base .= $pa.DS;
+			if (!file_exists( $base ))
+			{
+				FileHelper::mkdirs( $base );
+			}
 		}
 		return $base;
 	}
