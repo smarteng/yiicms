@@ -22,12 +22,28 @@
     'brand'=>'后台管理',
     'brandUrl'=>'#',
     'fixed' => '',
+
     'collapse'=>true, // requires bootstrap-responsive.css
     'items'=>array(
         array(
             'class'=>'bootstrap.TbMenu',
             'id'=>'navbar_top',
+            'firstItemCssClass'=>'active',
             'items'=>$this->channels,
+        ),
+        array(
+            'class'=>'bootstrap.TbMenu',
+            'htmlOptions'=>array('class'=>'pull-right'),
+            'items'=>array(
+                array('label'=>'后台首页', 'url'=>array('site/welcome'),'linkOptions'=>array('target'=>'main')),
+                array('label'=>'网站首页', 'url'=>'/','linkOptions'=>array('target'=>'_blank')),
+                array('label'=>'admin', 'url'=>'#', 'items'=>array(
+                    array('label'=>'编辑资料', 'url'=>array('site/welcome'),'linkOptions'=>array('target'=>'main')),
+                    array('label'=>'修改密码', 'url'=>array('site/welcome'),'linkOptions'=>array('target'=>'main')),
+                    '---',
+                    array('label'=>'退出登录', 'url'=>'#'),
+                )),
+              ),
         ),
     ),
 )); ?>
@@ -70,14 +86,6 @@
     <script src="/admin/js/bootstrap.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        //init change display
-        //$('#collapse0').addClass('in');
-        //$('var').first().removeClass('icon-chevron-right').addClass('icon-chevron-down');
-        /*
-        $('body').tooltip({
-            selector: '[rel=tooltip]'
-        });
-        */
         //sidebar icon
         $('.accordion-toggle').live('click',function(){
             if( $(this).hasClass('collapsed') ){

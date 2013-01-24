@@ -32,6 +32,7 @@ class Products extends CActiveRecord
 	const TYPE_COMMON=0; 
 	const TYPE_RECOMMEND=1;
 	const TYPE_HOT=2;
+	protected static $_pidOptions = NULL;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -86,7 +87,15 @@ class Products extends CActiveRecord
 	{
 		return '{{products}}';
 	}
-
+	/**
+	 * @return string the type text display for the current type
+	 */
+	public function getPidText() {
+		if (!isset(self::$_pidOptions)) {
+			self::$_pidOptions = Procates::model()->getPidOptions();
+		}
+	    return isset(self::$_pidOptions[$this->pid]) ? self::$_pidOptions[$this->pid] :"主分类";
+	}
 	/**
 	 * @return array validation rules for model attributes.
 	 */
@@ -185,6 +194,15 @@ class Products extends CActiveRecord
 		$criteria->compare('langid',$this->langid,true);
 
 		return new CActiveDataProvider($this, array(
+			'pagination'=>array(
+	            'pageSize'=>20,//设置每页显示20条
+	        ),
+	        
+	        'sort'=>array(
+	            'defaultOrder'=>'posttime DESC', //设置默认排序是create_time倒序
+	        ),
+	        
+			//'sort'=>false,
 			'criteria'=>$criteria,
 		));
 	}

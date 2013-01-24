@@ -1,5 +1,5 @@
 <?php
-
+header("Content-type: text/html; charset=utf-8"); 
 class SiteController extends Controller
 {
 	//top menu
@@ -8,43 +8,15 @@ class SiteController extends Controller
 	public $sidebarmenu = array();
 
 	/**
-	 * [init description]
-	 * @return [type] [description]
-	 */
-	public function init()
-	{
-		$channels = $this->getChannels();
-		$menus = array();
-		foreach ($channels as $channel) {
-			$menu['label'] = $channel['title'];
-			$menu['linkOptions'] = array('target'=>'main');
-			$menu['url'] = $this->getChnAdminLink($channel);
-			if ($channel['id'] == 4) {
-				$menu['active'] = true;
-			}else{
-				$menu['active'] = false;
-			}
-			if ($channel['pid'] != 0) {
-				$menus[$channel['pid']]['items'][] =$menu;
-			}else{
-				$menus[$channel['id']] =$menu;
-			}
-		}
-		$this->channels = $menus;
-		$this->sidebarmenu = include(Yii::app()->basePath.'/admin/config/sidebarmenu.php');
-		//print_r($this->sidebarmenu);
-		parent::init();
-	}
-	/**
 	 * [getChannels description]
 	 * @return [type] [description]
 	 */
 	public function getChannels()
 	{
 		$channels = Yii::app()->db->createCommand()
-				    ->select('id,title')
+				    ->select('id,pid,title')
 				    ->from('{{channels}}')
-				    ->order('ordernum,id')
+				    ->order('pid,ordernum,id')
 				    ->queryAll();
 		return $channels;
 	}
@@ -107,6 +79,22 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$channels = $this->getChannels();
+		$menus = array();
+		foreach ($channels as $channel) {
+			$menu['label'] = $channel['title'];
+			$menu['linkOptions'] = array('target'=>'main');
+			$menu['url'] = $this->getChnAdminLink($channel);
+			if ($channel['pid'] != 0) {
+				$menus[$channel['pid']]['items'][] =$menu;
+			}else{
+				$menus[$channel['id']] =$menu;
+			}
+		}
+		$this->channels = $menus;
+		//var_dump($this->channels);
+		//exit;
+		$this->sidebarmenu = include(Yii::app()->basePath.'/admin/config/sidebarmenu.php');
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->renderPartial('index');

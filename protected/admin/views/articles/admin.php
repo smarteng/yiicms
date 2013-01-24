@@ -1,6 +1,6 @@
 <?php $this->widget('bootstrap.TbBreadcrumbs',
     array('links'=>array('内容管理'=>'#','文章管理'),
-          'homeLink'=>CHtml::link('菜单',Yii::app()->homeUrl),
+          'homeLink'=>CHtml::link('菜单',array('site/welcome'),array('target'=>'main')),
           'htmlOptions'=>array('class'=>''),
           'separator'=>'/'));
 ?>

@@ -34,6 +34,7 @@ return array(
 				array('label'=>'栏目管理', 'icon'=>'plus-sign', 'url'=>$this->createUrl('channels/admin'),'linkOptions'=>array('target'=>'main'), 'active'=>false),
 		)
 	),
+	/*
 	array(
 		'name' => '订单管理',
 		'items' => array(
@@ -52,6 +53,7 @@ return array(
 				array('label'=>'会员管理', 'icon'=>'user', 'url'=>$this->createUrl('goods/index'),'linkOptions'=>array('target'=>'main'),'active'=>false),
 		)
 	),
+	*/
 	array(
 		'name' => '网站设置',
 		'items' => array(
@@ -66,7 +68,8 @@ return array(
 		'name' => '其他设置',
 		'items' => array(
 				array('label'=>'更新网站缓存', 'icon'=>'refresh', 'url'=>$this->createUrl('goods/index'),'linkOptions'=>array('target'=>'main'),'active'=>false),
-				array('label'=>'友情链接管理', 'icon'=>'random', 'url'=>$this->createUrl('goods/index'),'linkOptions'=>array('target'=>'main'),'active'=>false),
+				array('label'=>'添加友情链接', 'icon'=>'random', 'url'=>$this->createUrl('links/create'),'linkOptions'=>array('target'=>'main'),'active'=>false),
+				array('label'=>'友情链接管理', 'icon'=>'random', 'url'=>$this->createUrl('links/admin'),'linkOptions'=>array('target'=>'main'),'active'=>false),
 				array('label'=>'在线留言管理', 'icon'=>'comment', 'url'=>$this->createUrl('goods/index'),'linkOptions'=>array('target'=>'main'),'active'=>false),
 				array('label'=>'网站投票管理', 'icon'=>'wrench', 'url'=>$this->createUrl('goods/index'),'linkOptions'=>array('target'=>'main'),'active'=>false),
 				array('label'=>'邮箱设置', 'icon'=>'envelope', 'url'=>$this->createUrl('goods/index'),'linkOptions'=>array('target'=>'main'),'active'=>false),

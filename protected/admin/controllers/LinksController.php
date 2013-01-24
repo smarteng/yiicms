@@ -1,6 +1,6 @@
 <?php
 
-class ProductController extends Controller
+class LinksController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -62,29 +62,15 @@ class ProductController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Products;
+		$model=new Links;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Products']))
+		if(isset($_POST['Links']))
 		{
-			$model->attributes=$_POST['Products'];
-			if($model->save()){
-				$images = CUploadedFile::getInstancesByName('picpaths');
-				if (isset($images) && count($images) > 0) {
-					
-                	foreach ($images as $image => $pic) {
-                		$filename = uniqid().".".$pic->getExtensionName();
-						$full_filename = $this->getUploadDir("products").$filename;
-						if ($pic->saveAs($full_filename)){
-							$picpath[] = $this->getUploadBase("products").$filename;
-						}
-                	}
-                	$model->picpaths = implode(',', $picpath);
-                	$model->save();
-                }
-			}
+			$model->attributes=$_POST['Links'];
+			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
@@ -105,28 +91,10 @@ class ProductController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Products']))
+		if(isset($_POST['Links']))
 		{
-			$model->attributes=$_POST['Products'];
-			unset($model->picpaths);
-			if($model->save()){
-				$images = CUploadedFile::getInstancesByName('picpaths');
-				if (isset($images) && count($images) > 0) {
-					
-                	foreach ($images as $image => $pic) {
-                		$filename = uniqid().".".$pic->getExtensionName();
-						$full_filename = $this->getUploadDir("products").$filename;
-						if ($pic->saveAs($full_filename)){
-							$picpath[] = $this->getUploadBase("products").$filename;
-						}
-                	}
-                	$model->picpaths = implode(',', $picpath);
-                	$model->save();
-                }
-			}else{
-				var_dump($model->getErrors());
-				exit;
-			}
+			$model->attributes=$_POST['Links'];
+			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
@@ -154,7 +122,7 @@ class ProductController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Products');
+		$dataProvider=new CActiveDataProvider('Links');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -165,10 +133,10 @@ class ProductController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Products('search');
+		$model=new Links('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Products']))
-			$model->attributes=$_GET['Products'];
+		if(isset($_GET['Links']))
+			$model->attributes=$_GET['Links'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -179,12 +147,12 @@ class ProductController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Products the loaded model
+	 * @return Links the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Products::model()->findByPk($id);
+		$model=Links::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -192,11 +160,11 @@ class ProductController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Products $model the model to be validated
+	 * @param Links $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='products-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='links-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

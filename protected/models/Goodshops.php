@@ -27,7 +27,7 @@ class Goodshops extends CActiveRecord
 		return parent::model($className);
 	}
 	/**
-     * Prepares posttime  attributes before performing validation.
+     * Prepares created and updated  attributes before performing validation.
      */
     protected function beforeValidate() {
  

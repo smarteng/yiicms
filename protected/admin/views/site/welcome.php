@@ -4,7 +4,7 @@ $this->pageTitle=Yii::app()->name;
 ?>
 <?php $this->widget('bootstrap.TbBreadcrumbs',
 	array('links'=>array('后台首页'=>'#', '欢迎登陆Yiicms后台'),
-		  'homeLink'=>CHtml::link('菜单',Yii::app()->homeUrl),
+		  'homeLink'=>CHtml::link('菜单',array('site/welcome'),array('target'=>'main')),
 		  'htmlOptions'=>array('class'=>''),
 		  'separator'=>'/'));
 ?>
@@ -24,9 +24,10 @@ $this->pageTitle=Yii::app()->name;
     </div>
     <div id="collapseOne" class="accordion-body collapse in">
       <div class="accordion-inner">
-        <button class="btn btn-primary" type="button">发布文章</button>
-        <button class="btn btn-info" type="button">发布产品</button>
-        <button class="btn btn-warning" type="button">审核用户</button>
+        <a href="<?php echo $this->createUrl('articles/create'); ?>"><button class="btn btn-primary" type="button">发布文章</button></a>
+        <a href="<?php echo $this->createUrl('product/create'); ?>"><button class="btn btn-info" type="button">发布产品</button></a>
+        <a href="<?php echo $this->createUrl('product/create'); ?>"><button class="btn btn-success" type="button">发布产品</button></a>
+        <a href="<?php echo $this->createUrl('product/create'); ?>"><button class="btn btn-warning" type="button">发布产品</button></a>
       </div>
     </div>
   </div>

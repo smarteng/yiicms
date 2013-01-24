@@ -100,3 +100,13 @@ $this->widget('bootstrap.TbGridView', array(
   });
 </script>
 </div><!--/row-->
+<script type="text/javascript">
+    //init change display
+        //$('#collapse0').addClass('in');
+        //$('var').first().removeClass('icon-chevron-right').addClass('icon-chevron-down');
+        /*
+        $('body').tooltip({
+            selector: '[rel=tooltip]'
+        });
+        */
+</script>
