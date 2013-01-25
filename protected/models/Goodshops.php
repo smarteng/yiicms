@@ -115,7 +115,7 @@ class Goodshops extends CActiveRecord
 		$criteria->compare('share_count',$this->share_count);
 		$criteria->compare('created',$this->created,true);
 		$criteria->compare('updated',$this->updated,true);
-
+		$criteria->order='created desc';
 		return new CActiveDataProvider($this, array(
 			/*
 			'pagination'=>array(

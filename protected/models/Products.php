@@ -192,17 +192,17 @@ class Products extends CActiveRecord
 		$criteria->compare('level',$this->level);
 		$criteria->compare('ordernum',$this->ordernum,true);
 		$criteria->compare('langid',$this->langid,true);
-
+		$criteria->order='posttime desc';
 		return new CActiveDataProvider($this, array(
 			'pagination'=>array(
 	            'pageSize'=>20,//设置每页显示20条
 	        ),
-	        
+	        /*
 	        'sort'=>array(
 	            'defaultOrder'=>'posttime DESC', //设置默认排序是create_time倒序
 	        ),
-	        
-			//'sort'=>false,
+	        */
+			'sort'=>false,
 			'criteria'=>$criteria,
 		));
 	}

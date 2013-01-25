@@ -132,7 +132,7 @@ class Procates extends CActiveRecord
 		$criteria->compare('metakeywords',$this->metakeywords,true);
 		$criteria->compare('metadesc',$this->metadesc,true);
 		$criteria->compare('langid',$this->langid,true);
-
+		$criteria->order='ordernum desc';
 		return new CActiveDataProvider($this, array(
 			'pagination'=>array(
 	            'pageSize'=>20,//设置每页显示20条

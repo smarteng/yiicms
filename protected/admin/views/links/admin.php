@@ -10,13 +10,6 @@ $this->widget('bootstrap.TbBreadcrumbs',
 ?>
 
 <h4>友情链接管理</h4>
- 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
 <?php
 $this->widget('bootstrap.TbGridView', array(
     'type'=>'striped bordered condensed',//default striped bordered condensed

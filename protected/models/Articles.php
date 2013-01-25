@@ -134,7 +134,7 @@ class Articles extends CActiveRecord
 		$criteria->compare('metakeywords',$this->metakeywords,true);
 		$criteria->compare('metadesc',$this->metadesc,true);
 		$criteria->compare('langid',$this->langid,true);
-
+		$criteria->order='posttime desc';
 		return new CActiveDataProvider($this, array(
 			/*
 			'pagination'=>array(

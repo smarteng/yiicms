@@ -30,20 +30,15 @@ class Controller extends CController
 		parent::init();
 	}
 	/**
-	 * [getUploadDir 取得上传图片路径]
+	 * [getUploadDir 取得上传图片文件路径]
 	 * @param  [type] $path [description]
 	 * @return [type]       [description]
 	 */
 	public function getUploadDir($path)
 	{
-		$base = Yii::app( )->basePath.DS."..".DS."uploads".DS;
-		$paths = explode('/', trim($path,'/'));
-		foreach ($paths as $key => $pa) {
-			$base .= $pa.DS;
-			if (!file_exists( $base ))
-			{
-				FileHelper::mkdirs( $base );
-			}
+		$base = Yii::app()->basePath.DS."..".DS."uploads".DS.$path.DS;
+		if (!file_exists($base)){
+			mkdir($base,511,TRUE);
 		}
 		return $base;
 	}

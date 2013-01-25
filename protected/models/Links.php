@@ -30,7 +30,7 @@ class Links extends CActiveRecord
 	protected function beforeValidate() {
  
         if ($this->isNewRecord) {
-			$this->created = time();
+			$this->created = $this->updated = time();
         }else{
         	$this->updated = time();
         }
@@ -106,8 +106,17 @@ class Links extends CActiveRecord
 		$criteria->compare('logo',$this->logo,true);
 		$criteria->compare('ordernum',$this->ordernum,true);
 		$criteria->compare('langid',$this->langid,true);
-
+		$criteria->order='ordernum desc,updated desc';
 		return new CActiveDataProvider($this, array(
+			'pagination'=>array(
+	            'pageSize'=>20,//设置每页显示20条
+	        ),
+	        /*
+	        'sort'=>array(
+	            'defaultOrder'=>'create_time DESC', //设置默认排序是create_time倒序
+	        ),
+	        */
+			'sort'=>false,
 			'criteria'=>$criteria,
 		));
 	}
