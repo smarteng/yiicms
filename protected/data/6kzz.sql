@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 01 月 24 日 18:21
+-- 生成日期: 2013 年 02 月 05 日 13:45
 -- 服务器版本: 5.0.51
 -- PHP 版本: 5.3.20
 
@@ -19,6 +19,20 @@ SET time_zone = "+00:00";
 --
 -- 数据库: `6kzz`
 --
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zzdb_about`
+--
+
+CREATE TABLE IF NOT EXISTS `zzdb_about` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(50) NOT NULL,
+  `title` varchar(90) NOT NULL,
+  `content` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -62,10 +76,24 @@ INSERT INTO `zzdb_articles` (`id`, `channelid`, `type`, `cate`, `hits`, `posttim
 (9, 5, 0, 0, 1, 1303355136, 0, '', '', '如何下载并使用6KZZ快站免费模板？', '如何下载使用免费模板？<br />\r\n<br />\r\n1、从<a href="http://www.6kzz.com/" target="_blank">www.6kzz.com</a>浏览并下载适合您网站的免费模板（例如 blue.rar）。<br />\r\n<br />\r\n2、解压下载到的压缩包，把解压出来的文件夹（例如 blue）上传到6KZZ快站的template目录中。（目录结构：6kzz快站程序目录/template/blue/*.*）<br />\r\n<br />\r\n3、登陆系统后台，选择您要修改的语言环境。然后进入“网站管理”-&gt;“网站模板”，在模板列表中可以看到刚才上传的blue模板，选择“启用模\r\n板”，并选择相应语言的语言包，点击“提交”即可以。（模板语言包是由开发模板的作者提供，一般情况下在下载的模板包中已经带有语言包。）<br />\r\n<br />\r\n4、新模板可能需要您更换网站的LOGO、Banner广告，以搭配模板的风格。（LOGO、Banner广告的素材，在下载的模板包中一般都带有。该步骤可以跳过，不过会影响模板的效果。）<br />\r\n<br />\r\n5、访问网站，则可以浏览新模板的效果。请注意网站的语言环境，“6KZZ快站”支持在不同语言环境下使用不同的模板。', '', '', '6KZZ模板,6KZZ快站模板', '', 1),
 (10, 5, 0, 0, 0, 1303354846, 0, '', '', '我能够免费使用6KZZ快站程序吗？', '<strong>问：我没有获得授权，能够免费使用6KZZ快站程序吗？</strong><br />\r\n答：可以的。您可以免费使用6KZZ快站程序搭建自己的网站。<br />\r\n前提是您必须遵守License的规定：<a href="http://www.6kzz.com/zz/license.php" target="_blank">http://www.6kzz.com/zz/license.php</a><br />\r\n如果您需要进行以下其中一项或者多项的行为，则需要支付企业版授权费用：<br />\r\n1、修改6KZZ版权信息；<br />\r\n2、开通全功能版本；<br />\r\n3、使用6KZZ快站程序为其他企业搭建网站并从中获利。<br />\r\n<br />\r\n是否获得授权，可以通过6KZZ官网的“授权查询”进行查询：<a href="http://www.6kzz.com/zz/copyright.php" target="_blank">http://www.6kzz.com/zz/copyright.php</a>', '', '', '6KZZ授权', '', 1),
 (11, 5, 0, 0, 2, 1303355114, 0, '', '', '如何下载/安装6KZZ快站程序？', '1、“6KZZ快站”是基于PHP+MySQL开发的，所以您必须先拥有一个支持PHP+MySQL的主机。（<a href="http://www.6kzz.com/zz/service.php" target="_blank">推荐使用高度兼容“6KZZ快站”的国外免备案PHP+MySQL主机</a>）<br />\r\n<br />\r\n2、从<a href="http://www.6kzz.com/" target="_blank">www.6kzz.com</a>下载最新版本的“6KZZ快站”程序。解压后上传到您的主机。<br />\r\n<br />\r\n3、访问上传好的“6KZZ快站”程序，系统自动引导到安装界面。根据界面提示，配置并填写完整数据库参数。<br />\r\n（数据库用户名、密码、表名等，在购买主机的时候会提供）<br />\r\n<br />\r\n4、按照安装步骤进行，即可成功安装“6KZZ快站”。<br />\r\n<br />\r\n5、进入系统后台管理。修改站点名称、LOGO、栏目、内容等；也可以进行风格模板管理，打造一个个性化的企业网站。', '', '', '', '', 1),
-(12, 5, 0, 0, 1, 1303355040, 0, '', '', '“6KZZ快站”是什么程序？有什么优点？', '<a target="_blank" href="http://www.6kzz.com">“6KZZ快站”是一个基于PHP + MySQL的开源企业快速建站程序(企业网站源码)。</a><br />\r\n<br />\r\n“6KZZ快站”一改过去传统的企业建站方式，不需企业编写任何程序或网页，<br />\r\n只需要登陆管理后台，即可任意编辑网站的栏目、内容，以及进行网站样式的管理，短时间内即可生成企业个性化的精美网站。<br />\r\n<br />\r\n选择“6KZZ快站”的理由：<br />\r\n<strong>一、大方美观的模板</strong><br />\r\n6KZZ快站有优秀的美工团队的支持，提供众多大方美观的模板下载。您也可以定制自己喜欢的模板。<br />\r\n<br />\r\n<strong>二、多国语言支持</strong><br />\r\n您可以通过后台启用网站的多语言功能，让您的企业形象全球化，让来自不同国家的访客都能够方便的了解您的企业。<br />\r\n<br />\r\n<strong>三、极快的访问速度</strong><br />\r\n6KZZ快站程序采用PHP+MySQL架构，并采用缓存机制、Gzip压缩等等，使程序的执行效果更高、速度极快。<br />\r\n<br />\r\n<strong>四、强大的负载能力</strong><br />\r\n6KZZ快站采用数据缓存、最少化数据库查询的设计，使得程序在繁忙的服务器环境下仍然快速稳定运行。<br />\r\n<br />\r\n<strong>五、简洁的程序代码</strong><br />\r\n6KZZ快站一直保持着代码简洁的优点。代码简洁易读，容易进行二次开发、定制属于自己的功能。<br />\r\n<br />\r\n<strong>六、实用、完善的功能</strong><br />\r\n不仅追求简洁的代码，也追求实用完善的功能。企业网站需要的新闻模块、产品模块、页面模块、留言模块等，应有尽有。', '', '', '', '', 1),
+(12, 5, 0, 0, 3, 1303355040, 0, '', '', '“6KZZ快站”是什么程序？有什么优点？', '<a target="_blank" href="http://www.6kzz.com">“6KZZ快站”是一个基于PHP + MySQL的开源企业快速建站程序(企业网站源码)。</a><br />\r\n<br />\r\n“6KZZ快站”一改过去传统的企业建站方式，不需企业编写任何程序或网页，<br />\r\n只需要登陆管理后台，即可任意编辑网站的栏目、内容，以及进行网站样式的管理，短时间内即可生成企业个性化的精美网站。<br />\r\n<br />\r\n选择“6KZZ快站”的理由：<br />\r\n<strong>一、大方美观的模板</strong><br />\r\n6KZZ快站有优秀的美工团队的支持，提供众多大方美观的模板下载。您也可以定制自己喜欢的模板。<br />\r\n<br />\r\n<strong>二、多国语言支持</strong><br />\r\n您可以通过后台启用网站的多语言功能，让您的企业形象全球化，让来自不同国家的访客都能够方便的了解您的企业。<br />\r\n<br />\r\n<strong>三、极快的访问速度</strong><br />\r\n6KZZ快站程序采用PHP+MySQL架构，并采用缓存机制、Gzip压缩等等，使程序的执行效果更高、速度极快。<br />\r\n<br />\r\n<strong>四、强大的负载能力</strong><br />\r\n6KZZ快站采用数据缓存、最少化数据库查询的设计，使得程序在繁忙的服务器环境下仍然快速稳定运行。<br />\r\n<br />\r\n<strong>五、简洁的程序代码</strong><br />\r\n6KZZ快站一直保持着代码简洁的优点。代码简洁易读，容易进行二次开发、定制属于自己的功能。<br />\r\n<br />\r\n<strong>六、实用、完善的功能</strong><br />\r\n不仅追求简洁的代码，也追求实用完善的功能。企业网站需要的新闻模块、产品模块、页面模块、留言模块等，应有尽有。', '', '', '', '', 1),
 (14, 0, 0, 1, 0, 0, 0, '', '', '阿里时间段了附件', '阿萨德发链接爱死了的减肥啦加水电费阿斯蒂芬', '', '', '', '', 0),
 (15, 0, 0, 1, 0, 0, 0, '', '', '垃圾撒了的房间阿斯蒂芬', '阿斯蒂芬啊撒了的房间拉丝机地方了嬶尖斯蒂芬', '', '', '', '', 0),
 (16, 0, 0, 1, 0, 1357894806, 0, '', '', '在之前的代码中使用了CDbExpression', '<p></p><p class="cn" id="cn932" style="margin: 0.6em 0px 1em; padding: 0px 0px 0.1em; position: relative; font-family: Verdana, sans-serif; font-size: 11.80555534362793px; line-height: 12.499999046325684px;">在这里我们重载了CActiveRecord::beforeValidate()方法。这是CActiveRecord提供的众多可以定制其工作流的事件之一。作为一个小提示，如果在AR类save()被调用时不提供一个false参数，验证将被触发。这一过程将执行所有在AR类中rules()里定义的验证细节。一共有2个方法允许我们将适当的逻辑置放在验证开始之前和验证结束之后，这个2方法为：beforeValidate()和afterValidate()。在这个部分，我们决定在验证执行前对我们审查表后的公共字段进行直接设置。</p><div id="b932" class="comment-indicator" style="margin: 0px; padding: 0px; position: absolute; width: 20px; z-index: 999; text-align: center; left: -44px; top: 0px; height: 71px;"><span style="position: absolute; top: -10px; left: -10px; width: 25px; height: 25px;"></span></div><p></p><p class="cn" id="cn933" style="margin: 0.6em 0px 1em; padding: 0px 0px 0.1em; position: relative; font-family: Verdana, sans-serif; font-size: 11.80555534362793px; line-height: 12.499999046325684px;">你可能注意到在之前的代码中使用了CDbExpression来设置新建和更新时间的值为Unix时间戳。自1.0.2版开始，一个属性的值可以设置为CDbExpression类型，在所属记录被保存前。在保存过程中所需的值将由运行数据库表达式获得。</p><p style="text-align: right;"><strong><em>asdf asdf sdf&nbsp;</em></strong></p>', '', '', '', '', 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zzdb_article_tag`
+--
+
+CREATE TABLE IF NOT EXISTS `zzdb_article_tag` (
+  `id` bigint(19) unsigned NOT NULL auto_increment,
+  `art_id` bigint(19) unsigned NOT NULL default '0',
+  `tag_id` bigint(19) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `post_id_tag_id_unique` (`art_id`,`tag_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -177,7 +205,7 @@ INSERT INTO `zzdb_channels` (`id`, `pid`, `channeltype`, `systemtype`, `ordernum
 (1, 0, 1, 1, 3, 0, '', '', '产品展示', ' ', '', '', '', '#', 0, 1),
 (2, 0, 1, 2, 4, 0, '', '', '联系我们', ' ', '', '', '', '/contact/index', 0, 1),
 (3, 0, 1, 3, 6, 0, '', '', '客户留言', ' ', '', '', '', 'msg', 0, 1),
-(4, 0, 4, 0, 1, 1, '', '', '网站首页', '', '', '', '', 'site/index', 1, 1),
+(4, 0, 4, 0, 1, 0, '', '', '网站首页', '', '', '', '', 'site/index', 1, 1),
 (5, 0, 2, 4, 2, 0, '|1|2|', '', '公司动态', '', '', '', '', '', 0, 1),
 (6, 0, 1, 0, 5, 0, '|1|2|', '', '关于我们', '<span style="font-weight: bold;"><img src="attachment.php?id=1"><br>“6KZZ快站”</span>是一个基于PHP + MySQL的开源企业快速建站程序。<br><br>“6KZZ快站”一改过去传统的企业建站方式，不需企业编写任何程序或网页，只需要登陆管理后台，即可任意编辑网站的栏目、内容，以及进行网站样式的管理，短时间内即可生成企业个性化的精美网站。<br><br><span style="font-weight: bold; color: rgb(255, 102, 102);">选择“6KZZ快站”的理由：</span><br><span style="font-weight: bold;">一、大方美观的模板</span><br>6KZZ快站有优秀的美工团队的支持，提供众多大方美观的模板下载。您也可以定制自己喜欢的模板。<br><br><span style="font-weight: bold;">二、多国语言支持</span><br>您可以通过后台启用网站的多语言功能，让您的企业形象全球化，让来自不同国家的访客都能够方便的了解您的企业。<br><br><span style="font-weight: bold;">三、极快的访问速度</span><br>6KZZ快站程序采用PHP+MySQL架构，并采用缓存机制、Gzip压缩等等，使程序的执行效果更高、速度极快。<br><br><span style="font-weight: bold;">四、强大的负载能力</span><br>6KZZ快站采用数据缓存、最少化数据库查询的设计，使得程序在繁忙的服务器环境下仍然快速稳定运行。<br><br><span style="font-weight: bold;">五、简洁的程序代码</span><br>6KZZ快站一直保持着代码简洁的优点。代码简洁易读，容易进行二次开发、定制属于自己的功能。<br><br><span style="font-weight: bold;">六、实用、完善的功能</span><br>不仅追求简洁的代码，也追求实用完善的功能。企业网站需要的新闻模块、产品模块、页面模块、留言模块等，应有尽有。<br><br>', '', '', '', '', 0, 1),
 (7, 6, 1, 0, 7, 0, '', '', '公司文化', '请在这里添加公司文化的内容。<br><br><span style="font-weight: bold;">如何自行安装“6KZZ快站”？</span><br><br>1、“6KZZ快站”是基于PHP+MySQL开发的，所以您必须先拥有一个支持PHP+MySQL的主机。（推荐使用高度兼容“6KZZ快站”的国外免备案PHP+MySQL主机）<br><br>2、从www.6kzz.com下载最新版本的“6KZZ快站”程序。解压后上传到您的主机。<br><br>3、访问上传好的“6KZZ快站”程序，系统自动引导到安装界面。根据界面提示，配置并填写完整数据库参数。（数据库用户名、密码、表名等，在购买主机的时候会提供）<br><br>4、按照安装步骤进行，即可成功安装“6KZZ快站”。<br><br>5、进入系统后台管理。修改站点名称、LOGO、栏目、内容等；也可以进行模板管理，打造一个个性化的企业网站。<br><br>', '', '', '', '', 0, 1),
@@ -329,14 +357,16 @@ CREATE TABLE IF NOT EXISTS `zzdb_links` (
   PRIMARY KEY  (`id`),
   KEY `ordernum` (`ordernum`),
   KEY `langid` (`langid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=4 ;
 
 --
 -- 转存表中的数据 `zzdb_links`
 --
 
 INSERT INTO `zzdb_links` (`id`, `name`, `url`, `content`, `logo`, `ordernum`, `created`, `updated`, `langid`) VALUES
-(1, '漠漠欢好过', 'http://www.yiicms.com/admin.php/links/create', 'http://www.yiicms.com/admin.php/links/create', '', 0, 0, 1359010437, 0);
+(1, '漠漠欢好过', 'http://www.yiicms.com/admin.php/links/create', 'http://www.yiicms.com/admin.php/links/create', '', 0, 0, 1359010437, 0),
+(2, '香草园精油', 'http://xiangcaoyuan.sinaapp.com/', '香草园精油', '', 0, 1359083927, 1359084041, 0),
+(3, '即美说', 'http://www.jimeishuo.com/', '即美说', '', 2, 1359084030, 1359084030, 0);
 
 -- --------------------------------------------------------
 
@@ -591,7 +621,7 @@ CREATE TABLE IF NOT EXISTS `zzdb_products` (
 --
 
 INSERT INTO `zzdb_products` (`id`, `pid`, `cid`, `type`, `hits`, `posttime`, `alias`, `name`, `serialnum`, `seotitle`, `metakeywords`, `metadesc`, `content`, `picids`, `thumbnail`, `picpaths`, `price1`, `price2`, `store`, `sold`, `level`, `ordernum`, `langid`) VALUES
-(16, 0, 12, 0, 2, 1358910062, '', 'asdfasdf', '2222', 'asdfasdf', 'asdfasdf', 'asdfasf', 'asfasdfsafd', '0	0	0	0	0', '', '				', 222, 0, 22, 22, 3, 100, 1),
+(16, 0, 12, 0, 3, 1358910062, '', 'asdfasdf', '2222', 'asdfasdf', 'asdfasdf', 'asdfasf', 'asfasdfsafd', '0	0	0	0	0', '', '				', 222, 0, 22, 22, 3, 100, 1),
 (11, 0, 1, 0, 14, 1301045990, '', '惠普Compaq CQ326 13.3英寸笔记本电脑', 'Z1301045990', '', '', '', '<ul id="i-detail"><li title="惠普CQ326">商品名称：惠普CQ326</li><li>商品产地：中国大陆</li><li>商品毛重：2.66</li><li>上架时间：2010-7-6 19:47:03</li></ul>', '10	0	0	0	0', '', '201103/1_1301039854_7811.jpg				', 3999.99, 0, 100, 10, 3, 100, 1),
 (12, 0, 4, 1, 5, 1301409672, '', '华硕N82EI48JV-SL 14.0英寸笔记本电脑', 'Z1301409672', '', '', '', '<ul id="i-detail"><li title="华硕N82EI48JV-SL">商品名称：华硕N82EI48JV-SL</li><li>商品产地：中国大陆</li><li>商品毛重：3.72</li><li>上架时间：2011-2-23 16:46:49</li></ul>', '9	0	0	0	0', '', '201103/1_1301039854_5954.jpg				', 4300, 0, 100, 10, 3, 100, 1),
 (13, 0, 4, 0, 10, 1301045971, '', '华硕A40EI46JP-SL 14.0 英寸笔记本电脑', 'Z1301045971', '', '', '', '<ul id="i-detail"><li title="华硕A40EI46JP-SL">商品名称：华硕A40EI46JP-SL</li><li>商品产地：中国大陆</li><li>商品毛重：3.64</li><li>上架时间：2011-1-5 10:17:22</li></ul>', '8	0	0	0	0', '', '201103/1_1301039854_1215.jpg				', 3999.99, 0, 100, 10, 3, 100, 1),
@@ -605,6 +635,59 @@ INSERT INTO `zzdb_products` (`id`, `pid`, `cid`, `type`, `hits`, `posttime`, `al
 (22, 2, 21, 1, 0, 1359005115, '', '阿萨德发生大幅', '阿斯蒂芬阿斯蒂芬', '阿斯蒂芬', '阿道夫', 'f 阿斯蒂芬', 'asd阿斯蒂芬阿斯蒂芬阿斯蒂芬', '3555', '', '/uploads/products/5100c5bb6d728.jpg', 0, 0, 100, 10, 3, 0, 0),
 (23, 2, 21, 1, 0, 1359022425, '', '阿萨德发生大幅', '11222', '阿斯蒂芬阿斯蒂芬', '阿斯蒂芬阿斯蒂芬', '阿斯蒂芬阿斯蒂芬', '<p>阿斯蒂芬阿斯蒂芬撒地方</p><p>阿斯蒂芬asd飞asdf&nbsp;</p><p>阿斯蒂芬艾丝凡</p><p>阿斯蒂芬阿斯蒂芬</p><p><br /></p>', '222', '/uploads/products/thum/51010959739e6_thum.jpg', '/uploads/products/510109595b8f3.jpg', 0, 0, 100, 10, 3, 0, 0),
 (24, 1, 12, 1, 0, 1359022686, '', '阿斯蒂芬阿斯蒂芬', '', '', '', '阿斯蒂芬', '阿斯蒂芬阿斯蒂芬撒地方', '2222', '/uploads/products/thum/51010a5e3994c_thum.jpg', '/uploads/products/51010a5e3905d.jpg,/uploads/products/51010a5e53c22.jpg,/uploads/products/51010a5e5454d.jpg', 0, 0, 100, 10, 3, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zzdb_product_tag`
+--
+
+CREATE TABLE IF NOT EXISTS `zzdb_product_tag` (
+  `id` bigint(19) unsigned NOT NULL auto_increment,
+  `product_id` bigint(19) unsigned NOT NULL default '0',
+  `tag_id` bigint(19) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `post_id_tag_id_unique` (`product_id`,`tag_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
+
+--
+-- 转存表中的数据 `zzdb_product_tag`
+--
+
+INSERT INTO `zzdb_product_tag` (`id`, `product_id`, `tag_id`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 2, 3),
+(4, 3, 4),
+(5, 4, 5),
+(6, 5, 6),
+(7, 6, 7),
+(8, 7, 8),
+(9, 8, 9),
+(10, 19, 10),
+(11, 30, 11),
+(12, 31, 11),
+(13, 32, 11),
+(14, 33, 11),
+(15, 34, 11),
+(16, 35, 11),
+(17, 36, 11),
+(18, 37, 11),
+(19, 38, 11),
+(20, 39, 11),
+(21, 40, 11),
+(22, 41, 11),
+(23, 42, 11),
+(24, 43, 11),
+(25, 44, 11),
+(26, 45, 11),
+(27, 46, 11),
+(28, 47, 11),
+(29, 48, 11),
+(30, 49, 11),
+(31, 50, 11),
+(32, 51, 12),
+(33, 52, 11);
 
 -- --------------------------------------------------------
 
@@ -700,97 +783,6 @@ INSERT INTO `zzdb_settings` (`id`, `categoryid`, `property`, `setvalue`, `name`,
 -- --------------------------------------------------------
 
 --
--- 表的结构 `zzdb_settingsb`
---
-
-CREATE TABLE IF NOT EXISTS `zzdb_settingsb` (
-  `id` int(10) unsigned NOT NULL auto_increment COMMENT 'id',
-  `categoryid` tinyint(3) unsigned NOT NULL COMMENT '分类id',
-  `property` varchar(30) NOT NULL default '',
-  `setvalue` varchar(1000) NOT NULL default '',
-  `name` varchar(50) NOT NULL COMMENT '配置名称',
-  `description` varchar(100) NOT NULL COMMENT '描述',
-  `set_order` tinyint(3) unsigned NOT NULL,
-  `set_type` tinyint(3) unsigned NOT NULL,
-  `langid` int(10) unsigned NOT NULL default '0',
-  PRIMARY KEY  (`id`),
-  KEY `property` (`property`),
-  KEY `langid` (`langid`),
-  KEY `categoryid` (`categoryid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=91 ;
-
---
--- 转存表中的数据 `zzdb_settingsb`
---
-
-INSERT INTO `zzdb_settingsb` (`id`, `categoryid`, `property`, `setvalue`, `name`, `description`, `set_order`, `set_type`, `langid`) VALUES
-(1, 0, 'mailsendtype', '1', '', '', 0, 0, 0),
-(2, 0, 'mailsender', 'Sender@6kzz.com', '', '', 0, 0, 0),
-(3, 0, 'smtpserver', '', '', '', 0, 0, 0),
-(4, 0, 'smtpport', '', '', '', 0, 0, 0),
-(5, 0, 'smtpauth', '1', '', '', 0, 0, 0),
-(6, 0, 'smtpsender', '', '', '', 0, 0, 0),
-(7, 0, 'smtpusername', '', '', '', 0, 0, 0),
-(8, 0, 'smtppassword', '', '', '', 0, 0, 0),
-(9, 0, 'testreceiver', 'Receiver@6kzz.com', '', '', 0, 0, 0),
-(10, 0, 'copyrightheader', ' -阿萨德', '', '', 0, 0, 0),
-(11, 0, 'funmember', '1', '', '', 0, 0, 0),
-(12, 0, 'funshop', '1', '', '', 0, 0, 0),
-(13, 0, 'issignup', '1', '', '', 0, 0, 0),
-(14, 0, 'signupfilename', 'signup.php', '', '', 0, 0, 0),
-(15, 5, 'signupsecuritycode', '0', '启用注册验证码:', '注册时需要填写验证码', 0, 0, 0),
-(16, 0, 'issignupverify', '0', '', '', 0, 0, 0),
-(17, 0, 'signupitime', '0.01', '', '', 0, 0, 0),
-(18, 0, 'templatelang', 'en.php', '', '', 0, 0, 1),
-(19, 0, 'template', 'gray_blue', '', '', 0, 0, 1),
-(21, 4, 'seotitle', '6KZZ快站，企业建站首选！', '浏览器标题(Title):', '浏览器标题(Title)，有利于SEO', 0, 0, 1),
-(85, 1, 'icp', '12356', '网站备案信息代码:', '页面底部可以显示 ICP 备案信息，如果网站已备案，在此输入您的授权码，它将显示在页面底部，如果没有请留空', 0, 0, 1),
-(86, 1, 'cur', '￥', '网站货币符号:', '￥、＄、€、￡等等', 0, 0, 1),
-(87, 1, 'isoff', '0', '网站关闭:', '', 0, 0, 1),
-(88, 1, 'offdetails', '暗示的发生', '网站关闭原因:', '网站关闭时出现的提示信息', 0, 0, 1),
-(89, 1, 'counter', '阿斯蒂芬阿斯蒂芬', '网站第三方统计代码:', '页面底部可以显示第三方统计', 0, 0, 1),
-(27, 2, 'timeformat', 'yyyy-mm-dd', '网站时间格式:', '使用 yyyy(yy) 表示年，mm 表示月，dd 表示天。如 yyyy-mm-dd 表示 2012-01-01', 0, 0, 1),
-(28, 2, 'timeoffset', '8', '系统时差:', '当地时间与 GMT 的时差', 0, 0, 1),
-(29, 2, 'humantime', '0', '人性化时间格式:', '选择“是”，网站中的时间将以“n秒前”、“n分钟前”等形式显示', 0, 0, 1),
-(30, 3, 'isgzip', '0', '开启页面 Gzip 压缩:', '系统检测到服务器支持Gzip压缩', 0, 0, 1),
-(31, 4, 'urlrewrite', '2', '开启伪静态:', '程序实现：一般虚拟主机则可支持\r\n服务器配置：需要服务器支持与配置Url Rewrite规则', 0, 0, 1),
-(32, 4, 'metakeywords', '6KZZ快站,快速建站程序,智能建站程序,PHP建站程序', '关键字(Meta Keywords):', 'Keywords 项出现在页面头部的 Meta 标签中，有利于SEO，多个关键字间请用半角逗号 "," 隔开', 0, 0, 1),
-(33, 4, 'metadescription', '6KZZ快站是一个采用 PHP+MySQL 构建的高效能的快速建站、智能建站程序。', '描述(Meta Description):', 'Description 出现在页面头部的 Meta 标签中，有利于SEO', 0, 0, 1),
-(34, 4, 'headcontent', '', '其他头部信息:', '如需在 <head></head> 中添加其他的 HTML 代码，可以使用本设置，否则请留空', 0, 0, 1),
-(35, 0, 'signupsecuritycode', '0', '', '', 0, 0, 1),
-(36, 5, 'loginsecuritycode', '0', '启用登录验证码:', '登录时需要填写验证码', 0, 0, 1),
-(37, 5, 'msgsecuritycode', '0', '启用留言验证码:', '发表留言时需要填写验证码', 0, 0, 1),
-(38, 6, 'perpagepro', '12', '产品列表每页显示数量:', '请填写正确的数字', 0, 0, 1),
-(39, 6, 'perpageart', '15', '文章列表每页显示数量:', '请填写正确的数字', 0, 0, 1),
-(40, 6, 'perpagemsg', '10', '留言板每页显示数量:', '请填写正确的数字', 0, 0, 1),
-(41, 0, 'banner1', '2', '', '', 0, 0, 1),
-(42, 0, 'bannerlink1', 'http://www.6kzz.com', '', '', 0, 0, 1),
-(43, 0, 'banner2', '3', '', '', 0, 0, 1),
-(44, 0, 'bannerlink2', 'http://www.6kzz.com', '', '', 0, 0, 1),
-(45, 0, 'banner3', '', '', '', 0, 0, 1),
-(46, 0, 'bannerlink3', '#Banner链接', '', '', 0, 0, 1),
-(47, 0, 'banner4', '', '', '', 0, 0, 1),
-(48, 0, 'bannerlink4', '#Banner链接', '', '', 0, 0, 1),
-(49, 0, 'banner5', '', '', '', 0, 0, 1),
-(50, 0, 'bannerlink5', '#Banner链接', '', '', 0, 0, 1),
-(51, 0, 'copyrightfooter', 'Powered by <a href="http://www.6kzz.com" target="_blank">6KZZ v1.4</a> © 2011 6kzz.com', '', '', 0, 0, 0),
-(52, 0, 'isthumb', '1', '', '', 0, 0, 0),
-(53, 0, 'thumbwidth', '160', '', '', 0, 0, 0),
-(54, 0, 'thumbheight', '160', '', '', 0, 0, 0),
-(90, 0, 'logopath', '201103/1_1301037971_3787.gif', '', '', 0, 0, 1),
-(56, 0, 'bannerpath1', '201103/1_1301037973_4418.jpg', '', '', 0, 0, 1),
-(57, 0, 'bannerpath2', '201103/1_1301037975_9640.jpg', '', '', 0, 0, 1),
-(58, 0, 'bannerpath3', '', '', '', 0, 0, 1),
-(59, 0, 'bannerpath4', '', '', '', 0, 0, 1),
-(60, 0, 'bannerpath5', '', '', '', 0, 0, 1),
-(61, 0, 'salt', '5f34b58768b44fbd91895cb9c343ec63', '', '', 0, 0, 0),
-(82, 1, 'logo', '1', '网站LOGO:(建议234 * 60像素)', '', 0, 0, 1),
-(83, 1, 'webname', 'yiicms', '网站名称:', '网站名称，将显示在导航条和标题中', 0, 0, 1),
-(84, 1, 'url', 'http://a.com/6kzz', '网站 URL:', '网站 URL，将作为链接显示在页面底部', 0, 0, 1);
-
--- --------------------------------------------------------
-
---
 -- 表的结构 `zzdb_slideshow`
 --
 
@@ -815,6 +807,21 @@ INSERT INTO `zzdb_slideshow` (`id`, `title`, `url`, `image`, `token`, `sortnum`,
 (3, '阿芙刘野限定版', 'http://www.yiicms.com', '/uploads/slideshow/50f60ce952b04.jpg', 1, 0, 1358298463),
 (4, '阿芙人参系列', 'http://www.yiicms.com', '/uploads/slideshow/50f5fd7163c8c.jpg', 1, 0, 1358298481),
 (5, '阿芙玫瑰系列', 'http://www.yiicms.com', '/uploads/slideshow/50f5fd821c1bb.jpg', 1, 0, 1358298498);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `zzdb_tag`
+--
+
+CREATE TABLE IF NOT EXISTS `zzdb_tag` (
+  `id` bigint(20) unsigned NOT NULL auto_increment,
+  `name` varchar(50) NOT NULL default '',
+  `post_nums` bigint(20) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`),
+  KEY `post_nums_idx` (`post_nums`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -867,64 +874,7 @@ CREATE TABLE IF NOT EXISTS `zzdb_users` (
 
 INSERT INTO `zzdb_users` (`id`, `username`, `userpass`, `email`, `realname`, `phone`, `lastip`, `addtime`, `lasttime`, `popedom`, `ishidden`) VALUES
 (1, 'zym', '10027794a5c77b28984e5ce110cef597', 'zymzeng@qq.com', '曾勇民', '13538288822', '127.0.0.1', 1298332800, 1301034299, '|channel|page|article|procate|products|order|member|main|lang|template|link|msg|vote|user|database|', 1),
-(2, 'admin', '362864ed70a8b0c71d144b7a556f1797', 'smarteng@qq.com', '', '', '127.0.0.1', 1346203000, 1359004633, '|channel|page|article|procate|products|order|member|main|lang|template|link|msg|vote|user|database|', 0);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `zzdb_voteitems`
---
-
-CREATE TABLE IF NOT EXISTS `zzdb_voteitems` (
-  `id` int(10) unsigned NOT NULL auto_increment,
-  `voteid` int(10) unsigned NOT NULL default '0',
-  `title` varchar(100) NOT NULL default '',
-  `votednum` int(10) unsigned NOT NULL default '0',
-  `voteips` mediumtext NOT NULL,
-  PRIMARY KEY  (`id`),
-  KEY `voteid` (`voteid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=6 ;
-
---
--- 转存表中的数据 `zzdb_voteitems`
---
-
-INSERT INTO `zzdb_voteitems` (`id`, `voteid`, `title`, `votednum`, `voteips`) VALUES
-(1, 1, 'asdfasdf', 0, ''),
-(2, 1, 'asdfasdf', 0, ''),
-(3, 1, 'asdfasdf', 0, ''),
-(4, 1, 'asdf', 0, ''),
-(5, 1, 'ass', 0, '');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `zzdb_votes`
---
-
-CREATE TABLE IF NOT EXISTS `zzdb_votes` (
-  `id` int(10) unsigned NOT NULL auto_increment,
-  `title` varchar(100) NOT NULL default '',
-  `content` varchar(1000) NOT NULL default '',
-  `votednum` int(10) unsigned NOT NULL default '0',
-  `maxvotes` tinyint(3) unsigned NOT NULL default '1',
-  `starttime` int(10) unsigned NOT NULL default '0',
-  `stoptime` int(10) unsigned NOT NULL default '0',
-  `level` tinyint(3) unsigned NOT NULL default '0',
-  `ordernum` int(10) unsigned NOT NULL default '0',
-  `langid` int(10) unsigned NOT NULL default '0',
-  PRIMARY KEY  (`id`),
-  KEY `timerange` USING BTREE (`starttime`,`stoptime`),
-  KEY `langid` (`langid`),
-  KEY `ordernum` (`ordernum`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=2 ;
-
---
--- 转存表中的数据 `zzdb_votes`
---
-
-INSERT INTO `zzdb_votes` (`id`, `title`, `content`, `votednum`, `maxvotes`, `starttime`, `stoptime`, `level`, `ordernum`, `langid`) VALUES
-(1, 'sdfasdfsadf', '', 0, 1, 1356595200, 1356767999, 1, 0, 1);
+(2, 'admin', '362864ed70a8b0c71d144b7a556f1797', 'smarteng@qq.com', '', '', '127.0.0.1', 1346203000, 1360037255, '|channel|page|article|procate|products|order|member|main|lang|template|link|msg|vote|user|database|', 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

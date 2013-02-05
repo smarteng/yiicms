@@ -1,6 +1,8 @@
 <?php
 /* @var $this SiteController */
 $this->pageTitle=Yii::app()->name;
+//Yii::app()->clientScript->registerLinkTag('alternate','application/rss+xml',$this->createUrl('/feed'),NULL,array('title'=>'ddddddd')); 
+//Yii::app()->clientScript->registerLinkTag('canonical',NULL,$this->createUrl('/feed'));
 ?>
 <!--加载首页轮播图-->
 <?php $this->widget('ext.slider.SliderWidget', array('asbg'=>false, 'width'=>'640px', 'height'=>'240px', 'token'=>'1'));?>
